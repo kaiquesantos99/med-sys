@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kaique\\source\\repos\\MedSys\\MedSys\\MedSys.csproj": {}
+    "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\MedSys.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kaique\\source\\repos\\MedSys\\MedSys\\MedSys.csproj": {
+    "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\MedSys.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kaique\\source\\repos\\MedSys\\MedSys\\MedSys.csproj",
+        "projectUniqueName": "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
         "projectName": "MedSys",
-        "projectPath": "C:\\Users\\Kaique\\source\\repos\\MedSys\\MedSys\\MedSys.csproj",
-        "packagesPath": "C:\\Users\\Kaique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kaique\\source\\repos\\MedSys\\MedSys\\obj\\",
+        "projectPath": "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
+        "packagesPath": "C:\\Users\\aclis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aclis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,7 +69,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

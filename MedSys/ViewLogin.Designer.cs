@@ -31,64 +31,45 @@
             ldlEntrar = new Label();
             txtSenha = new TextBox();
             txtUsuario = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
             SuspendLayout();
             // 
             // ldlEntrar
             // 
             ldlEntrar.AutoSize = true;
-            ldlEntrar.Location = new Point(615, 271);
+            ldlEntrar.Location = new Point(525, 203);
             ldlEntrar.Name = "ldlEntrar";
-            ldlEntrar.Size = new Size(48, 20);
+            ldlEntrar.Size = new Size(38, 15);
             ldlEntrar.TabIndex = 1;
             ldlEntrar.Text = "Entrar";
             ldlEntrar.Click += ldlEntrar_Click;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(572, 220);
+            txtSenha.Location = new Point(500, 165);
+            txtSenha.Margin = new Padding(3, 2, 3, 2);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(125, 27);
+            txtSenha.Size = new Size(110, 23);
             txtSenha.TabIndex = 2;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(572, 177);
+            txtUsuario.Location = new Point(500, 133);
+            txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(125, 27);
+            txtUsuario.Size = new Size(110, 23);
             txtUsuario.TabIndex = 3;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(495, 184);
-            label2.Name = "label2";
-            label2.Size = new Size(46, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Login";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(495, 226);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Senha";
-            label3.Click += label3_Click;
-            // 
             // ViewLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            BackgroundImage = Properties.Resources.background_login;
+            ClientSize = new Size(700, 338);
             Controls.Add(txtUsuario);
             Controls.Add(txtSenha);
             Controls.Add(ldlEntrar);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ViewLogin";
             Text = "Login MedSys";
             ResumeLayout(false);
@@ -99,7 +80,5 @@
         private Label ldlEntrar;
         private TextBox txtSenha;
         private TextBox txtUsuario;
-        private Label label2;
-        private Label label3;
     }
 }

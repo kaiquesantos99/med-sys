@@ -30,24 +30,24 @@
         {
             tlpMain = new TableLayoutPanel();
             tlpMenu = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            picBtnMedicamento = new PictureBox();
             picBtnColaborador = new PictureBox();
+            picBtnPaciente = new PictureBox();
+            picInicioMedSys = new PictureBox();
             tlpBotoesPacientes = new TableLayoutPanel();
             picListaPaciente = new PictureBox();
             picCadastrarPaciente = new PictureBox();
-            picBtnPaciente = new PictureBox();
-            picBtnMedicamento = new PictureBox();
-            picInicioMedSys = new PictureBox();
-            pictureBox1 = new PictureBox();
             tlpMain.SuspendLayout();
             tlpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBtnColaborador).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBtnPaciente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picInicioMedSys).BeginInit();
             tlpBotoesPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picListaPaciente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCadastrarPaciente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picBtnPaciente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picInicioMedSys).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tlpMain
@@ -88,6 +88,29 @@
             tlpMenu.Size = new Size(770, 67);
             tlpMenu.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.btn_prontuario;
+            pictureBox1.Location = new Point(506, 3);
+            pictureBox1.Margin = new Padding(48, 3, 3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(52, 61);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // picBtnMedicamento
+            // 
+            picBtnMedicamento.Dock = DockStyle.Right;
+            picBtnMedicamento.Image = Properties.Resources.btn_medicamento;
+            picBtnMedicamento.Location = new Point(660, 3);
+            picBtnMedicamento.Margin = new Padding(3, 3, 38, 3);
+            picBtnMedicamento.Name = "picBtnMedicamento";
+            picBtnMedicamento.Size = new Size(52, 61);
+            picBtnMedicamento.SizeMode = PictureBoxSizeMode.Zoom;
+            picBtnMedicamento.TabIndex = 2;
+            picBtnMedicamento.TabStop = false;
+            // 
             // picBtnColaborador
             // 
             picBtnColaborador.Image = Properties.Resources.btn_colaborador2;
@@ -98,6 +121,30 @@
             picBtnColaborador.SizeMode = PictureBoxSizeMode.Zoom;
             picBtnColaborador.TabIndex = 0;
             picBtnColaborador.TabStop = false;
+            // 
+            // picBtnPaciente
+            // 
+            picBtnPaciente.Image = Properties.Resources.btn_paciente;
+            picBtnPaciente.Location = new Point(214, 3);
+            picBtnPaciente.Margin = new Padding(48, 3, 3, 3);
+            picBtnPaciente.Name = "picBtnPaciente";
+            picBtnPaciente.Size = new Size(52, 52);
+            picBtnPaciente.SizeMode = PictureBoxSizeMode.Zoom;
+            picBtnPaciente.TabIndex = 1;
+            picBtnPaciente.TabStop = false;
+            // 
+            // picInicioMedSys
+            // 
+            picInicioMedSys.Image = Properties.Resources.medsys_logo;
+            picInicioMedSys.Location = new Point(360, 3);
+            picInicioMedSys.Margin = new Padding(48, 3, 3, 3);
+            picInicioMedSys.Name = "picInicioMedSys";
+            picInicioMedSys.Size = new Size(52, 61);
+            picInicioMedSys.SizeMode = PictureBoxSizeMode.Zoom;
+            picInicioMedSys.TabIndex = 3;
+            picInicioMedSys.TabStop = false;
+            picInicioMedSys.MouseEnter += picInicioMedSys_MouseEnter;
+            picInicioMedSys.MouseLeave += picInicioMedSys_MouseLeave;
             // 
             // tlpBotoesPacientes
             // 
@@ -133,51 +180,6 @@
             picCadastrarPaciente.TabIndex = 0;
             picCadastrarPaciente.TabStop = false;
             // 
-            // picBtnPaciente
-            // 
-            picBtnPaciente.Image = Properties.Resources.btn_paciente;
-            picBtnPaciente.Location = new Point(214, 3);
-            picBtnPaciente.Margin = new Padding(48, 3, 3, 3);
-            picBtnPaciente.Name = "picBtnPaciente";
-            picBtnPaciente.Size = new Size(52, 52);
-            picBtnPaciente.SizeMode = PictureBoxSizeMode.Zoom;
-            picBtnPaciente.TabIndex = 1;
-            picBtnPaciente.TabStop = false;
-            // 
-            // picBtnMedicamento
-            // 
-            picBtnMedicamento.Dock = DockStyle.Right;
-            picBtnMedicamento.Image = Properties.Resources.btn_medicamento;
-            picBtnMedicamento.Location = new Point(660, 3);
-            picBtnMedicamento.Margin = new Padding(3, 3, 38, 3);
-            picBtnMedicamento.Name = "picBtnMedicamento";
-            picBtnMedicamento.Size = new Size(52, 61);
-            picBtnMedicamento.SizeMode = PictureBoxSizeMode.Zoom;
-            picBtnMedicamento.TabIndex = 2;
-            picBtnMedicamento.TabStop = false;
-            // 
-            // picInicioMedSys
-            // 
-            picInicioMedSys.Image = Properties.Resources.medsys_logo;
-            picInicioMedSys.Location = new Point(360, 3);
-            picInicioMedSys.Margin = new Padding(48, 3, 3, 3);
-            picInicioMedSys.Name = "picInicioMedSys";
-            picInicioMedSys.Size = new Size(52, 61);
-            picInicioMedSys.SizeMode = PictureBoxSizeMode.Zoom;
-            picInicioMedSys.TabIndex = 3;
-            picInicioMedSys.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.btn_prontuario;
-            pictureBox1.Location = new Point(506, 3);
-            pictureBox1.Margin = new Padding(48, 3, 3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(52, 61);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -189,14 +191,14 @@
             WindowState = FormWindowState.Maximized;
             tlpMain.ResumeLayout(false);
             tlpMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBtnColaborador).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBtnPaciente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picInicioMedSys).EndInit();
             tlpBotoesPacientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picListaPaciente).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCadastrarPaciente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picBtnPaciente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picInicioMedSys).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

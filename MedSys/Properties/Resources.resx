@@ -118,10 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="background_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn_colaborador2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_colaborador2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn_colaborador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_colaborador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medsys_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medsys_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_paciente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_paciente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_prontuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_prontuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_medicamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_medicamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medsys_neon_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medsys_neon_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -26,5 +26,67 @@ namespace MedSys
         {
             picInicioMedSys.Image = Properties.Resources.medsys_logo;
         }
+
+        private void tlpMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picBtnMedicamento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picBtnColaborador_Click(object sender, EventArgs e)
+        {
+            tlpBotoesColaboradores.Visible = true;
+            tlpBotoesColaboradores.Dock = DockStyle.Fill;
+
+            tlpBotoesPacientes.Visible = false;
+
+        }
+
+        private void picCadastrarPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picListaPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panOptionsButtons_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picCadastrarMedico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picBtnPaciente_Click(object sender, EventArgs e)
+        {
+            tlpBotoesPacientes.Visible = true;
+            tlpBotoesPacientes.Dock = DockStyle.Fill;
+
+            tlpBotoesColaboradores.Visible = false;
+        }
     }
 }

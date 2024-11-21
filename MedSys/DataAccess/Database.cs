@@ -9,7 +9,7 @@ namespace MedSys.DataAccess
 {
     internal class Database
     {
-        private string connectionString = "Server=localhost;Database=medsys;Uid=root;Pwd=;";
+        private string connectionString = "Server=localhost;Database=medsys;Uid=root;Pwd=148276@Allan;";
 
         public MySqlConnection GetConnection ()
         {

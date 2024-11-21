@@ -69,6 +69,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(txtSenha);
             Controls.Add(ldlEntrar);
+            DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "ViewLogin";
             Text = "Login MedSys";

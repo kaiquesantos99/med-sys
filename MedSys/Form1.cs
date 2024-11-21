@@ -5,6 +5,9 @@ namespace MedSys
         public Form1()
         {
             InitializeComponent();
+            tlpBotoesColaboradores.Dock = DockStyle.Fill;
+            tlpBotoesPacientes.Dock = DockStyle.Fill;
+            tlpBotoesProntuario.Dock = DockStyle.Fill;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -49,10 +52,11 @@ namespace MedSys
 
         private void picBtnColaborador_Click(object sender, EventArgs e)
         {
-            tlpBotoesColaboradores.Visible = true;
-            tlpBotoesColaboradores.Dock = DockStyle.Fill;
+            tlpBotoesColaboradores.Visible = true; 
 
             tlpBotoesPacientes.Visible = false;
+
+
 
         }
 

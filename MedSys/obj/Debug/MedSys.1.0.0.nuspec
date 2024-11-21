@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MedSys</id>
+    <version>1.0.0</version>
+    <authors>MedSys</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="d26c56c105c2e70226cf5f18a5d63a79ea5c6ea5" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0">
+        <dependency id="MySql.Data" version="9.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\aclis\source\repos\med-sys\MedSys\bin\Debug\net8.0-windows\MedSys.runtimeconfig.json" target="lib\net8.0-windows7.0\MedSys.runtimeconfig.json" />
+    <file src="C:\Users\aclis\source\repos\med-sys\MedSys\bin\Debug\net8.0-windows\MedSys.dll" target="lib\net8.0-windows7.0\MedSys.dll" />
+  </files>
+</package>

@@ -88,5 +88,10 @@ namespace MedSys
 
             tlpBotoesColaboradores.Visible = false;
         }
+
+        private void picCadastrarEnfermeiros_Click(object sender, EventArgs e)
+        {
+            new ViewCadastrarEnfermeiro().Show();  
+        }
     }
 }

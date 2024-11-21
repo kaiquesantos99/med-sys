@@ -133,3 +133,5 @@ C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\refint\MedS
 C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.pdb
 C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.genruntimeconfig.cache
 C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\ref\MedSys.dll
+C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.Properties.Resources.resources
+C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastrarEnfermeiro.resources

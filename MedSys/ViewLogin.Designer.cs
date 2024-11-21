@@ -36,40 +36,39 @@
             // ldlEntrar
             // 
             ldlEntrar.AutoSize = true;
-            ldlEntrar.Location = new Point(525, 203);
+            ldlEntrar.Location = new Point(600, 271);
             ldlEntrar.Name = "ldlEntrar";
-            ldlEntrar.Size = new Size(38, 15);
+            ldlEntrar.Size = new Size(48, 20);
             ldlEntrar.TabIndex = 1;
             ldlEntrar.Text = "Entrar";
             ldlEntrar.Click += ldlEntrar_Click;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(500, 165);
-            txtSenha.Margin = new Padding(3, 2, 3, 2);
+            txtSenha.Location = new Point(571, 220);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(110, 23);
+            txtSenha.Size = new Size(125, 27);
             txtSenha.TabIndex = 2;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(500, 133);
-            txtUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtUsuario.Location = new Point(571, 177);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(110, 23);
+            txtUsuario.Size = new Size(125, 27);
             txtUsuario.TabIndex = 3;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // ViewLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background_login;
-            ClientSize = new Size(700, 338);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(800, 451);
             Controls.Add(txtUsuario);
             Controls.Add(txtSenha);
             Controls.Add(ldlEntrar);
-            Margin = new Padding(3, 2, 3, 2);
+            DoubleBuffered = true;
             Name = "ViewLogin";
             Text = "Login MedSys";
             ResumeLayout(false);

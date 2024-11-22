@@ -127,8 +127,14 @@
   <data name="imagemcadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagemcadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnListaColaboradores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnListaColaboradores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CADASTRO_ENFERMEIRO_azul52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CADASTRO_ENFERMEIRO_azul52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="g7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\g7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastrarbutton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrarbutton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn_medicamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_medicamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,11 +142,11 @@
   <data name="btnListaPacientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnListaPacientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnCadastrarMedico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnCadastrarMedico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="medsys_neon_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medsys_neon_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cadastrarbutton3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrarbutton3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnCadastrarPaciente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnCadastrarPaciente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,11 +154,14 @@
   <data name="medsys_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medsys_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnCadastrarMedico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCadastrarMedico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="g1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\g1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnCadastrarEnfermeiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnCadastrarEnfermeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_colaborador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_colaborador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn_prontuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_prontuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,25 +169,34 @@
   <data name="cadastrarbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cadastrarbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_colaborador2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_colaborador2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn_paciente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_paciente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnCadastrarRecepcionista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnCadastrarRecepcionista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn_colaborador2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_colaborador2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CADASTRO_ENFERMEIRO7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CADASTRO_ENFERMEIRO7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CADASTRO_ENFERMEIRO_azul51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CADASTRO_ENFERMEIRO_azul51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCadastrarRecepcionista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCadastrarRecepcionista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cadastrarbutton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cadastrarbutton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medsys_neon_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medsys_neon_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnListaColaboradores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnListaColaboradores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cadastrarbutton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastrarbutton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn_colaborador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_colaborador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastrarbutton4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrarbutton4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

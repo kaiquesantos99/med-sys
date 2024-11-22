@@ -7,6 +7,12 @@
     <Compile Update="ViewCadastrarEnfermeiro.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ViewCadastroMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewCadastroRecepcionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ViewLogin.cs">
       <SubType>Form</SubType>
     </Compile>

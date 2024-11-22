@@ -136,3 +136,5 @@ C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\ref\MedSys.
 C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.Properties.Resources.resources
 C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastrarEnfermeiro.resources
 C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastrarEnfermeiro.resources
+C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastroMedico.resources
+C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastroRecepcionista.resources

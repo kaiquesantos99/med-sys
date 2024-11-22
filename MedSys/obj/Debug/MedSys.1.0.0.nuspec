@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>MedSys</authors>
     <description>Package Description</description>
-    <repository type="git" commit="d26c56c105c2e70226cf5f18a5d63a79ea5c6ea5" />
+    <repository type="git" commit="915e8292cd934101ffb4379d29435666a692eec6" />
     <dependencies>
       <group targetFramework="net8.0-windows7.0">
         <dependency id="MySql.Data" version="9.0.0" exclude="Build,Analyzers" />

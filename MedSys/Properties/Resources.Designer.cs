@@ -213,9 +213,49 @@ namespace MedSys.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cadastrarbutton3 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarbutton3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadastrarbutton4 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarbutton4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CADASTRO_ENFERMEIRO_azul5 {
             get {
                 object obj = ResourceManager.GetObject("CADASTRO_ENFERMEIRO_azul5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CADASTRO_ENFERMEIRO_azul51 {
+            get {
+                object obj = ResourceManager.GetObject("CADASTRO_ENFERMEIRO_azul51", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CADASTRO_ENFERMEIRO_azul52 {
+            get {
+                object obj = ResourceManager.GetObject("CADASTRO_ENFERMEIRO_azul52", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +276,26 @@ namespace MedSys.Properties {
         internal static System.Drawing.Bitmap CADASTRO_ENFERMEIRO71 {
             get {
                 object obj = ResourceManager.GetObject("CADASTRO_ENFERMEIRO71", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap g1 {
+            get {
+                object obj = ResourceManager.GetObject("g1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap g7 {
+            get {
+                object obj = ResourceManager.GetObject("g7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

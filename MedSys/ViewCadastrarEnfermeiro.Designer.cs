@@ -365,7 +365,7 @@
             txtEmail.Location = new Point(373, 363);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(183, 23);
+            txtEmail.Size = new Size(200, 23);
             txtEmail.TabIndex = 29;
             // 
             // pictureBox1

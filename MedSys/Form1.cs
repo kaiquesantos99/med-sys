@@ -78,7 +78,7 @@ namespace MedSys
 
         private void picCadastrarMedico_Click(object sender, EventArgs e)
         {
-
+            new ViewCadastroMedico().Show();
         }
 
         private void picBtnPaciente_Click(object sender, EventArgs e)
@@ -91,7 +91,12 @@ namespace MedSys
 
         private void picCadastrarEnfermeiros_Click(object sender, EventArgs e)
         {
-            new ViewCadastrarEnfermeiro().Show();  
+            new ViewCadastrarEnfermeiro().Show();
+        }
+
+        private void picCadastrarRecepcionista_Click(object sender, EventArgs e)
+        {
+            new ViewCadastroRecepcionista().Show();
         }
     }
 }

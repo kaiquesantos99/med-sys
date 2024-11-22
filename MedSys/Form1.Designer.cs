@@ -156,6 +156,7 @@
             picCadastrarRecepcionista.SizeMode = PictureBoxSizeMode.Zoom;
             picCadastrarRecepcionista.TabIndex = 2;
             picCadastrarRecepcionista.TabStop = false;
+            picCadastrarRecepcionista.Click += picCadastrarRecepcionista_Click;
             // 
             // picCadastrarColaboradores
             // 

@@ -140,3 +140,4 @@ C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewC
 C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastroRecepcionista.resources
 C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastroMedico.resources
 C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastroRecepcionista.resources
+C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewCadastrarPaciente.resources

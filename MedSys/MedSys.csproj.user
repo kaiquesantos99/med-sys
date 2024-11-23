@@ -7,6 +7,9 @@
     <Compile Update="ViewCadastrarEnfermeiro.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ViewCadastrarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ViewCadastroMedico.cs">
       <SubType>Form</SubType>
     </Compile>

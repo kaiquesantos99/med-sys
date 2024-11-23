@@ -58,7 +58,7 @@ namespace MedSys
 
         private void picCadastrarPaciente_Click(object sender, EventArgs e)
         {
-
+            new ViewCadastrarPaciente().Show();
         }
 
         private void picListaPaciente_Click(object sender, EventArgs e)

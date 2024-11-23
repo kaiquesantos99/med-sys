@@ -35,9 +35,9 @@
             lblMatricula = new Label();
             txtMatricula = new TextBox();
             lblCEP = new Label();
-            textBox1 = new TextBox();
+            txtCep = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txtLogradouro = new TextBox();
             lblNum = new Label();
             txtNum = new TextBox();
             lblComplemento = new Label();
@@ -47,7 +47,7 @@
             lblCidade = new Label();
             txtCidade = new TextBox();
             lblUF = new Label();
-            textBox3 = new TextBox();
+            txtUF = new TextBox();
             lblCPF = new Label();
             txtCPF = new TextBox();
             lblRG = new Label();
@@ -64,6 +64,10 @@
             txtNascimento = new TextBox();
             lblPis = new Label();
             txtPis = new TextBox();
+            lblUsuario = new Label();
+            txtUsuario = new TextBox();
+            lblSenha = new Label();
+            txtSenha = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -138,14 +142,14 @@
             lblCEP.TabIndex = 6;
             lblCEP.Text = "CEP";
             // 
-            // textBox1
+            // txtCep
             // 
-            textBox1.BackColor = Color.FromArgb(223, 233, 245);
-            textBox1.Location = new Point(139, 194);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(103, 23);
-            textBox1.TabIndex = 7;
+            txtCep.BackColor = Color.FromArgb(223, 233, 245);
+            txtCep.Location = new Point(139, 194);
+            txtCep.Multiline = true;
+            txtCep.Name = "txtCep";
+            txtCep.Size = new Size(103, 23);
+            txtCep.TabIndex = 7;
             // 
             // label1
             // 
@@ -158,14 +162,14 @@
             label1.TabIndex = 8;
             label1.Text = "Logradouro";
             // 
-            // textBox2
+            // txtLogradouro
             // 
-            textBox2.BackColor = Color.FromArgb(223, 233, 245);
-            textBox2.Location = new Point(355, 195);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(202, 23);
-            textBox2.TabIndex = 9;
+            txtLogradouro.BackColor = Color.FromArgb(223, 233, 245);
+            txtLogradouro.Location = new Point(355, 195);
+            txtLogradouro.Multiline = true;
+            txtLogradouro.Name = "txtLogradouro";
+            txtLogradouro.Size = new Size(202, 23);
+            txtLogradouro.TabIndex = 9;
             // 
             // lblNum
             // 
@@ -259,21 +263,21 @@
             lblUF.TabIndex = 18;
             lblUF.Text = "UF";
             // 
-            // textBox3
+            // txtUF
             // 
-            textBox3.BackColor = Color.FromArgb(223, 233, 245);
-            textBox3.Location = new Point(699, 194);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(40, 23);
-            textBox3.TabIndex = 19;
+            txtUF.BackColor = Color.FromArgb(223, 233, 245);
+            txtUF.Location = new Point(699, 194);
+            txtUF.Multiline = true;
+            txtUF.Name = "txtUF";
+            txtUF.Size = new Size(40, 23);
+            txtUF.TabIndex = 19;
             // 
             // lblCPF
             // 
             lblCPF.AutoSize = true;
             lblCPF.BackColor = Color.FromArgb(187, 210, 236);
             lblCPF.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCPF.Location = new Point(129, 322);
+            lblCPF.Location = new Point(129, 307);
             lblCPF.Name = "lblCPF";
             lblCPF.Size = new Size(41, 18);
             lblCPF.TabIndex = 20;
@@ -282,7 +286,7 @@
             // txtCPF
             // 
             txtCPF.BackColor = Color.FromArgb(223, 233, 245);
-            txtCPF.Location = new Point(179, 319);
+            txtCPF.Location = new Point(179, 305);
             txtCPF.Multiline = true;
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(130, 23);
@@ -293,7 +297,7 @@
             lblRG.AutoSize = true;
             lblRG.BackColor = Color.FromArgb(187, 210, 236);
             lblRG.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRG.Location = new Point(317, 322);
+            lblRG.Location = new Point(317, 309);
             lblRG.Name = "lblRG";
             lblRG.Size = new Size(33, 18);
             lblRG.TabIndex = 22;
@@ -302,7 +306,7 @@
             // txtRG
             // 
             txtRG.BackColor = Color.FromArgb(223, 233, 245);
-            txtRG.Location = new Point(355, 319);
+            txtRG.Location = new Point(355, 306);
             txtRG.Multiline = true;
             txtRG.Name = "txtRG";
             txtRG.Size = new Size(136, 23);
@@ -313,7 +317,7 @@
             lblCoren.AutoSize = true;
             lblCoren.BackColor = Color.FromArgb(187, 210, 236);
             lblCoren.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCoren.Location = new Point(494, 322);
+            lblCoren.Location = new Point(494, 310);
             lblCoren.Name = "lblCoren";
             lblCoren.Size = new Size(68, 18);
             lblCoren.TabIndex = 24;
@@ -322,7 +326,7 @@
             // txtCoren
             // 
             txtCoren.BackColor = Color.FromArgb(223, 233, 245);
-            txtCoren.Location = new Point(566, 319);
+            txtCoren.Location = new Point(566, 307);
             txtCoren.Multiline = true;
             txtCoren.Name = "txtCoren";
             txtCoren.Size = new Size(136, 23);
@@ -333,7 +337,7 @@
             lblEmail.AutoSize = true;
             lblEmail.BackColor = Color.FromArgb(187, 210, 236);
             lblEmail.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(312, 365);
+            lblEmail.Location = new Point(312, 356);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(56, 18);
             lblEmail.TabIndex = 26;
@@ -344,7 +348,7 @@
             lblTelefone.AutoSize = true;
             lblTelefone.BackColor = Color.FromArgb(187, 210, 236);
             lblTelefone.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTelefone.Location = new Point(116, 365);
+            lblTelefone.Location = new Point(116, 354);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(73, 18);
             lblTelefone.TabIndex = 27;
@@ -353,7 +357,7 @@
             // txtTelefone
             // 
             txtTelefone.BackColor = Color.FromArgb(223, 233, 245);
-            txtTelefone.Location = new Point(190, 362);
+            txtTelefone.Location = new Point(190, 351);
             txtTelefone.Multiline = true;
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(119, 23);
@@ -362,7 +366,7 @@
             // txtEmail
             // 
             txtEmail.BackColor = Color.FromArgb(223, 233, 245);
-            txtEmail.Location = new Point(373, 363);
+            txtEmail.Location = new Point(373, 353);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(200, 23);
@@ -392,6 +396,7 @@
             btnCadastrar.TabIndex = 31;
             btnCadastrar.Text = "CADASTRAR";
             btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // lblNascimento
             // 
@@ -433,12 +438,56 @@
             txtPis.Size = new Size(116, 23);
             txtPis.TabIndex = 35;
             // 
+            // lblUsuario
+            // 
+            lblUsuario.AutoSize = true;
+            lblUsuario.BackColor = Color.FromArgb(187, 210, 236);
+            lblUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsuario.Location = new Point(116, 398);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(67, 18);
+            lblUsuario.TabIndex = 36;
+            lblUsuario.Text = "Usuário";
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.BackColor = Color.FromArgb(223, 233, 245);
+            txtUsuario.Location = new Point(190, 395);
+            txtUsuario.Multiline = true;
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(119, 23);
+            txtUsuario.TabIndex = 37;
+            // 
+            // lblSenha
+            // 
+            lblSenha.AutoSize = true;
+            lblSenha.BackColor = Color.FromArgb(187, 210, 236);
+            lblSenha.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSenha.Location = new Point(315, 398);
+            lblSenha.Name = "lblSenha";
+            lblSenha.Size = new Size(55, 18);
+            lblSenha.TabIndex = 38;
+            lblSenha.Text = "Senha";
+            // 
+            // txtSenha
+            // 
+            txtSenha.BackColor = Color.FromArgb(223, 233, 245);
+            txtSenha.Location = new Point(376, 395);
+            txtSenha.Multiline = true;
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(119, 23);
+            txtSenha.TabIndex = 39;
+            // 
             // ViewCadastrarEnfermeiro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtSenha);
+            Controls.Add(lblSenha);
+            Controls.Add(txtUsuario);
+            Controls.Add(lblUsuario);
             Controls.Add(txtPis);
             Controls.Add(lblPis);
             Controls.Add(txtNascimento);
@@ -455,7 +504,7 @@
             Controls.Add(lblRG);
             Controls.Add(txtCPF);
             Controls.Add(lblCPF);
-            Controls.Add(textBox3);
+            Controls.Add(txtUF);
             Controls.Add(lblUF);
             Controls.Add(txtCidade);
             Controls.Add(lblCidade);
@@ -465,9 +514,9 @@
             Controls.Add(lblComplemento);
             Controls.Add(txtNum);
             Controls.Add(lblNum);
-            Controls.Add(textBox2);
+            Controls.Add(txtLogradouro);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtCep);
             Controls.Add(lblCEP);
             Controls.Add(txtMatricula);
             Controls.Add(lblMatricula);
@@ -492,9 +541,9 @@
         private Label lblMatricula;
         private TextBox txtMatricula;
         private Label lblCEP;
-        private TextBox textBox1;
+        private TextBox txtCep;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtLogradouro;
         private Label lblNum;
         private TextBox txtNum;
         private Label lblComplemento;
@@ -504,7 +553,7 @@
         private Label lblCidade;
         private TextBox txtCidade;
         private Label lblUF;
-        private TextBox textBox3;
+        private TextBox txtUF;
         private Label lblCPF;
         private TextBox txtCPF;
         private Label lblRG;
@@ -521,5 +570,9 @@
         private TextBox txtNascimento;
         private Label lblPis;
         private TextBox txtPis;
+        private Label lblUsuario;
+        private TextBox txtUsuario;
+        private Label lblSenha;
+        private TextBox txtSenha;
     }
 }

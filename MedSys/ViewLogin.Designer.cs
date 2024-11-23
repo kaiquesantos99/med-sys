@@ -36,39 +36,42 @@
             // ldlEntrar
             // 
             ldlEntrar.AutoSize = true;
-            ldlEntrar.Location = new Point(600, 271);
+            ldlEntrar.Location = new Point(525, 203);
             ldlEntrar.Name = "ldlEntrar";
-            ldlEntrar.Size = new Size(48, 20);
+            ldlEntrar.Size = new Size(38, 15);
             ldlEntrar.TabIndex = 1;
             ldlEntrar.Text = "Entrar";
             ldlEntrar.Click += ldlEntrar_Click;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(571, 220);
+            txtSenha.Location = new Point(500, 165);
+            txtSenha.Margin = new Padding(3, 2, 3, 2);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(125, 27);
+            txtSenha.Size = new Size(110, 23);
             txtSenha.TabIndex = 2;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(571, 177);
+            txtUsuario.Location = new Point(500, 133);
+            txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(125, 27);
+            txtUsuario.Size = new Size(110, 23);
             txtUsuario.TabIndex = 3;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // ViewLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background_login;
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(800, 451);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(700, 338);
             Controls.Add(txtUsuario);
             Controls.Add(txtSenha);
             Controls.Add(ldlEntrar);
             DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ViewLogin";
             Text = "Login MedSys";
             ResumeLayout(false);

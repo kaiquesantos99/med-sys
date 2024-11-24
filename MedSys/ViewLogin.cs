@@ -37,20 +37,54 @@ namespace MedSys
             string usuario = txtUsuario.Text;
 
             string senha = txtSenha.Text;
-            
+
             ColaboradorDAO cdao = new ColaboradorDAO();
 
             aprovado = cdao.VerificarIdentidade(usuario, senha);
 
             if (aprovado)
             {
-                Form1 form1 = new Form1();  
+                Form1 form1 = new Form1();
                 form1.Show();
-              
+
             }
             else
             {
                 MessageBox.Show("Login ou Senha incorreta.");
+            }
+        }
+
+        private void ViewLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bool aprovado;
+
+                string usuario = txtUsuario.Text;
+
+                string senha = txtSenha.Text;
+
+                ColaboradorDAO cdao = new ColaboradorDAO();
+
+                aprovado = cdao.VerificarIdentidade(usuario, senha);
+
+                if (aprovado)
+                {
+                    Form1 form1 = new Form1();
+                    form1.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Login ou Senha incorreta.");
+                }
+
+                e.Handled = true;
             }
         }
     }

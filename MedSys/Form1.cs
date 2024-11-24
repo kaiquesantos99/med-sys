@@ -16,6 +16,7 @@ namespace MedSys
             tlpBtnListaColaboradores.Dock = DockStyle.Fill;
             tlpMedicamento.Dock = DockStyle.Fill;
             tlpInternacao.Dock = DockStyle.Fill;
+            tlpBotoesEstoque.Dock = DockStyle.Fill;
 
 
             EstoqueDAO edao = new EstoqueDAO();
@@ -67,7 +68,10 @@ namespace MedSys
 
         private void picBtnMedicamento_Click(object sender, EventArgs e)
         {
-            tlpMedicamento.Visible = true;
+            tlpBotoesColaboradores.Visible = false;
+            tlpBotoesPacientes.Visible = false;
+            tlpBotoesProntuario.Visible = false;
+            tlpBotoesEstoque.Visible = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -80,7 +84,8 @@ namespace MedSys
             tlpBotoesColaboradores.Visible = true;
             tlpBotoesPacientes.Visible = false;
             tlpBotoesProntuario.Visible = false;
-
+            tlpBotoesEstoque.Visible = false;
+            
         }
 
         private void picCadastrarPaciente_Click(object sender, EventArgs e)
@@ -113,6 +118,7 @@ namespace MedSys
             tlpBotoesColaboradores.Visible = false;
             tlpBotoesPacientes.Visible = true;
             tlpBotoesProntuario.Visible = false;
+            tlpBotoesEstoque.Visible = false;
         }
 
         private void picCadastrarEnfermeiros_Click(object sender, EventArgs e)
@@ -140,6 +146,7 @@ namespace MedSys
             tlpBotoesColaboradores.Visible = false;
             tlpBotoesPacientes.Visible = false;
             tlpBotoesProntuario.Visible = true;
+            tlpBotoesEstoque.Visible = false;
         }
 
         private void picInicioMedSys_Click(object sender, EventArgs e)
@@ -147,6 +154,7 @@ namespace MedSys
             tlpBotoesColaboradores.Visible = false;
             tlpBotoesPacientes.Visible = false;
             tlpBotoesProntuario.Visible = false;
+            tlpBotoesEstoque.Visible = false;
             tlpBtnListaColaboradores.Visible = false;
             tlpMedicamento.Visible = false;
             tlpInternacao.Visible = false;
@@ -183,6 +191,7 @@ namespace MedSys
             tlpBotoesPacientes.Visible = false;
             tlpBotoesProntuario.Visible = false;
             tlpBtnListaColaboradores.Visible = true;
+
         }
 
         private void dgvListaColaboradores_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -217,6 +226,14 @@ namespace MedSys
         private void picBtnInternacoes_Click(object sender, EventArgs e)
         {
             tlpInternacao.Visible = true;
+        }
+
+        private void picBtnEstoque_Click(object sender, EventArgs e)
+        {
+            tlpBtnListaColaboradores.Visible = false;
+            tlpInternacao.Visible = false;
+            tlpMedicamento.Visible = true;
+            
         }
     }
 }

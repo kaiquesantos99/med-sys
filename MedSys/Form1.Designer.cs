@@ -30,6 +30,9 @@
         {
             tlpMain = new TableLayoutPanel();
             panOptionsButtons = new Panel();
+            tlpBotoesEstoque = new TableLayoutPanel();
+            picBtnEstoque = new PictureBox();
+            picBtnCadastrarMedicamento = new PictureBox();
             tlpBotoesProntuario = new TableLayoutPanel();
             picBtnConsulta = new PictureBox();
             picBtnExame = new PictureBox();
@@ -63,6 +66,9 @@
             dgvListaColaboradores = new DataGridView();
             tlpMain.SuspendLayout();
             panOptionsButtons.SuspendLayout();
+            tlpBotoesEstoque.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picBtnEstoque).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBtnCadastrarMedicamento).BeginInit();
             tlpBotoesProntuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBtnConsulta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBtnExame).BeginInit();
@@ -113,6 +119,7 @@
             // 
             // panOptionsButtons
             // 
+            panOptionsButtons.Controls.Add(tlpBotoesEstoque);
             panOptionsButtons.Controls.Add(tlpBotoesProntuario);
             panOptionsButtons.Controls.Add(tlpBotoesPacientes);
             panOptionsButtons.Controls.Add(tlpBotoesColaboradores);
@@ -121,6 +128,48 @@
             panOptionsButtons.Name = "panOptionsButtons";
             panOptionsButtons.Size = new Size(1101, 34);
             panOptionsButtons.TabIndex = 2;
+            // 
+            // tlpBotoesEstoque
+            // 
+            tlpBotoesEstoque.ColumnCount = 5;
+            tlpBotoesEstoque.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tlpBotoesEstoque.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 251F));
+            tlpBotoesEstoque.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tlpBotoesEstoque.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 123F));
+            tlpBotoesEstoque.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tlpBotoesEstoque.Controls.Add(picBtnEstoque, 3, 0);
+            tlpBotoesEstoque.Controls.Add(picBtnCadastrarMedicamento, 1, 0);
+            tlpBotoesEstoque.Dock = DockStyle.Fill;
+            tlpBotoesEstoque.Location = new Point(0, 0);
+            tlpBotoesEstoque.Name = "tlpBotoesEstoque";
+            tlpBotoesEstoque.RowCount = 1;
+            tlpBotoesEstoque.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBotoesEstoque.Size = new Size(1101, 34);
+            tlpBotoesEstoque.TabIndex = 4;
+            tlpBotoesEstoque.Visible = false;
+            // 
+            // picBtnEstoque
+            // 
+            picBtnEstoque.Dock = DockStyle.Fill;
+            picBtnEstoque.Image = Properties.Resources.btnEstoque;
+            picBtnEstoque.Location = new Point(738, 3);
+            picBtnEstoque.Name = "picBtnEstoque";
+            picBtnEstoque.Size = new Size(117, 28);
+            picBtnEstoque.SizeMode = PictureBoxSizeMode.Zoom;
+            picBtnEstoque.TabIndex = 0;
+            picBtnEstoque.TabStop = false;
+            picBtnEstoque.Click += picBtnEstoque_Click;
+            // 
+            // picBtnCadastrarMedicamento
+            // 
+            picBtnCadastrarMedicamento.Dock = DockStyle.Fill;
+            picBtnCadastrarMedicamento.Image = Properties.Resources.btnCadastrarMedicamento;
+            picBtnCadastrarMedicamento.Location = new Point(245, 3);
+            picBtnCadastrarMedicamento.Name = "picBtnCadastrarMedicamento";
+            picBtnCadastrarMedicamento.Size = new Size(245, 28);
+            picBtnCadastrarMedicamento.SizeMode = PictureBoxSizeMode.Zoom;
+            picBtnCadastrarMedicamento.TabIndex = 1;
+            picBtnCadastrarMedicamento.TabStop = false;
             // 
             // tlpBotoesProntuario
             // 
@@ -135,12 +184,11 @@
             tlpBotoesProntuario.Controls.Add(picBtnConsulta, 1, 0);
             tlpBotoesProntuario.Controls.Add(picBtnExame, 3, 0);
             tlpBotoesProntuario.Controls.Add(picBtnInternacoes, 5, 0);
-            tlpBotoesProntuario.Dock = DockStyle.Fill;
-            tlpBotoesProntuario.Location = new Point(0, 0);
+            tlpBotoesProntuario.Location = new Point(755, 0);
             tlpBotoesProntuario.Name = "tlpBotoesProntuario";
             tlpBotoesProntuario.RowCount = 1;
             tlpBotoesProntuario.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBotoesProntuario.Size = new Size(1101, 34);
+            tlpBotoesProntuario.Size = new Size(74, 34);
             tlpBotoesProntuario.TabIndex = 3;
             tlpBotoesProntuario.Visible = false;
             // 
@@ -148,7 +196,7 @@
             // 
             picBtnConsulta.Dock = DockStyle.Fill;
             picBtnConsulta.Image = Properties.Resources.btnConsulta;
-            picBtnConsulta.Location = new Point(180, 3);
+            picBtnConsulta.Location = new Point(-76, 3);
             picBtnConsulta.Name = "picBtnConsulta";
             picBtnConsulta.Size = new Size(128, 28);
             picBtnConsulta.SizeMode = PictureBoxSizeMode.Zoom;
@@ -161,7 +209,7 @@
             // 
             picBtnExame.Dock = DockStyle.Fill;
             picBtnExame.Image = Properties.Resources.btnExame;
-            picBtnExame.Location = new Point(491, 3);
+            picBtnExame.Location = new Point(-21, 3);
             picBtnExame.Name = "picBtnExame";
             picBtnExame.Size = new Size(102, 28);
             picBtnExame.SizeMode = PictureBoxSizeMode.Zoom;
@@ -175,7 +223,7 @@
             // 
             picBtnInternacoes.Dock = DockStyle.Fill;
             picBtnInternacoes.Image = Properties.Resources.btnInternacao;
-            picBtnInternacoes.Location = new Point(776, 3);
+            picBtnInternacoes.Location = new Point(8, 3);
             picBtnInternacoes.Name = "picBtnInternacoes";
             picBtnInternacoes.Size = new Size(143, 28);
             picBtnInternacoes.SizeMode = PictureBoxSizeMode.Zoom;
@@ -562,6 +610,9 @@
             WindowState = FormWindowState.Maximized;
             tlpMain.ResumeLayout(false);
             panOptionsButtons.ResumeLayout(false);
+            tlpBotoesEstoque.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picBtnEstoque).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBtnCadastrarMedicamento).EndInit();
             tlpBotoesProntuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picBtnConsulta).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBtnExame).EndInit();
@@ -627,5 +678,8 @@
         private Panel panel1;
         private Button btnAlta;
         private Button btnInternar;
+        private TableLayoutPanel tlpBotoesEstoque;
+        private PictureBox picBtnEstoque;
+        private PictureBox picBtnCadastrarMedicamento;
     }
 }

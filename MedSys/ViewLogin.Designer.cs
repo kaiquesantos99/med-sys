@@ -49,8 +49,9 @@
             txtSenha.Margin = new Padding(3, 2, 3, 2);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(110, 23);
-            txtSenha.TabIndex = 2;
+            txtSenha.TabIndex = 3;
             txtSenha.Text = "05031999";
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // txtUsuario
             // 
@@ -58,7 +59,7 @@
             txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(110, 23);
-            txtUsuario.TabIndex = 3;
+            txtUsuario.TabIndex = 2;
             txtUsuario.Text = "kaka.01";
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
@@ -76,6 +77,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "ViewLogin";
             Text = "Login MedSys";
+            KeyDown += ViewLogin_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -46,6 +46,25 @@ namespace MedSys
             ColaboradorDAO cdao = new ColaboradorDAO();
             cdao.InserirRecepcionista(recepcionista);
 
+            txtNomeR.Text = "";
+            txtAdmissaoR.Text = "";
+            txtMatriculaR.Text = "";
+            txtNascimentoR.Text = "";
+            txtCPFR.Text = "";
+            txtRGR.Text = "";
+            txtPISR.Text = "";
+            txtCEPR.Text = "";
+            txtLogradouroR.Text = "";
+            txtNumR.Text = "";
+            txtComplementoR.Text = "";
+            txtBairroR.Text = "";
+            txtCidadeR.Text = "";
+            txtUFR.Text = "";
+            txtTelefoneR.Text = "";
+            txtEmailR.Text = "";
+            txtUsuarioR.Text = "";
+            txtSenhaR.Text = "";
+
             MessageBox.Show("Cadastrado com sucesso!");
         }
     }

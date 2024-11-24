@@ -5,8 +5,8 @@ namespace MedSys
 {
     public partial class Form1 : Form
     {
-     
-        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -15,12 +15,16 @@ namespace MedSys
             tlpBotoesProntuario.Dock = DockStyle.Fill;
             tlpBtnListaColaboradores.Dock = DockStyle.Fill;
             tlpMedicamento.Dock = DockStyle.Fill;
+            tlpInternacao.Dock = DockStyle.Fill;
 
 
             EstoqueDAO edao = new EstoqueDAO();
             dgvEstoque.DataSource = edao.ReadEstoque();
             ColaboradorDAO cdao = new ColaboradorDAO();
             dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
+            ProntuarioDAO pdao = new ProntuarioDAO();
+            dgvInternacao.DataSource = pdao.ReadInternacao(1);
+            dgvInternacaoDetalhes.DataSource = pdao.ReadDetalhesInternacao(1);
 
             // Add ComboBox Values
             cbColaboradores.Items.Add("Enfermeiros");
@@ -145,6 +149,7 @@ namespace MedSys
             tlpBotoesProntuario.Visible = false;
             tlpBtnListaColaboradores.Visible = false;
             tlpMedicamento.Visible = false;
+            tlpInternacao.Visible = false;
         }
 
         private void picBtnExame_Click(object sender, EventArgs e)
@@ -207,6 +212,11 @@ namespace MedSys
         private void panMain_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void picBtnInternacoes_Click(object sender, EventArgs e)
+        {
+            tlpInternacao.Visible = true;
         }
     }
 }

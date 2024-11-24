@@ -1,9 +1,12 @@
 using MedSys.DataAccess;
+using MedSys.Model;
 
 namespace MedSys
 {
     public partial class Form1 : Form
     {
+     
+        
         public Form1()
         {
             InitializeComponent();
@@ -11,8 +14,11 @@ namespace MedSys
             tlpBotoesPacientes.Dock = DockStyle.Fill;
             tlpBotoesProntuario.Dock = DockStyle.Fill;
             tlpBtnListaColaboradores.Dock = DockStyle.Fill;
+            tlpMedicamento.Dock = DockStyle.Fill;
 
 
+            EstoqueDAO edao = new EstoqueDAO();
+            dgvEstoque.DataSource = edao.ReadEstoque();
             ColaboradorDAO cdao = new ColaboradorDAO();
             dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
 
@@ -21,6 +27,7 @@ namespace MedSys
             cbColaboradores.Items.Add("Médicos");
             cbColaboradores.Items.Add("Recepcionistas");
         }
+
 
 
 
@@ -56,7 +63,7 @@ namespace MedSys
 
         private void picBtnMedicamento_Click(object sender, EventArgs e)
         {
-
+            tlpMedicamento.Visible = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -137,6 +144,7 @@ namespace MedSys
             tlpBotoesPacientes.Visible = false;
             tlpBotoesProntuario.Visible = false;
             tlpBtnListaColaboradores.Visible = false;
+            tlpMedicamento.Visible = false;
         }
 
         private void picBtnExame_Click(object sender, EventArgs e)
@@ -194,6 +202,11 @@ namespace MedSys
             {
                 dgvListaColaboradores.DataSource = cdao.ReadRecepcionista();
             }
+        }
+
+        private void panMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

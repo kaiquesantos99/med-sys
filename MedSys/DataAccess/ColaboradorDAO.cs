@@ -148,6 +148,49 @@ namespace MedSys.DataAccess
             }
         }
 
+        public void InserirPaciente(Paciente paciente)
+        {
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO paciente (nome, nascimento, cpf, rg, cep, logradouro, numero, complemento, bairro, cidade, uf, telefone, telefone_2, acompanhante, carteirinha, convenio, peso, altura, observacoes, sexo) VALUES (@nome, @nascimento, @cpf, @rg, @cep, @logradouro, @numero, @complemento, @bairro, @cidade, @uf, @telefone, @telefone_2, @acompanhante, @carteirinha, @convenio, @peso, @altura, @observacoes, @sexo)";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@nome", paciente.Nome);
+                    cmd.Parameters.AddWithValue("@nascimento", paciente.Nascimento);
+                    cmd.Parameters.AddWithValue("@cpf", paciente.Cpf);
+                    cmd.Parameters.AddWithValue("@rg", paciente.Rg);
+                    cmd.Parameters.AddWithValue("@cep", paciente.Cep);
+                    cmd.Parameters.AddWithValue("@logradouro", paciente.Logradouro);
+                    cmd.Parameters.AddWithValue("@numero", paciente.Numero);
+                    cmd.Parameters.AddWithValue("@complemento", paciente.Complemento);
+                    cmd.Parameters.AddWithValue("@bairro", paciente.Bairro);
+                    cmd.Parameters.AddWithValue("@cidade", paciente.Cidade);
+                    cmd.Parameters.AddWithValue("@uf", paciente.Uf);
+                    cmd.Parameters.AddWithValue("@telefone", paciente.Telefone);
+                    cmd.Parameters.AddWithValue("@telefone_2", paciente.Telefone_2);
+                    cmd.Parameters.AddWithValue("@acompanhante", paciente.Acompanhante);
+                    cmd.Parameters.AddWithValue("@carteirinha", paciente.Carteirinha);
+                    cmd.Parameters.AddWithValue("@convenio", paciente.Convenio);
+                    cmd.Parameters.AddWithValue("@peso", paciente.Peso);
+                    cmd.Parameters.AddWithValue("@altura", paciente.Altura);
+                    cmd.Parameters.AddWithValue("@observacoes", paciente.Observacoes);
+                    cmd.Parameters.AddWithValue("@sexo", paciente.Sexo);
+
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex);
+                }
+                 
+               
+            }
+        }
+
         public List<Enfermeiro> ReadEnfermeiro()
         {
             List<Enfermeiro> listaEnfermeiros = new List<Enfermeiro>();

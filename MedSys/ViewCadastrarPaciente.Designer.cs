@@ -32,7 +32,7 @@
             lblNomeP = new Label();
             txtNomeP = new TextBox();
             lblNascimentoP = new Label();
-            textBox1 = new TextBox();
+            txtNascimentoP = new TextBox();
             lblCPFP = new Label();
             txtCPFP = new TextBox();
             lblRGP = new Label();
@@ -44,7 +44,7 @@
             lblCEPP = new Label();
             txtCEPP = new TextBox();
             lblLogradouroP = new Label();
-            txtLogradourP = new TextBox();
+            txtLogradouroP = new TextBox();
             lblNumP = new Label();
             txtNumP = new TextBox();
             lblUFP = new Label();
@@ -59,15 +59,17 @@
             lblEmergenciaP = new Label();
             lblAcompanhanteP = new Label();
             txtTelefoneP = new TextBox();
-            txtEmergenciaP = new TextBox();
+            txtTelefone_2 = new TextBox();
             txtAcompanhanteP = new TextBox();
             lblAlturaP = new Label();
             lblPesoP = new Label();
             txtPesoP = new TextBox();
             txtAlturaP = new TextBox();
             lblObservacaoP = new Label();
-            txtObservacaoP = new TextBox();
+            txtObservacoesP = new TextBox();
             btnGravar = new Button();
+            lblSexo = new Label();
+            txtSexoP = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -112,15 +114,15 @@
             lblNascimentoP.TabIndex = 3;
             lblNascimentoP.Text = "Data de Nascimento";
             // 
-            // textBox1
+            // txtNascimentoP
             // 
-            textBox1.BackColor = Color.FromArgb(223, 233, 245);
-            textBox1.Location = new Point(322, 72);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(137, 23);
-            textBox1.TabIndex = 4;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtNascimentoP.BackColor = Color.FromArgb(223, 233, 245);
+            txtNascimentoP.Location = new Point(322, 72);
+            txtNascimentoP.Multiline = true;
+            txtNascimentoP.Name = "txtNascimentoP";
+            txtNascimentoP.Size = new Size(137, 23);
+            txtNascimentoP.TabIndex = 4;
+            txtNascimentoP.TextChanged += textBox1_TextChanged;
             // 
             // lblCPFP
             // 
@@ -233,14 +235,14 @@
             lblLogradouroP.TabIndex = 15;
             lblLogradouroP.Text = "Logradouro";
             // 
-            // txtLogradourP
+            // txtLogradouroP
             // 
-            txtLogradourP.BackColor = Color.FromArgb(223, 233, 245);
-            txtLogradourP.Location = new Point(346, 158);
-            txtLogradourP.Multiline = true;
-            txtLogradourP.Name = "txtLogradourP";
-            txtLogradourP.Size = new Size(202, 23);
-            txtLogradourP.TabIndex = 16;
+            txtLogradouroP.BackColor = Color.FromArgb(223, 233, 245);
+            txtLogradouroP.Location = new Point(346, 158);
+            txtLogradouroP.Multiline = true;
+            txtLogradouroP.Name = "txtLogradouroP";
+            txtLogradouroP.Size = new Size(202, 23);
+            txtLogradouroP.TabIndex = 16;
             // 
             // lblNumP
             // 
@@ -384,14 +386,14 @@
             txtTelefoneP.Size = new Size(137, 23);
             txtTelefoneP.TabIndex = 30;
             // 
-            // txtEmergenciaP
+            // txtTelefone_2
             // 
-            txtEmergenciaP.BackColor = Color.FromArgb(223, 233, 245);
-            txtEmergenciaP.Location = new Point(548, 238);
-            txtEmergenciaP.Multiline = true;
-            txtEmergenciaP.Name = "txtEmergenciaP";
-            txtEmergenciaP.Size = new Size(137, 23);
-            txtEmergenciaP.TabIndex = 31;
+            txtTelefone_2.BackColor = Color.FromArgb(223, 233, 245);
+            txtTelefone_2.Location = new Point(548, 238);
+            txtTelefone_2.Multiline = true;
+            txtTelefone_2.Name = "txtTelefone_2";
+            txtTelefone_2.Size = new Size(137, 23);
+            txtTelefone_2.TabIndex = 31;
             // 
             // txtAcompanhanteP
             // 
@@ -407,7 +409,7 @@
             lblAlturaP.AutoSize = true;
             lblAlturaP.BackColor = Color.FromArgb(187, 210, 236);
             lblAlturaP.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAlturaP.Location = new Point(58, 387);
+            lblAlturaP.Location = new Point(58, 360);
             lblAlturaP.Name = "lblAlturaP";
             lblAlturaP.Size = new Size(51, 18);
             lblAlturaP.TabIndex = 33;
@@ -418,7 +420,7 @@
             lblPesoP.AutoSize = true;
             lblPesoP.BackColor = Color.FromArgb(187, 210, 236);
             lblPesoP.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPesoP.Location = new Point(58, 348);
+            lblPesoP.Location = new Point(58, 331);
             lblPesoP.Name = "lblPesoP";
             lblPesoP.Size = new Size(47, 18);
             lblPesoP.TabIndex = 34;
@@ -427,7 +429,7 @@
             // txtPesoP
             // 
             txtPesoP.BackColor = Color.FromArgb(223, 233, 245);
-            txtPesoP.Location = new Point(112, 346);
+            txtPesoP.Location = new Point(112, 328);
             txtPesoP.Multiline = true;
             txtPesoP.Name = "txtPesoP";
             txtPesoP.Size = new Size(95, 23);
@@ -436,7 +438,7 @@
             // txtAlturaP
             // 
             txtAlturaP.BackColor = Color.FromArgb(223, 233, 245);
-            txtAlturaP.Location = new Point(112, 384);
+            txtAlturaP.Location = new Point(112, 358);
             txtAlturaP.Multiline = true;
             txtAlturaP.Name = "txtAlturaP";
             txtAlturaP.Size = new Size(95, 23);
@@ -453,14 +455,14 @@
             lblObservacaoP.TabIndex = 37;
             lblObservacaoP.Text = "Observações ";
             // 
-            // txtObservacaoP
+            // txtObservacoesP
             // 
-            txtObservacaoP.BackColor = Color.FromArgb(223, 233, 245);
-            txtObservacaoP.Location = new Point(338, 331);
-            txtObservacaoP.Multiline = true;
-            txtObservacaoP.Name = "txtObservacaoP";
-            txtObservacaoP.Size = new Size(253, 107);
-            txtObservacaoP.TabIndex = 38;
+            txtObservacoesP.BackColor = Color.FromArgb(223, 233, 245);
+            txtObservacoesP.Location = new Point(338, 331);
+            txtObservacoesP.Multiline = true;
+            txtObservacoesP.Name = "txtObservacoesP";
+            txtObservacoesP.Size = new Size(253, 107);
+            txtObservacoesP.TabIndex = 38;
             // 
             // btnGravar
             // 
@@ -475,21 +477,44 @@
             btnGravar.TabIndex = 39;
             btnGravar.Text = "GRAVAR";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
+            // 
+            // lblSexo
+            // 
+            lblSexo.AutoSize = true;
+            lblSexo.BackColor = Color.FromArgb(187, 210, 236);
+            lblSexo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSexo.Location = new Point(58, 393);
+            lblSexo.Name = "lblSexo";
+            lblSexo.Size = new Size(46, 18);
+            lblSexo.TabIndex = 40;
+            lblSexo.Text = "Sexo";
+            // 
+            // txtSexoP
+            // 
+            txtSexoP.BackColor = Color.FromArgb(223, 233, 245);
+            txtSexoP.Location = new Point(113, 390);
+            txtSexoP.Multiline = true;
+            txtSexoP.Name = "txtSexoP";
+            txtSexoP.Size = new Size(95, 23);
+            txtSexoP.TabIndex = 41;
             // 
             // ViewCadastrarPaciente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtSexoP);
+            Controls.Add(lblSexo);
             Controls.Add(btnGravar);
-            Controls.Add(txtObservacaoP);
+            Controls.Add(txtObservacoesP);
             Controls.Add(lblObservacaoP);
             Controls.Add(txtAlturaP);
             Controls.Add(txtPesoP);
             Controls.Add(lblPesoP);
             Controls.Add(lblAlturaP);
             Controls.Add(txtAcompanhanteP);
-            Controls.Add(txtEmergenciaP);
+            Controls.Add(txtTelefone_2);
             Controls.Add(txtTelefoneP);
             Controls.Add(lblAcompanhanteP);
             Controls.Add(lblEmergenciaP);
@@ -504,7 +529,7 @@
             Controls.Add(lblUFP);
             Controls.Add(txtNumP);
             Controls.Add(lblNumP);
-            Controls.Add(txtLogradourP);
+            Controls.Add(txtLogradouroP);
             Controls.Add(lblLogradouroP);
             Controls.Add(txtCEPP);
             Controls.Add(lblCEPP);
@@ -516,7 +541,7 @@
             Controls.Add(lblRGP);
             Controls.Add(txtCPFP);
             Controls.Add(lblCPFP);
-            Controls.Add(textBox1);
+            Controls.Add(txtNascimentoP);
             Controls.Add(lblNascimentoP);
             Controls.Add(txtNomeP);
             Controls.Add(lblNomeP);
@@ -535,7 +560,7 @@
         private Label lblNomeP;
         private TextBox txtNomeP;
         private Label lblNascimentoP;
-        private TextBox textBox1;
+        private TextBox txtNascimentoP;
         private Label lblCPFP;
         private TextBox txtCPFP;
         private Label lblRGP;
@@ -547,7 +572,7 @@
         private Label lblCEPP;
         private TextBox txtCEPP;
         private Label lblLogradouroP;
-        private TextBox txtLogradourP;
+        private TextBox txtLogradouroP;
         private Label lblNumP;
         private TextBox txtNumP;
         private Label lblUFP;
@@ -562,14 +587,16 @@
         private Label lblEmergenciaP;
         private Label lblAcompanhanteP;
         private TextBox txtTelefoneP;
-        private TextBox txtEmergenciaP;
+        private TextBox txtTelefone_2;
         private TextBox txtAcompanhanteP;
         private Label lblAlturaP;
         private Label lblPesoP;
         private TextBox txtPesoP;
         private TextBox txtAlturaP;
         private Label lblObservacaoP;
-        private TextBox txtObservacaoP;
+        private TextBox txtObservacoesP;
         private Button btnGravar;
+        private Label lblSexo;
+        private TextBox txtSexoP;
     }
 }

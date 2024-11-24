@@ -1607,19 +1607,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kaique\\.nuget\\packages\\": {}
+    "C:\\Users\\aclis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kaique\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
+      "projectUniqueName": "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
       "projectName": "MedSys",
-      "projectPath": "C:\\Users\\Kaique\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
-      "packagesPath": "C:\\Users\\Kaique\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kaique\\source\\repos\\med-sys\\MedSys\\obj\\",
+      "projectPath": "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
+      "packagesPath": "C:\\Users\\aclis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aclis\\source\\repos\\med-sys\\MedSys\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aclis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

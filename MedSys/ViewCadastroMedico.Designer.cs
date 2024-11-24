@@ -89,6 +89,7 @@
             // 
             txtNomeM.BackColor = Color.FromArgb(223, 233, 245);
             txtNomeM.Location = new Point(330, 65);
+            txtNomeM.MaxLength = 200;
             txtNomeM.Multiline = true;
             txtNomeM.Name = "txtNomeM";
             txtNomeM.Size = new Size(332, 22);
@@ -189,6 +190,7 @@
             // 
             txtCepM.BackColor = Color.FromArgb(223, 233, 245);
             txtCepM.Location = new Point(138, 221);
+            txtCepM.MaxLength = 9;
             txtCepM.Multiline = true;
             txtCepM.Name = "txtCepM";
             txtCepM.Size = new Size(107, 22);
@@ -209,6 +211,7 @@
             // 
             txtLogradouroM.BackColor = Color.FromArgb(223, 233, 245);
             txtLogradouroM.Location = new Point(347, 218);
+            txtLogradouroM.MaxLength = 200;
             txtLogradouroM.Multiline = true;
             txtLogradouroM.Name = "txtLogradouroM";
             txtLogradouroM.Size = new Size(202, 23);
@@ -249,6 +252,7 @@
             // 
             txtUFM.BackColor = Color.FromArgb(223, 233, 245);
             txtUFM.Location = new Point(680, 216);
+            txtUFM.MaxLength = 2;
             txtUFM.Multiline = true;
             txtUFM.Name = "txtUFM";
             txtUFM.Size = new Size(43, 22);
@@ -269,6 +273,7 @@
             // 
             txtComplementoM.BackColor = Color.FromArgb(223, 233, 245);
             txtComplementoM.Location = new Point(203, 261);
+            txtComplementoM.MaxLength = 100;
             txtComplementoM.Multiline = true;
             txtComplementoM.Name = "txtComplementoM";
             txtComplementoM.Size = new Size(129, 23);
@@ -289,6 +294,7 @@
             // 
             txtBairroM.BackColor = Color.FromArgb(223, 233, 245);
             txtBairroM.Location = new Point(397, 260);
+            txtBairroM.MaxLength = 100;
             txtBairroM.Multiline = true;
             txtBairroM.Name = "txtBairroM";
             txtBairroM.Size = new Size(154, 22);
@@ -309,6 +315,7 @@
             // 
             txtCidadeM.BackColor = Color.FromArgb(223, 233, 245);
             txtCidadeM.Location = new Point(623, 260);
+            txtCidadeM.MaxLength = 100;
             txtCidadeM.Multiline = true;
             txtCidadeM.Name = "txtCidadeM";
             txtCidadeM.Size = new Size(115, 22);
@@ -329,6 +336,7 @@
             // 
             txtCPFM.BackColor = Color.FromArgb(223, 233, 245);
             txtCPFM.Location = new Point(169, 309);
+            txtCPFM.MaxLength = 14;
             txtCPFM.Multiline = true;
             txtCPFM.Name = "txtCPFM";
             txtCPFM.Size = new Size(141, 23);
@@ -349,6 +357,7 @@
             // 
             txtRGM.BackColor = Color.FromArgb(223, 233, 245);
             txtRGM.Location = new Point(358, 309);
+            txtRGM.MaxLength = 10;
             txtRGM.Multiline = true;
             txtRGM.Name = "txtRGM";
             txtRGM.Size = new Size(129, 23);
@@ -369,6 +378,7 @@
             // 
             txtCRM.BackColor = Color.FromArgb(223, 233, 245);
             txtCRM.Location = new Point(548, 308);
+            txtCRM.MaxLength = 7;
             txtCRM.Multiline = true;
             txtCRM.Name = "txtCRM";
             txtCRM.Size = new Size(129, 23);
@@ -389,6 +399,7 @@
             // 
             txtTelefoneM.BackColor = Color.FromArgb(223, 233, 245);
             txtTelefoneM.Location = new Point(163, 353);
+            txtTelefoneM.MaxLength = 16;
             txtTelefoneM.Multiline = true;
             txtTelefoneM.Name = "txtTelefoneM";
             txtTelefoneM.Size = new Size(129, 23);
@@ -461,6 +472,7 @@
             // 
             txtEspecialidade.BackColor = Color.FromArgb(223, 233, 245);
             txtEspecialidade.Location = new Point(401, 171);
+            txtEspecialidade.MaxLength = 70;
             txtEspecialidade.Multiline = true;
             txtEspecialidade.Name = "txtEspecialidade";
             txtEspecialidade.Size = new Size(179, 22);
@@ -470,6 +482,7 @@
             // 
             txtUsuarioM.BackColor = Color.FromArgb(223, 233, 245);
             txtUsuarioM.Location = new Point(158, 396);
+            txtUsuarioM.MaxLength = 100;
             txtUsuarioM.Multiline = true;
             txtUsuarioM.Name = "txtUsuarioM";
             txtUsuarioM.Size = new Size(129, 23);
@@ -479,6 +492,7 @@
             // 
             txtSenhaM.BackColor = Color.FromArgb(223, 233, 245);
             txtSenhaM.Location = new Point(357, 398);
+            txtSenhaM.MaxLength = 30;
             txtSenhaM.Multiline = true;
             txtSenhaM.Name = "txtSenhaM";
             txtSenhaM.Size = new Size(129, 23);

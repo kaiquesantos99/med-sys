@@ -86,6 +86,7 @@
             // 
             txtNome.BackColor = Color.FromArgb(223, 233, 245);
             txtNome.Location = new Point(338, 67);
+            txtNome.MaxLength = 200;
             txtNome.Multiline = true;
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(333, 23);
@@ -145,7 +146,8 @@
             // txtCep
             // 
             txtCep.BackColor = Color.FromArgb(223, 233, 245);
-            txtCep.Location = new Point(139, 194);
+            txtCep.Location = new Point(138, 197);
+            txtCep.MaxLength = 9;
             txtCep.Multiline = true;
             txtCep.Name = "txtCep";
             txtCep.Size = new Size(103, 23);
@@ -166,6 +168,7 @@
             // 
             txtLogradouro.BackColor = Color.FromArgb(223, 233, 245);
             txtLogradouro.Location = new Point(355, 195);
+            txtLogradouro.MaxLength = 200;
             txtLogradouro.Multiline = true;
             txtLogradouro.Name = "txtLogradouro";
             txtLogradouro.Size = new Size(202, 23);
@@ -206,6 +209,7 @@
             // 
             txtComplemento.BackColor = Color.FromArgb(223, 233, 245);
             txtComplemento.Location = new Point(203, 243);
+            txtComplemento.MaxLength = 200;
             txtComplemento.Multiline = true;
             txtComplemento.Name = "txtComplemento";
             txtComplemento.Size = new Size(129, 23);
@@ -227,6 +231,7 @@
             // 
             txtBairro.BackColor = Color.FromArgb(223, 233, 245);
             txtBairro.Location = new Point(395, 243);
+            txtBairro.MaxLength = 200;
             txtBairro.Multiline = true;
             txtBairro.Name = "txtBairro";
             txtBairro.Size = new Size(129, 23);
@@ -247,6 +252,7 @@
             // 
             txtCidade.BackColor = Color.FromArgb(223, 233, 245);
             txtCidade.Location = new Point(596, 243);
+            txtCidade.MaxLength = 200;
             txtCidade.Multiline = true;
             txtCidade.Name = "txtCidade";
             txtCidade.Size = new Size(129, 23);
@@ -267,6 +273,7 @@
             // 
             txtUF.BackColor = Color.FromArgb(223, 233, 245);
             txtUF.Location = new Point(699, 194);
+            txtUF.MaxLength = 2;
             txtUF.Multiline = true;
             txtUF.Name = "txtUF";
             txtUF.Size = new Size(40, 23);
@@ -287,6 +294,7 @@
             // 
             txtCPF.BackColor = Color.FromArgb(223, 233, 245);
             txtCPF.Location = new Point(179, 305);
+            txtCPF.MaxLength = 14;
             txtCPF.Multiline = true;
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(130, 23);
@@ -307,6 +315,7 @@
             // 
             txtRG.BackColor = Color.FromArgb(223, 233, 245);
             txtRG.Location = new Point(355, 306);
+            txtRG.MaxLength = 10;
             txtRG.Multiline = true;
             txtRG.Name = "txtRG";
             txtRG.Size = new Size(136, 23);
@@ -358,6 +367,7 @@
             // 
             txtTelefone.BackColor = Color.FromArgb(223, 233, 245);
             txtTelefone.Location = new Point(190, 351);
+            txtTelefone.MaxLength = 16;
             txtTelefone.Multiline = true;
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(119, 23);
@@ -367,6 +377,7 @@
             // 
             txtEmail.BackColor = Color.FromArgb(223, 233, 245);
             txtEmail.Location = new Point(373, 353);
+            txtEmail.MaxLength = 100;
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(200, 23);
@@ -453,6 +464,7 @@
             // 
             txtUsuario.BackColor = Color.FromArgb(223, 233, 245);
             txtUsuario.Location = new Point(190, 395);
+            txtUsuario.MaxLength = 100;
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(119, 23);
@@ -473,6 +485,7 @@
             // 
             txtSenha.BackColor = Color.FromArgb(223, 233, 245);
             txtSenha.Location = new Point(376, 395);
+            txtSenha.MaxLength = 30;
             txtSenha.Multiline = true;
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(119, 23);

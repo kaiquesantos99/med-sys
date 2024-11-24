@@ -98,6 +98,7 @@
             // 
             txtNomeP.BackColor = Color.FromArgb(223, 233, 245);
             txtNomeP.Location = new Point(210, 35);
+            txtNomeP.MaxLength = 200;
             txtNomeP.Multiline = true;
             txtNomeP.Name = "txtNomeP";
             txtNomeP.Size = new Size(333, 23);
@@ -139,6 +140,7 @@
             // 
             txtCPFP.BackColor = Color.FromArgb(223, 233, 245);
             txtCPFP.Location = new Point(596, 34);
+            txtCPFP.MaxLength = 14;
             txtCPFP.Multiline = true;
             txtCPFP.Name = "txtCPFP";
             txtCPFP.Size = new Size(155, 23);
@@ -159,6 +161,7 @@
             // 
             txtRGP.BackColor = Color.FromArgb(223, 233, 245);
             txtRGP.Location = new Point(507, 73);
+            txtRGP.MaxLength = 10;
             txtRGP.Multiline = true;
             txtRGP.Name = "txtRGP";
             txtRGP.Size = new Size(137, 23);
@@ -179,6 +182,7 @@
             // 
             txtCarteirinhaP.BackColor = Color.FromArgb(223, 233, 245);
             txtCarteirinhaP.Location = new Point(249, 105);
+            txtCarteirinhaP.MaxLength = 23;
             txtCarteirinhaP.Multiline = true;
             txtCarteirinhaP.Name = "txtCarteirinhaP";
             txtCarteirinhaP.Size = new Size(252, 23);
@@ -199,6 +203,7 @@
             // 
             txtConvenioP.BackColor = Color.FromArgb(223, 233, 245);
             txtConvenioP.Location = new Point(589, 106);
+            txtConvenioP.MaxLength = 50;
             txtConvenioP.Multiline = true;
             txtConvenioP.Name = "txtConvenioP";
             txtConvenioP.Size = new Size(162, 23);
@@ -219,6 +224,7 @@
             // 
             txtCEPP.BackColor = Color.FromArgb(223, 233, 245);
             txtCEPP.Location = new Point(105, 159);
+            txtCEPP.MaxLength = 9;
             txtCEPP.Multiline = true;
             txtCEPP.Name = "txtCEPP";
             txtCEPP.Size = new Size(128, 23);
@@ -239,6 +245,7 @@
             // 
             txtLogradouroP.BackColor = Color.FromArgb(223, 233, 245);
             txtLogradouroP.Location = new Point(346, 158);
+            txtLogradouroP.MaxLength = 200;
             txtLogradouroP.Multiline = true;
             txtLogradouroP.Name = "txtLogradouroP";
             txtLogradouroP.Size = new Size(202, 23);
@@ -279,6 +286,7 @@
             // 
             txtUFP.BackColor = Color.FromArgb(223, 233, 245);
             txtUFP.Location = new Point(693, 158);
+            txtUFP.MaxLength = 2;
             txtUFP.Multiline = true;
             txtUFP.Name = "txtUFP";
             txtUFP.Size = new Size(40, 23);
@@ -299,6 +307,7 @@
             // 
             txtComplementoP.BackColor = Color.FromArgb(223, 233, 245);
             txtComplementoP.Location = new Point(174, 195);
+            txtComplementoP.MaxLength = 100;
             txtComplementoP.Multiline = true;
             txtComplementoP.Name = "txtComplementoP";
             txtComplementoP.Size = new Size(164, 23);
@@ -330,6 +339,7 @@
             // 
             txtBairroP.BackColor = Color.FromArgb(223, 233, 245);
             txtBairroP.Location = new Point(403, 196);
+            txtBairroP.MaxLength = 100;
             txtBairroP.Multiline = true;
             txtBairroP.Name = "txtBairroP";
             txtBairroP.Size = new Size(129, 23);
@@ -339,6 +349,7 @@
             // 
             txtCidadeP.BackColor = Color.FromArgb(223, 233, 245);
             txtCidadeP.Location = new Point(604, 197);
+            txtCidadeP.MaxLength = 100;
             txtCidadeP.Multiline = true;
             txtCidadeP.Name = "txtCidadeP";
             txtCidadeP.Size = new Size(129, 23);
@@ -381,6 +392,7 @@
             // 
             txtTelefoneP.BackColor = Color.FromArgb(223, 233, 245);
             txtTelefoneP.Location = new Point(200, 237);
+            txtTelefoneP.MaxLength = 16;
             txtTelefoneP.Multiline = true;
             txtTelefoneP.Name = "txtTelefoneP";
             txtTelefoneP.Size = new Size(137, 23);
@@ -390,6 +402,7 @@
             // 
             txtTelefone_2.BackColor = Color.FromArgb(223, 233, 245);
             txtTelefone_2.Location = new Point(548, 238);
+            txtTelefone_2.MaxLength = 16;
             txtTelefone_2.Multiline = true;
             txtTelefone_2.Name = "txtTelefone_2";
             txtTelefone_2.Size = new Size(137, 23);
@@ -399,6 +412,7 @@
             // 
             txtAcompanhanteP.BackColor = Color.FromArgb(223, 233, 245);
             txtAcompanhanteP.Location = new Point(183, 275);
+            txtAcompanhanteP.MaxLength = 200;
             txtAcompanhanteP.Multiline = true;
             txtAcompanhanteP.Name = "txtAcompanhanteP";
             txtAcompanhanteP.Size = new Size(550, 46);
@@ -494,6 +508,7 @@
             // 
             txtSexoP.BackColor = Color.FromArgb(223, 233, 245);
             txtSexoP.Location = new Point(113, 390);
+            txtSexoP.MaxLength = 50;
             txtSexoP.Multiline = true;
             txtSexoP.Name = "txtSexoP";
             txtSexoP.Size = new Size(95, 23);

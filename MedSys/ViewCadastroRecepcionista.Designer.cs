@@ -94,6 +94,7 @@
             // 
             txtNomeR.BackColor = Color.FromArgb(223, 233, 245);
             txtNomeR.Location = new Point(338, 69);
+            txtNomeR.MaxLength = 200;
             txtNomeR.Multiline = true;
             txtNomeR.Name = "txtNomeR";
             txtNomeR.Size = new Size(332, 22);
@@ -154,6 +155,7 @@
             // 
             txtCEPR.BackColor = Color.FromArgb(223, 233, 245);
             txtCEPR.Location = new Point(141, 195);
+            txtCEPR.MaxLength = 9;
             txtCEPR.Multiline = true;
             txtCEPR.Name = "txtCEPR";
             txtCEPR.Size = new Size(107, 22);
@@ -174,6 +176,7 @@
             // 
             txtLogradouroR.BackColor = Color.FromArgb(223, 233, 245);
             txtLogradouroR.Location = new Point(352, 195);
+            txtLogradouroR.MaxLength = 200;
             txtLogradouroR.Multiline = true;
             txtLogradouroR.Name = "txtLogradouroR";
             txtLogradouroR.Size = new Size(202, 23);
@@ -254,6 +257,7 @@
             // 
             txtUFR.BackColor = Color.FromArgb(223, 233, 245);
             txtUFR.Location = new Point(685, 195);
+            txtUFR.MaxLength = 2;
             txtUFR.Multiline = true;
             txtUFR.Name = "txtUFR";
             txtUFR.Size = new Size(43, 22);
@@ -274,6 +278,7 @@
             // 
             txtComplementoR.BackColor = Color.FromArgb(223, 233, 245);
             txtComplementoR.Location = new Point(202, 243);
+            txtComplementoR.MaxLength = 200;
             txtComplementoR.Multiline = true;
             txtComplementoR.Name = "txtComplementoR";
             txtComplementoR.Size = new Size(129, 23);
@@ -294,6 +299,7 @@
             // 
             txtBairroR.BackColor = Color.FromArgb(223, 233, 245);
             txtBairroR.Location = new Point(393, 244);
+            txtBairroR.MaxLength = 200;
             txtBairroR.Multiline = true;
             txtBairroR.Name = "txtBairroR";
             txtBairroR.Size = new Size(154, 22);
@@ -314,6 +320,7 @@
             // 
             txtCidadeR.BackColor = Color.FromArgb(223, 233, 245);
             txtCidadeR.Location = new Point(617, 243);
+            txtCidadeR.MaxLength = 200;
             txtCidadeR.Multiline = true;
             txtCidadeR.Name = "txtCidadeR";
             txtCidadeR.Size = new Size(115, 22);
@@ -334,6 +341,7 @@
             // 
             txtCPFR.BackColor = Color.FromArgb(223, 233, 245);
             txtCPFR.Location = new Point(168, 301);
+            txtCPFR.MaxLength = 14;
             txtCPFR.Multiline = true;
             txtCPFR.Name = "txtCPFR";
             txtCPFR.Size = new Size(141, 23);
@@ -354,6 +362,7 @@
             // 
             txtRGR.BackColor = Color.FromArgb(223, 233, 245);
             txtRGR.Location = new Point(351, 303);
+            txtRGR.MaxLength = 10;
             txtRGR.Multiline = true;
             txtRGR.Name = "txtRGR";
             txtRGR.Size = new Size(129, 23);
@@ -374,6 +383,7 @@
             // 
             txtTelefoneR.BackColor = Color.FromArgb(223, 233, 245);
             txtTelefoneR.Location = new Point(562, 303);
+            txtTelefoneR.MaxLength = 16;
             txtTelefoneR.Multiline = true;
             txtTelefoneR.Name = "txtTelefoneR";
             txtTelefoneR.Size = new Size(129, 23);
@@ -394,6 +404,7 @@
             // 
             txtEmailR.BackColor = Color.FromArgb(223, 233, 245);
             txtEmailR.Location = new Point(185, 340);
+            txtEmailR.MaxLength = 100;
             txtEmailR.Multiline = true;
             txtEmailR.Name = "txtEmailR";
             txtEmailR.Size = new Size(269, 23);
@@ -440,6 +451,7 @@
             // 
             txtUsuarioR.BackColor = Color.FromArgb(223, 233, 245);
             txtUsuarioR.Location = new Point(171, 381);
+            txtUsuarioR.MaxLength = 100;
             txtUsuarioR.Multiline = true;
             txtUsuarioR.Name = "txtUsuarioR";
             txtUsuarioR.Size = new Size(141, 23);
@@ -449,6 +461,7 @@
             // 
             txtSenhaR.BackColor = Color.FromArgb(223, 233, 245);
             txtSenhaR.Location = new Point(372, 382);
+            txtSenhaR.MaxLength = 30;
             txtSenhaR.Multiline = true;
             txtSenhaR.Name = "txtSenhaR";
             txtSenhaR.Size = new Size(141, 23);

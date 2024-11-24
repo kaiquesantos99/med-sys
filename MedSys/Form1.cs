@@ -23,9 +23,7 @@ namespace MedSys
             dgvEstoque.DataSource = edao.ReadEstoque();
             ColaboradorDAO cdao = new ColaboradorDAO();
             dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
-            ProntuarioDAO pdao = new ProntuarioDAO();
-            dgvInternacao.DataSource = pdao.ReadInternacao(1);
-            dgvInternacaoDetalhes.DataSource = pdao.ReadDetalhesInternacao(1);
+            
 
             // Add ComboBox Values
             cbColaboradores.Items.Add("Enfermeiros");
@@ -85,7 +83,7 @@ namespace MedSys
             tlpBotoesPacientes.Visible = false;
             tlpBotoesProntuario.Visible = false;
             tlpBotoesEstoque.Visible = false;
-            
+
         }
 
         private void picCadastrarPaciente_Click(object sender, EventArgs e)
@@ -233,7 +231,13 @@ namespace MedSys
             tlpBtnListaColaboradores.Visible = false;
             tlpInternacao.Visible = false;
             tlpMedicamento.Visible = true;
-            
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ProntuarioDAO pdao = new ProntuarioDAO();
+            dgvInternacao.DataSource = pdao.ReadInternacao(txtBusca.Text);
         }
     }
 }

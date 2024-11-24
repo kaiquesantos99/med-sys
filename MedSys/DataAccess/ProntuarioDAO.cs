@@ -20,7 +20,7 @@ namespace MedSys.DataAccess
 
 
         // Leitura
-        public List<Internacao> ReadInternacao(int p)
+        public List<Internacao> ReadInternacao(string p)
         {
             List<Internacao> listaInternacao = new List<Internacao>();
 
@@ -29,10 +29,10 @@ namespace MedSys.DataAccess
                 try
                 {
                     conn.Open();
-                    string query = "SELECT i.id id, p.nome paciente, p.nascimento nascimento, p.sexo sexo, i.leito leito, i.setor setor, i.internado_tempo tempo_internado, m.nome medico, m.especialidade especialidade, p.status_paciente status_paciente FROM medico m JOIN internacao i on m.id = i.id_medico JOIN paciente p on p.id = i.id_paciente WHERE p.id = @id";
+                    string query = "SELECT i.id id, p.nome paciente, p.nascimento nascimento, p.sexo sexo, i.leito leito, i.setor setor, i.internado_tempo tempo_internado, m.nome medico, m.especialidade especialidade, p.status_paciente status_paciente FROM medico m JOIN internacao i on m.id = i.id_medico JOIN paciente p on p.id = i.id_paciente WHERE p.nome LIKE @nome";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                    cmd.Parameters.AddWithValue("@id", p);
+                    cmd.Parameters.AddWithValue("@nome", p + "%");
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())

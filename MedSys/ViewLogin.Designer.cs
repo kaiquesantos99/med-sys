@@ -50,6 +50,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(110, 23);
             txtSenha.TabIndex = 2;
+            txtSenha.Text = "05031999";
             // 
             // txtUsuario
             // 
@@ -58,6 +59,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(110, 23);
             txtUsuario.TabIndex = 3;
+            txtUsuario.Text = "kaka.01";
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // ViewLogin

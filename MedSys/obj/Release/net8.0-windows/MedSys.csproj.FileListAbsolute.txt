@@ -1,0 +1,14 @@
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.csproj.AssemblyReference.cache
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.Form1.resources
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.Properties.Resources.resources
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.ViewCadastrarEnfermeiro.resources
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.ViewCadastrarPaciente.resources
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.ViewCadastroMedico.resources
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.ViewCadastroRecepcionista.resources
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.ViewLogin.resources
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.csproj.GenerateResource.cache
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.AssemblyInfoInputs.cache
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.AssemblyInfo.cs
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.csproj.CoreCompileInputs.cache
+C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Release\net8.0-windows\MedSys.sourcelink.json

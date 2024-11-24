@@ -1,3 +1,5 @@
+using MedSys.DataAccess;
+
 namespace MedSys
 {
     public partial class Form1 : Form
@@ -5,7 +7,22 @@ namespace MedSys
         public Form1()
         {
             InitializeComponent();
+            tlpBotoesColaboradores.Dock = DockStyle.Fill;
+            tlpBotoesPacientes.Dock = DockStyle.Fill;
+            tlpBotoesProntuario.Dock = DockStyle.Fill;
+            tlpBtnListaColaboradores.Dock = DockStyle.Fill;
+
+
+            ColaboradorDAO cdao = new ColaboradorDAO();
+            dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
+
+            // Add ComboBox Values
+            cbColaboradores.Items.Add("Enfermeiros");
+            cbColaboradores.Items.Add("Médicos");
+            cbColaboradores.Items.Add("Recepcionistas");
         }
+
+
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -50,9 +67,8 @@ namespace MedSys
         private void picBtnColaborador_Click(object sender, EventArgs e)
         {
             tlpBotoesColaboradores.Visible = true;
-            tlpBotoesColaboradores.Dock = DockStyle.Fill;
-
             tlpBotoesPacientes.Visible = false;
+            tlpBotoesProntuario.Visible = false;
 
         }
 
@@ -83,10 +99,9 @@ namespace MedSys
 
         private void picBtnPaciente_Click(object sender, EventArgs e)
         {
-            tlpBotoesPacientes.Visible = true;
-            tlpBotoesPacientes.Dock = DockStyle.Fill;
-
             tlpBotoesColaboradores.Visible = false;
+            tlpBotoesPacientes.Visible = true;
+            tlpBotoesProntuario.Visible = false;
         }
 
         private void picCadastrarEnfermeiros_Click(object sender, EventArgs e)
@@ -97,6 +112,88 @@ namespace MedSys
         private void picCadastrarRecepcionista_Click(object sender, EventArgs e)
         {
             new ViewCadastroRecepcionista().Show();
+        }
+
+        private void picBtnConsulta_MouseEnter(object sender, EventArgs e)
+        {
+            picBtnConsulta.Image = Properties.Resources.btnConsultaSelect;
+        }
+
+        private void picBtnConsulta_MouseLeave(object sender, EventArgs e)
+        {
+            picBtnConsulta.Image = Properties.Resources.btnConsulta;
+        }
+
+        private void picBtnProntuario_Click(object sender, EventArgs e)
+        {
+            tlpBotoesColaboradores.Visible = false;
+            tlpBotoesPacientes.Visible = false;
+            tlpBotoesProntuario.Visible = true;
+        }
+
+        private void picInicioMedSys_Click(object sender, EventArgs e)
+        {
+            tlpBotoesColaboradores.Visible = false;
+            tlpBotoesPacientes.Visible = false;
+            tlpBotoesProntuario.Visible = false;
+            tlpBtnListaColaboradores.Visible = false;
+        }
+
+        private void picBtnExame_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picBtnExame_MouseEnter(object sender, EventArgs e)
+        {
+            picBtnExame.Image = Properties.Resources.btnExameSelect;
+        }
+
+        private void picBtnExame_MouseLeave(object sender, EventArgs e)
+        {
+            picBtnExame.Image = Properties.Resources.btnExame;
+        }
+
+        private void picBtnInternacoes_MouseEnter(object sender, EventArgs e)
+        {
+            picBtnInternacoes.Image = Properties.Resources.btnInternacaoSelect;
+        }
+
+        private void picBtnInternacoes_MouseLeave(object sender, EventArgs e)
+        {
+            picBtnInternacoes.Image = Properties.Resources.btnInternacao;
+        }
+
+        private void picCadastrarColaboradores_Click(object sender, EventArgs e)
+        {
+            tlpBotoesColaboradores.Visible = false;
+            tlpBotoesPacientes.Visible = false;
+            tlpBotoesProntuario.Visible = false;
+            tlpBtnListaColaboradores.Visible = true;
+        }
+
+        private void dgvListaColaboradores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbColaboradores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ColaboradorDAO cdao = new ColaboradorDAO();
+            string valorSelecionado = cbColaboradores.SelectedItem.ToString();
+
+            if (valorSelecionado == "Enfermeiros")
+            {
+                dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
+            }
+            else if (valorSelecionado == "Médicos")
+            {
+                dgvListaColaboradores.DataSource = cdao.ReadMedico();
+            }
+            else if (valorSelecionado == "Recepcionistas")
+            {
+                dgvListaColaboradores.DataSource = cdao.ReadRecepcionista();
+            }
         }
     }
 }

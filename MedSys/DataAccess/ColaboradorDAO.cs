@@ -39,7 +39,7 @@ namespace MedSys.DataAccess
                     cmd.Parameters.AddWithValue("@usuarior", usuario);
                     cmd.Parameters.AddWithValue("@senhar", senha);
                     int result = Convert.ToInt32(cmd.ExecuteScalar());
-                    return result == 1;
+                    return result > 0;
                 }
 
                 catch (Exception ex)
@@ -132,7 +132,6 @@ namespace MedSys.DataAccess
                 cmd.Parameters.AddWithValue("@cpf", recepcionista.Cpf);
                 cmd.Parameters.AddWithValue("@rg", recepcionista.Rg);
                 cmd.Parameters.AddWithValue("@pis", recepcionista.Pis);
-
                 cmd.Parameters.AddWithValue("@cep", recepcionista.Cep);
                 cmd.Parameters.AddWithValue("@logradouro", recepcionista.Logradouro);
                 cmd.Parameters.AddWithValue("@numero", recepcionista.Numero);
@@ -148,8 +147,131 @@ namespace MedSys.DataAccess
                 cmd.ExecuteNonQuery();
             }
         }
-    }
+
+        public List<Enfermeiro> ReadEnfermeiro()
+        {
+            List<Enfermeiro> listaEnfermeiros = new List<Enfermeiro>();
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM enfermeiro";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    Enfermeiro enfermeiro = new Enfermeiro
+                    {
+                        Id = reader.GetInt32("id"),
+                        Nome = reader.GetString("nome"),
+                        Dt_Admissao = reader.GetDateTime("dt_admissao").ToString().Substring(0,10),
+                        Matricula = reader.GetInt32("matricula"),
+                        Coren = reader.GetInt32("coren"),
+                        Nascimento = reader.GetDateTime("nascimento").ToString().Substring(0,10),
+                        Cpf = reader.GetString("cpf"),
+                        Rg = reader.GetString("rg"),
+                        Pis = reader.GetInt32("pis"),
+                        Cep = reader.GetString("cep"),
+                        Logradouro = reader.GetString("logradouro"),
+                        Numero = reader.GetInt32("numero"),
+                        Complemento = reader.GetString("complemento"),
+                        Bairro = reader.GetString("bairro"),
+                        Cidade = reader.GetString("cidade"),
+                        Uf = reader.GetString("uf"),
+                        Telefone = reader.GetString("telefone"),
+                        Email = reader.GetString("email"),
+                        Usuario = reader.GetString("usuario"),
+                        Senha = reader.GetString("senha")
+                    };
+                    listaEnfermeiros.Add(enfermeiro);
+                }
+            }
+            return listaEnfermeiros;
         }
+
+        public List<Medico> ReadMedico()
+        {
+            List<Medico> listaMedico = new List<Medico>();
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM medico";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Medico medico = new Medico
+                    {
+                        Id = reader.GetInt32("id"),
+                        Nome = reader.GetString("nome"),
+                        Dt_Admissao = reader.GetDateTime("dt_admissao").ToString().Substring(0, 10),
+                        Matricula = reader.GetInt32("matricula"),
+                        Crm = reader.GetInt32("crm"),
+                        Nascimento = reader.GetDateTime("nascimento").ToString().Substring(0, 10),
+                        Cpf = reader.GetString("cpf"),
+                        Rg = reader.GetString("rg"),
+                        Pis = reader.GetInt32("pis"),
+                        Especialidade = reader.GetString("especialidade"),
+                        Cep = reader.GetString("cep"),
+                        Logradouro = reader.GetString("logradouro"),
+                        Numero = reader.GetInt32("numero"),
+                        Complemento = reader.GetString("complemento"),
+                        Bairro = reader.GetString("bairro"),
+                        Cidade = reader.GetString("cidade"),
+                        Uf = reader.GetString("uf"),
+                        Telefone = reader.GetString("telefone"),
+                        Email = reader.GetString("email"),
+                        Usuario = reader.GetString("usuario"),
+                        Senha = reader.GetString("senha")
+                    };
+                    listaMedico.Add(medico);
+                }
+            }
+            return listaMedico;
+        }
+
+        public List<Recepcionista> ReadRecepcionista()
+        {
+            List<Recepcionista> listaRecepcionista = new List<Recepcionista>();
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM recepcionista";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Recepcionista recepcionista = new Recepcionista
+                    {
+                        Id = reader.GetInt32("id"),
+                        Nome = reader.GetString("nome"),
+                        Dt_Admissao = reader.GetDateTime("dt_admissao").ToString().Substring(0, 10),
+                        Matricula = reader.GetInt32("matricula"),
+                        Nascimento = reader.GetDateTime("nascimento").ToString().Substring(0, 10),
+                        Cpf = reader.GetString("cpf"),
+                        Rg = reader.GetString("rg"),
+                        Pis = reader.GetInt32("pis"),
+                        Cep = reader.GetString("cep"),
+                        Logradouro = reader.GetString("logradouro"),
+                        Numero = reader.GetInt32("numero"),
+                        Complemento = reader.GetString("complemento"),
+                        Bairro = reader.GetString("bairro"),
+                        Cidade = reader.GetString("cidade"),
+                        Uf = reader.GetString("uf"),
+                        Telefone = reader.GetString("telefone"),
+                        Email = reader.GetString("email"),
+                        Usuario = reader.GetString("usuario"),
+                        Senha = reader.GetString("senha")
+                    };
+                    listaRecepcionista.Add(recepcionista);
+                }
+            }
+            return listaRecepcionista;
+        }
+    }
+}
     
 
 

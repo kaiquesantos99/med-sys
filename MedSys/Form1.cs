@@ -5,7 +5,7 @@ namespace MedSys
 {
     public partial class Form1 : Form
     {
-
+        private string cpfFuturoInternado;
 
         public Form1()
         {
@@ -23,12 +23,14 @@ namespace MedSys
             dgvEstoque.DataSource = edao.ReadEstoque();
             ColaboradorDAO cdao = new ColaboradorDAO();
             dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
-            
+
 
             // Add ComboBox Values
             cbColaboradores.Items.Add("Enfermeiros");
             cbColaboradores.Items.Add("Médicos");
             cbColaboradores.Items.Add("Recepcionistas");
+
+            
         }
 
 
@@ -238,6 +240,47 @@ namespace MedSys
         {
             ProntuarioDAO pdao = new ProntuarioDAO();
             dgvInternacao.DataSource = pdao.ReadInternacao(txtBusca.Text);
+        }
+
+        private void dgvInternacao_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                
+                DataGridViewRow linhaSelecionada = dgvInternacao.Rows[e.RowIndex];
+                string valorCelulaSelecionada = linhaSelecionada.Cells[0].Value.ToString();
+                cpfFuturoInternado = valorCelulaSelecionada;
+
+                ProntuarioDAO pdao = new ProntuarioDAO();
+                dgvInternacaoDetalhes.DataSource = pdao.ReadDetalhesInternacao(int.Parse(valorCelulaSelecionada));
+            }
+        }
+
+        private void dgvInternacao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnInternar_Click(object sender, EventArgs e)
+        {
+            if (dgvInternacao.CurrentRow != null)
+            {
+                
+
+                var cellValue = dgvInternacao.CurrentRow.Cells["cpf"].Value?.ToString();
+                ProntuarioDAO pdao = new ProntuarioDAO();
+                pdao.InternarPaciente(cellValue.ToString());
+                dgvInternacao.DataSource = pdao.ReadInternacao(cellValue.ToString());
+                MessageBox.Show("Paciente interado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Selecione um paciente para internar!");
+            }
+
+            
+
+
         }
     }
 }

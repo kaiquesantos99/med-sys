@@ -489,6 +489,8 @@
             dgvInternacao.RowHeadersWidth = 51;
             dgvInternacao.Size = new Size(544, 179);
             dgvInternacao.TabIndex = 0;
+            dgvInternacao.CellClick += dgvInternacao_CellClick;
+            dgvInternacao.CellContentClick += dgvInternacao_CellContentClick;
             // 
             // dgvInternacaoDetalhes
             // 
@@ -519,6 +521,7 @@
             btnInternar.TabIndex = 0;
             btnInternar.Text = "Internar";
             btnInternar.UseVisualStyleBackColor = true;
+            btnInternar.Click += btnInternar_Click;
             // 
             // btnAlta
             // 

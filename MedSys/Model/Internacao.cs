@@ -10,6 +10,7 @@ namespace MedSys.Model
     {
         public int Atendimento { get; set; }
         public string Paciente {  get; set; }
+        public string Cpf {  get; set; }
         public string Nascimento { get; set; }
         public string Sexo {  get; set; }
         public string Leito {  get; set; }

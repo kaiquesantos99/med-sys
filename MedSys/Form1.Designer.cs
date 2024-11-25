@@ -174,6 +174,7 @@
             picBtnCadastrarMedicamento.SizeMode = PictureBoxSizeMode.Zoom;
             picBtnCadastrarMedicamento.TabIndex = 1;
             picBtnCadastrarMedicamento.TabStop = false;
+            picBtnCadastrarMedicamento.Click += picBtnCadastrarMedicamento_Click;
             // 
             // tlpBotoesProntuario
             // 
@@ -489,8 +490,6 @@
             dgvInternacao.RowHeadersWidth = 51;
             dgvInternacao.Size = new Size(544, 179);
             dgvInternacao.TabIndex = 0;
-            dgvInternacao.CellClick += dgvInternacao_CellClick;
-            dgvInternacao.CellContentClick += dgvInternacao_CellContentClick;
             // 
             // dgvInternacaoDetalhes
             // 
@@ -520,8 +519,6 @@
             btnInternar.Size = new Size(75, 23);
             btnInternar.TabIndex = 0;
             btnInternar.Text = "Internar";
-            btnInternar.UseVisualStyleBackColor = true;
-            btnInternar.Click += btnInternar_Click;
             // 
             // btnAlta
             // 
@@ -605,6 +602,7 @@
             cbMedicamentos.Name = "cbMedicamentos";
             cbMedicamentos.Size = new Size(26, 23);
             cbMedicamentos.TabIndex = 1;
+            cbMedicamentos.SelectedIndexChanged += cbMedicamentos_SelectedIndexChanged;
             // 
             // tlpBtnListaColaboradores
             // 

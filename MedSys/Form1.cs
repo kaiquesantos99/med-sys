@@ -5,7 +5,6 @@ namespace MedSys
 {
     public partial class Form1 : Form
     {
-        private string cpfFuturoInternado;
 
         public Form1()
         {
@@ -397,6 +396,35 @@ namespace MedSys
                 dgvEstoque.DataSource = edao.ReadEstoqueFor("Estimulantes do Sistema Nervoso Central");
             }
 
+        }
+
+        private void dgvInternacao_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+
+                DataGridViewRow linhaSelecionada = dgvInternacao.Rows[e.RowIndex];
+                string valorCelulaSelecionada = linhaSelecionada.Cells[0].Value.ToString();
+                ProntuarioDAO pdao = new ProntuarioDAO();
+                dgvInternacaoDetalhes.DataSource = pdao.ReadDetalhesInternacao(int.Parse(valorCelulaSelecionada));
+            }
+        }
+
+        private void btnInternar_Click(object sender, EventArgs e)
+        {
+            if (dgvInternacao.CurrentRow != null)
+            {
+
+                var cellValue = dgvInternacao.CurrentRow.Cells["cpf"].Value?.ToString();
+                ProntuarioDAO pdao = new ProntuarioDAO();
+                pdao.InternarPaciente(cellValue.ToString());
+                dgvInternacao.DataSource = pdao.ReadInternacao(cellValue.ToString());
+                MessageBox.Show("Paciente interado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Selecione um paciente para internar!");
+            }
         }
     }
 }

@@ -490,6 +490,7 @@
             dgvInternacao.RowHeadersWidth = 51;
             dgvInternacao.Size = new Size(544, 179);
             dgvInternacao.TabIndex = 0;
+            dgvInternacao.CellClick += dgvInternacao_CellClick;
             // 
             // dgvInternacaoDetalhes
             // 
@@ -519,6 +520,7 @@
             btnInternar.Size = new Size(75, 23);
             btnInternar.TabIndex = 0;
             btnInternar.Text = "Internar";
+            btnInternar.Click += btnInternar_Click;
             // 
             // btnAlta
             // 

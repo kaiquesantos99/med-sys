@@ -67,5 +67,10 @@ namespace MedSys
 
             MessageBox.Show("Cadastrado com sucesso!");
         }
+
+        private void ViewCadastroRecepcionista_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

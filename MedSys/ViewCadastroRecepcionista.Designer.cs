@@ -514,6 +514,7 @@
             DoubleBuffered = true;
             Name = "ViewCadastroRecepcionista";
             Text = "ViewCadastroRecepcionista";
+            Load += ViewCadastroRecepcionista_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

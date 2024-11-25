@@ -52,6 +52,9 @@
             picBtnProntuario = new PictureBox();
             picBtnMedicamento = new PictureBox();
             panMain = new Panel();
+            tlpMedicamento = new TableLayoutPanel();
+            dgvEstoque = new DataGridView();
+            cbMedicamentos = new ComboBox();
             tlpInternacao = new TableLayoutPanel();
             dgvInternacao = new DataGridView();
             dgvInternacaoDetalhes = new DataGridView();
@@ -61,9 +64,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             txtBusca = new TextBox();
             btnBuscar = new Button();
-            tlpMedicamento = new TableLayoutPanel();
-            dgvEstoque = new DataGridView();
-            cbMedicamentos = new ComboBox();
             tlpBtnListaColaboradores = new TableLayoutPanel();
             cbColaboradores = new ComboBox();
             dgvListaColaboradores = new DataGridView();
@@ -91,13 +91,13 @@
             ((System.ComponentModel.ISupportInitialize)picBtnProntuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).BeginInit();
             panMain.SuspendLayout();
+            tlpMedicamento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             tlpInternacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInternacao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvInternacaoDetalhes).BeginInit();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            tlpMedicamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             tlpBtnListaColaboradores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListaColaboradores).BeginInit();
             SuspendLayout();
@@ -450,8 +450,8 @@
             // 
             // panMain
             // 
-            panMain.Controls.Add(tlpInternacao);
             panMain.Controls.Add(tlpMedicamento);
+            panMain.Controls.Add(tlpInternacao);
             panMain.Controls.Add(tlpBtnListaColaboradores);
             panMain.Dock = DockStyle.Fill;
             panMain.Location = new Point(4, 151);
@@ -459,6 +459,50 @@
             panMain.Size = new Size(1101, 407);
             panMain.TabIndex = 3;
             panMain.Paint += panMain_Paint;
+            // 
+            // tlpMedicamento
+            // 
+            tlpMedicamento.ColumnCount = 2;
+            tlpMedicamento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.97617F));
+            tlpMedicamento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.0238285F));
+            tlpMedicamento.Controls.Add(dgvEstoque, 0, 0);
+            tlpMedicamento.Controls.Add(cbMedicamentos, 1, 0);
+            tlpMedicamento.Dock = DockStyle.Fill;
+            tlpMedicamento.Location = new Point(0, 0);
+            tlpMedicamento.Margin = new Padding(3, 2, 3, 2);
+            tlpMedicamento.Name = "tlpMedicamento";
+            tlpMedicamento.RowCount = 1;
+            tlpMedicamento.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpMedicamento.Size = new Size(1101, 407);
+            tlpMedicamento.TabIndex = 5;
+            tlpMedicamento.Visible = false;
+            // 
+            // dgvEstoque
+            // 
+            dgvEstoque.BackgroundColor = SystemColors.Control;
+            dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEstoque.Dock = DockStyle.Fill;
+            dgvEstoque.GridColor = SystemColors.Control;
+            dgvEstoque.Location = new Point(3, 2);
+            dgvEstoque.Margin = new Padding(3, 2, 3, 2);
+            dgvEstoque.Name = "dgvEstoque";
+            dgvEstoque.RowHeadersWidth = 51;
+            dgvEstoque.Size = new Size(764, 403);
+            dgvEstoque.TabIndex = 0;
+            dgvEstoque.CellBeginEdit += dgvEstoque_CellBeginEdit;
+            dgvEstoque.CellEndEdit += dgvEstoque_CellEndEdit;
+            dgvEstoque.KeyDown += dgvEstoque_KeyDown;
+            // 
+            // cbMedicamentos
+            // 
+            cbMedicamentos.Dock = DockStyle.Fill;
+            cbMedicamentos.FormattingEnabled = true;
+            cbMedicamentos.Location = new Point(773, 2);
+            cbMedicamentos.Margin = new Padding(3, 2, 3, 2);
+            cbMedicamentos.Name = "cbMedicamentos";
+            cbMedicamentos.Size = new Size(325, 23);
+            cbMedicamentos.TabIndex = 1;
+            cbMedicamentos.SelectedIndexChanged += cbMedicamentos_SelectedIndexChanged;
             // 
             // tlpInternacao
             // 
@@ -469,14 +513,13 @@
             tlpInternacao.Controls.Add(dgvInternacaoDetalhes, 1, 1);
             tlpInternacao.Controls.Add(panel1, 0, 2);
             tlpInternacao.Controls.Add(tableLayoutPanel1, 0, 0);
-            tlpInternacao.Dock = DockStyle.Fill;
-            tlpInternacao.Location = new Point(0, 0);
+            tlpInternacao.Location = new Point(738, 0);
             tlpInternacao.Name = "tlpInternacao";
             tlpInternacao.RowCount = 3;
             tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
             tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpInternacao.Size = new Size(1101, 407);
+            tlpInternacao.Size = new Size(117, 113);
             tlpInternacao.TabIndex = 6;
             tlpInternacao.Visible = false;
             // 
@@ -488,7 +531,7 @@
             dgvInternacao.Location = new Point(3, 40);
             dgvInternacao.Name = "dgvInternacao";
             dgvInternacao.RowHeadersWidth = 51;
-            dgvInternacao.Size = new Size(544, 179);
+            dgvInternacao.Size = new Size(52, 32);
             dgvInternacao.TabIndex = 0;
             dgvInternacao.CellClick += dgvInternacao_CellClick;
             // 
@@ -497,10 +540,10 @@
             dgvInternacaoDetalhes.BackgroundColor = SystemColors.Control;
             dgvInternacaoDetalhes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvInternacaoDetalhes.Dock = DockStyle.Fill;
-            dgvInternacaoDetalhes.Location = new Point(553, 40);
+            dgvInternacaoDetalhes.Location = new Point(61, 40);
             dgvInternacaoDetalhes.Name = "dgvInternacaoDetalhes";
             dgvInternacaoDetalhes.RowHeadersWidth = 51;
-            dgvInternacaoDetalhes.Size = new Size(545, 179);
+            dgvInternacaoDetalhes.Size = new Size(53, 32);
             dgvInternacaoDetalhes.TabIndex = 1;
             // 
             // panel1
@@ -508,9 +551,9 @@
             panel1.Controls.Add(btnInternar);
             panel1.Controls.Add(btnAlta);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 225);
+            panel1.Location = new Point(3, 78);
             panel1.Name = "panel1";
-            panel1.Size = new Size(544, 179);
+            panel1.Size = new Size(52, 32);
             panel1.TabIndex = 2;
             // 
             // btnInternar
@@ -544,7 +587,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(544, 31);
+            tableLayoutPanel1.Size = new Size(52, 31);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // txtBusca
@@ -552,59 +595,19 @@
             txtBusca.Dock = DockStyle.Fill;
             txtBusca.Location = new Point(3, 3);
             txtBusca.Name = "txtBusca";
-            txtBusca.Size = new Size(175, 23);
+            txtBusca.Size = new Size(11, 23);
             txtBusca.TabIndex = 0;
             // 
             // btnBuscar
             // 
             btnBuscar.Dock = DockStyle.Fill;
-            btnBuscar.Location = new Point(184, 3);
+            btnBuscar.Location = new Point(20, 3);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(175, 25);
+            btnBuscar.Size = new Size(11, 25);
             btnBuscar.TabIndex = 1;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
-            // 
-            // tlpMedicamento
-            // 
-            tlpMedicamento.ColumnCount = 2;
-            tlpMedicamento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.97617F));
-            tlpMedicamento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.0238285F));
-            tlpMedicamento.Controls.Add(dgvEstoque, 0, 0);
-            tlpMedicamento.Controls.Add(cbMedicamentos, 1, 0);
-            tlpMedicamento.Location = new Point(995, 3);
-            tlpMedicamento.Margin = new Padding(3, 2, 3, 2);
-            tlpMedicamento.Name = "tlpMedicamento";
-            tlpMedicamento.RowCount = 1;
-            tlpMedicamento.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpMedicamento.Size = new Size(104, 58);
-            tlpMedicamento.TabIndex = 5;
-            tlpMedicamento.Visible = false;
-            // 
-            // dgvEstoque
-            // 
-            dgvEstoque.BackgroundColor = SystemColors.Control;
-            dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEstoque.Dock = DockStyle.Fill;
-            dgvEstoque.GridColor = SystemColors.Control;
-            dgvEstoque.Location = new Point(3, 2);
-            dgvEstoque.Margin = new Padding(3, 2, 3, 2);
-            dgvEstoque.Name = "dgvEstoque";
-            dgvEstoque.RowHeadersWidth = 51;
-            dgvEstoque.Size = new Size(66, 54);
-            dgvEstoque.TabIndex = 0;
-            // 
-            // cbMedicamentos
-            // 
-            cbMedicamentos.Dock = DockStyle.Fill;
-            cbMedicamentos.FormattingEnabled = true;
-            cbMedicamentos.Location = new Point(75, 2);
-            cbMedicamentos.Margin = new Padding(3, 2, 3, 2);
-            cbMedicamentos.Name = "cbMedicamentos";
-            cbMedicamentos.Size = new Size(26, 23);
-            cbMedicamentos.TabIndex = 1;
-            cbMedicamentos.SelectedIndexChanged += cbMedicamentos_SelectedIndexChanged;
             // 
             // tlpBtnListaColaboradores
             // 
@@ -679,14 +682,14 @@
             ((System.ComponentModel.ISupportInitialize)picBtnProntuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).EndInit();
             panMain.ResumeLayout(false);
+            tlpMedicamento.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
             tlpInternacao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvInternacao).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvInternacaoDetalhes).EndInit();
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            tlpMedicamento.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
             tlpBtnListaColaboradores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvListaColaboradores).EndInit();
             ResumeLayout(false);

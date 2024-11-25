@@ -88,6 +88,45 @@ namespace MedSys.DataAccess
 
         }
 
+        public void UpdateEstoque(string id, string valor)
+        {
+
+            try
+            {
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+                    string query = "UPDATE estoque SET quantidade = @valor WHERE id = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@valor", int.Parse(valor));
+                    cmd.Parameters.AddWithValue("@id", int.Parse(id));
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Atualizado!");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Digite somente números!");
+            }
+
+            
+        }
+
+        public void DeleteEstoque(int id)
+        {
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "DELETE FROM estoque WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Medicamento excluído com sucesso!");
+            }
+        }
+
     }
 
 }

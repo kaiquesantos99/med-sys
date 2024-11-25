@@ -426,5 +426,54 @@ namespace MedSys
                 MessageBox.Show("Selecione um paciente para internar!");
             }
         }
+
+        private void dgvEstoque_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvEstoque.Columns[e.ColumnIndex].Name == "quantidade")
+            {
+
+                string id = dgvEstoque.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                string novoValor = dgvEstoque.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                EstoqueDAO edao = new EstoqueDAO();
+                edao.UpdateEstoque(id, novoValor);
+            }
+        }
+
+        private void dgvEstoque_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgvEstoque.Columns[e.ColumnIndex].Name == "Quantidade")
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+
+
+
+        }
+
+        private void dgvEstoque_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (dgvEstoque.SelectedRows.Count > 0)
+                {
+                    int id = int.Parse(dgvEstoque.SelectedRows[0].Cells["id"].Value.ToString());
+
+                    if (MessageBox.Show("Deseja realmente excluir este registro?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        EstoqueDAO edao = new EstoqueDAO();
+                        edao.DeleteEstoque(id);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um medicamento que deseja excluir!");
+                }
+            }
+        }
     }
 }

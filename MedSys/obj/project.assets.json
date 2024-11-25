@@ -1607,19 +1607,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kaique\\.nuget\\packages\\": {}
+    "C:\\Users\\Lennon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kaique\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
+      "projectUniqueName": "C:\\Users\\Lennon\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
       "projectName": "MedSys",
-      "projectPath": "C:\\Users\\Kaique\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
-      "packagesPath": "C:\\Users\\Kaique\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kaique\\source\\repos\\med-sys\\MedSys\\obj\\",
+      "projectPath": "C:\\Users\\Lennon\\source\\repos\\med-sys\\MedSys\\MedSys.csproj",
+      "packagesPath": "C:\\Users\\Lennon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lennon\\source\\repos\\med-sys\\MedSys\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lennon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1674,7 +1674,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

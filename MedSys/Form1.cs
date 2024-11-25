@@ -5,10 +5,15 @@ namespace MedSys
 {
     public partial class Form1 : Form
     {
+        private bool CheckedEnfermeiro { get; set; } = false;
+        private bool CheckedMedico { get; set; } = false;
+        private bool CheckedRecepcionista { get; set; } = false;
 
-        public Form1()
+        public Form1(string usuario)
         {
             InitializeComponent();
+            CheckTipoColaborador(usuario); // Verifica o tipo de colaborador para limitar acesso ao sistema
+
             tlpBotoesColaboradores.Dock = DockStyle.Fill;
             tlpBotoesPacientes.Dock = DockStyle.Fill;
             tlpBotoesProntuario.Dock = DockStyle.Fill;
@@ -64,7 +69,22 @@ namespace MedSys
 
         }
 
-
+        private void CheckTipoColaborador(string usuario)
+        {
+            ColaboradorDAO cdao = new ColaboradorDAO();
+            if (cdao.CheckEnfermeiro(usuario))
+            {
+                CheckedEnfermeiro = true;
+            }
+            else if (cdao.CheckMedico(usuario))
+            {
+                CheckedMedico = true;
+            }
+            else if (cdao.CheckRecepcionista(usuario))
+            {
+                CheckedRecepcionista = true;
+            }
+        }
 
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -99,10 +119,18 @@ namespace MedSys
 
         private void picBtnMedicamento_Click(object sender, EventArgs e)
         {
-            tlpBotoesColaboradores.Visible = false;
-            tlpBotoesPacientes.Visible = false;
-            tlpBotoesProntuario.Visible = false;
-            tlpBotoesEstoque.Visible = true;
+            if (CheckedEnfermeiro)
+            {
+                tlpBotoesColaboradores.Visible = false;
+                tlpBotoesPacientes.Visible = false;
+                tlpBotoesProntuario.Visible = false;
+                tlpBotoesEstoque.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Você não tem permissão para acessar a aba de estoque!");
+            }
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

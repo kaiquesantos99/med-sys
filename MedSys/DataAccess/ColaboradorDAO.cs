@@ -313,6 +313,82 @@ namespace MedSys.DataAccess
             }
             return listaRecepcionista;
         }
+
+        // CHECK FUNÇÃO
+        public bool CheckRecepcionista(string usuario)
+        {
+            try
+            {
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(usuario) FROM recepcionista WHERE usuario = @usuario";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+                return false;
+            }
+
+            
+            
+        }
+
+        public bool CheckEnfermeiro(string usuario)
+        {
+            try
+            {
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(usuario) FROM enfermeiro WHERE usuario = @usuario";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+                return false;
+            }
+
+            
+            
+        }
+
+        public bool CheckMedico(string usuario)
+        {
+            try
+            {
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(usuario) FROM medico WHERE usuario = @usuario";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+                return false;
+            }
+
+
+            
+            
+        }
+
     }
 }
     

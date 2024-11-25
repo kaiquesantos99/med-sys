@@ -44,7 +44,7 @@ namespace MedSys
 
             if (aprovado)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(usuario);
                 form1.Show();
 
             }
@@ -75,7 +75,7 @@ namespace MedSys
 
                 if (aprovado)
                 {
-                    Form1 form1 = new Form1();
+                    Form1 form1 = new Form1(usuario);
                     form1.Show();
 
                 }

@@ -79,6 +79,7 @@
             MaximizeBox = false;
             Name = "ViewLogin";
             Text = "MedSys | Login";
+            FormClosing += ViewLogin_FormClosing;
             KeyDown += ViewLogin_KeyDown;
             ResumeLayout(false);
             PerformLayout();

@@ -182,6 +182,35 @@ namespace MedSys.DataAccess
                     cmd2.ExecuteNonQuery();
                 }
 
+                conn.Close();
+
+
+
+                conn.Open();
+                int idinternacao;
+                string query3 = "SELECT i.id FROM internacao i JOIN paciente p ON i.id_paciente = p.id WHERE id_paciente = @idpaciente AND p.status_paciente = @internado ";
+                using (MySqlCommand cmd3 = new MySqlCommand(query3, conn))
+                {
+                    cmd3.Parameters.AddWithValue("@idpaciente", idpaciente);
+                    cmd3.Parameters.AddWithValue("@internado", "Internado");
+                    idinternacao = Convert.ToInt32(cmd3.ExecuteScalar());
+                }
+                    
+
+               
+
+
+                conn.Close();
+                conn.Open();
+                string query4 = "INSERT INTO detalhes_internacao (detalhes, id_internacao) VALUES (@detalhes, @idinternacao)";
+                using (MySqlCommand cmd4 = new MySqlCommand(query4, conn))
+                {
+                    cmd4.Parameters.AddWithValue("@detalhes", "O paciente foi internado.");
+                    cmd4.Parameters.AddWithValue("@idinternacao", idinternacao);
+
+                    cmd4.ExecuteNonQuery();
+                }
+
                 MessageBox.Show("Paciente internado com sucesso!");
 
 

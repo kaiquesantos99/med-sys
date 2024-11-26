@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tlpMain = new TableLayoutPanel();
             panOptionsButtons = new Panel();
+            tlpBotoesPacientes = new TableLayoutPanel();
+            picCadastrarPaciente = new PictureBox();
+            picListaPaciente = new PictureBox();
             tlpBotoesColaboradores = new TableLayoutPanel();
             picCadastrarEnfermeiros = new PictureBox();
             picCadastrarMedico = new PictureBox();
@@ -39,9 +42,6 @@
             tlpBotoesEstoque = new TableLayoutPanel();
             picBtnEstoque = new PictureBox();
             picBtnCadastrarMedicamento = new PictureBox();
-            tlpBotoesPacientes = new TableLayoutPanel();
-            picCadastrarPaciente = new PictureBox();
-            picListaPaciente = new PictureBox();
             tlpBotoesProntuario = new TableLayoutPanel();
             picBtnExame = new PictureBox();
             picBtnInternacoes = new PictureBox();
@@ -52,6 +52,16 @@
             picBtnProntuario = new PictureBox();
             picBtnMedicamento = new PictureBox();
             panMain = new Panel();
+            tlpInternacao = new TableLayoutPanel();
+            dgvInternacao = new DataGridView();
+            dgvInternacaoDetalhes = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            txtBusca = new TextBox();
+            btnBuscar = new Button();
+            tlpRegistroDetalhes = new TableLayoutPanel();
+            btnAlta = new Button();
+            txtRegistroDetalhes = new TextBox();
+            btnRegistrarDetalhes = new Button();
             tlpListaPacientes = new TableLayoutPanel();
             dgvListaPacientes = new DataGridView();
             tlpListaPacientesRight = new TableLayoutPanel();
@@ -64,14 +74,6 @@
             btnBuscaPaciente = new Button();
             txtBuscaPaciente = new TextBox();
             btnInternarPaciente = new Button();
-            tlpInternacao = new TableLayoutPanel();
-            dgvInternacao = new DataGridView();
-            dgvInternacaoDetalhes = new DataGridView();
-            panel1 = new Panel();
-            btnAlta = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            txtBusca = new TextBox();
-            btnBuscar = new Button();
             tlpBtnListaColaboradores = new TableLayoutPanel();
             dgvListaColaboradores = new DataGridView();
             cbColaboradores = new ComboBox();
@@ -80,6 +82,9 @@
             cbMedicamentos = new ComboBox();
             tlpMain.SuspendLayout();
             panOptionsButtons.SuspendLayout();
+            tlpBotoesPacientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picCadastrarPaciente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picListaPaciente).BeginInit();
             tlpBotoesColaboradores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picCadastrarEnfermeiros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCadastrarMedico).BeginInit();
@@ -88,9 +93,6 @@
             tlpBotoesEstoque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBtnEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBtnCadastrarMedicamento).BeginInit();
-            tlpBotoesPacientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picCadastrarPaciente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picListaPaciente).BeginInit();
             tlpBotoesProntuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBtnExame).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBtnInternacoes).BeginInit();
@@ -101,16 +103,16 @@
             ((System.ComponentModel.ISupportInitialize)picBtnProntuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).BeginInit();
             panMain.SuspendLayout();
+            tlpInternacao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInternacao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInternacaoDetalhes).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            tlpRegistroDetalhes.SuspendLayout();
             tlpListaPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListaPacientes).BeginInit();
             tlpListaPacientesRight.SuspendLayout();
             tlpListaPacientesRightTop.SuspendLayout();
             tlpBuscaPaciente.SuspendLayout();
-            tlpInternacao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvInternacao).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvInternacaoDetalhes).BeginInit();
-            panel1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             tlpBtnListaColaboradores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListaColaboradores).BeginInit();
             tlpMedicamento.SuspendLayout();
@@ -138,15 +140,63 @@
             // 
             // panOptionsButtons
             // 
+            panOptionsButtons.Controls.Add(tlpBotoesPacientes);
             panOptionsButtons.Controls.Add(tlpBotoesColaboradores);
             panOptionsButtons.Controls.Add(tlpBotoesEstoque);
-            panOptionsButtons.Controls.Add(tlpBotoesPacientes);
             panOptionsButtons.Controls.Add(tlpBotoesProntuario);
             panOptionsButtons.Dock = DockStyle.Fill;
             panOptionsButtons.Location = new Point(4, 110);
             panOptionsButtons.Name = "panOptionsButtons";
             panOptionsButtons.Size = new Size(1101, 34);
             panOptionsButtons.TabIndex = 2;
+            // 
+            // tlpBotoesPacientes
+            // 
+            tlpBotoesPacientes.ColumnCount = 5;
+            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 213F));
+            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 198F));
+            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tlpBotoesPacientes.Controls.Add(picCadastrarPaciente, 1, 0);
+            tlpBotoesPacientes.Controls.Add(picListaPaciente, 3, 0);
+            tlpBotoesPacientes.Dock = DockStyle.Fill;
+            tlpBotoesPacientes.Location = new Point(0, 0);
+            tlpBotoesPacientes.Name = "tlpBotoesPacientes";
+            tlpBotoesPacientes.RowCount = 1;
+            tlpBotoesPacientes.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBotoesPacientes.Size = new Size(1101, 34);
+            tlpBotoesPacientes.TabIndex = 1;
+            tlpBotoesPacientes.Visible = false;
+            tlpBotoesPacientes.Paint += tableLayoutPanel1_Paint_1;
+            // 
+            // picCadastrarPaciente
+            // 
+            picCadastrarPaciente.Dock = DockStyle.Fill;
+            picCadastrarPaciente.Image = Properties.Resources.btnCadastrarPaciente;
+            picCadastrarPaciente.Location = new Point(233, 3);
+            picCadastrarPaciente.Name = "picCadastrarPaciente";
+            picCadastrarPaciente.Size = new Size(207, 28);
+            picCadastrarPaciente.SizeMode = PictureBoxSizeMode.Zoom;
+            picCadastrarPaciente.TabIndex = 0;
+            picCadastrarPaciente.TabStop = false;
+            picCadastrarPaciente.Click += picCadastrarPaciente_Click;
+            picCadastrarPaciente.MouseEnter += picCadastrarPaciente_MouseEnter;
+            picCadastrarPaciente.MouseLeave += picCadastrarPaciente_MouseLeave;
+            // 
+            // picListaPaciente
+            // 
+            picListaPaciente.Dock = DockStyle.Fill;
+            picListaPaciente.Image = Properties.Resources.btnListaPacientes;
+            picListaPaciente.Location = new Point(676, 3);
+            picListaPaciente.Name = "picListaPaciente";
+            picListaPaciente.Size = new Size(192, 28);
+            picListaPaciente.SizeMode = PictureBoxSizeMode.Zoom;
+            picListaPaciente.TabIndex = 1;
+            picListaPaciente.TabStop = false;
+            picListaPaciente.Click += picListaPaciente_Click;
+            picListaPaciente.MouseEnter += picListaPaciente_MouseEnter;
+            picListaPaciente.MouseLeave += picListaPaciente_MouseLeave;
             // 
             // tlpBotoesColaboradores
             // 
@@ -164,11 +214,11 @@
             tlpBotoesColaboradores.Controls.Add(picCadastrarMedico, 3, 0);
             tlpBotoesColaboradores.Controls.Add(picCadastrarRecepcionista, 5, 0);
             tlpBotoesColaboradores.Controls.Add(picBtnListaColaboradores, 7, 0);
-            tlpBotoesColaboradores.Location = new Point(20, 0);
+            tlpBotoesColaboradores.Location = new Point(0, 0);
             tlpBotoesColaboradores.Name = "tlpBotoesColaboradores";
             tlpBotoesColaboradores.RowCount = 1;
             tlpBotoesColaboradores.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBotoesColaboradores.Size = new Size(74, 34);
+            tlpBotoesColaboradores.Size = new Size(94, 34);
             tlpBotoesColaboradores.TabIndex = 2;
             tlpBotoesColaboradores.Visible = false;
             tlpBotoesColaboradores.Paint += tableLayoutPanel1_Paint_2;
@@ -177,49 +227,57 @@
             // 
             picCadastrarEnfermeiros.Dock = DockStyle.Fill;
             picCadastrarEnfermeiros.Image = Properties.Resources.btnCadastrarEnfermeiro;
-            picCadastrarEnfermeiros.Location = new Point(-166, 3);
+            picCadastrarEnfermeiros.Location = new Point(-162, 3);
             picCadastrarEnfermeiros.Name = "picCadastrarEnfermeiros";
             picCadastrarEnfermeiros.Size = new Size(226, 28);
             picCadastrarEnfermeiros.SizeMode = PictureBoxSizeMode.Zoom;
             picCadastrarEnfermeiros.TabIndex = 0;
             picCadastrarEnfermeiros.TabStop = false;
             picCadastrarEnfermeiros.Click += picCadastrarEnfermeiros_Click;
+            picCadastrarEnfermeiros.MouseEnter += picCadastrarEnfermeiros_MouseEnter;
+            picCadastrarEnfermeiros.MouseLeave += picCadastrarEnfermeiros_MouseLeave;
             // 
             // picCadastrarMedico
             // 
             picCadastrarMedico.Dock = DockStyle.Fill;
             picCadastrarMedico.Image = Properties.Resources.btnCadastrarMedico;
-            picCadastrarMedico.Location = new Point(-104, 3);
+            picCadastrarMedico.Location = new Point(-96, 3);
             picCadastrarMedico.Name = "picCadastrarMedico";
             picCadastrarMedico.Size = new Size(193, 28);
             picCadastrarMedico.SizeMode = PictureBoxSizeMode.Zoom;
             picCadastrarMedico.TabIndex = 1;
             picCadastrarMedico.TabStop = false;
             picCadastrarMedico.Click += picCadastrarMedico_Click;
+            picCadastrarMedico.MouseEnter += picCadastrarMedico_MouseEnter;
+            picCadastrarMedico.MouseLeave += picCadastrarMedico_MouseLeave;
             // 
             // picCadastrarRecepcionista
             // 
             picCadastrarRecepcionista.Dock = DockStyle.Fill;
             picCadastrarRecepcionista.Image = Properties.Resources.btnCadastrarRecepcionista;
-            picCadastrarRecepcionista.Location = new Point(-75, 3);
+            picCadastrarRecepcionista.Location = new Point(-63, 3);
             picCadastrarRecepcionista.Name = "picCadastrarRecepcionista";
             picCadastrarRecepcionista.Size = new Size(244, 28);
             picCadastrarRecepcionista.SizeMode = PictureBoxSizeMode.Zoom;
             picCadastrarRecepcionista.TabIndex = 2;
             picCadastrarRecepcionista.TabStop = false;
             picCadastrarRecepcionista.Click += picCadastrarRecepcionista_Click;
+            picCadastrarRecepcionista.MouseEnter += picCadastrarRecepcionista_MouseEnter;
+            picCadastrarRecepcionista.MouseLeave += picCadastrarRecepcionista_MouseLeave;
             // 
             // picBtnListaColaboradores
             // 
             picBtnListaColaboradores.Dock = DockStyle.Fill;
             picBtnListaColaboradores.Image = Properties.Resources.btnListaColaboradores;
-            picBtnListaColaboradores.Location = new Point(5, 3);
+            picBtnListaColaboradores.Location = new Point(21, 3);
             picBtnListaColaboradores.Name = "picBtnListaColaboradores";
             picBtnListaColaboradores.Size = new Size(237, 28);
             picBtnListaColaboradores.SizeMode = PictureBoxSizeMode.Zoom;
             picBtnListaColaboradores.TabIndex = 3;
             picBtnListaColaboradores.TabStop = false;
             picBtnListaColaboradores.Click += picCadastrarColaboradores_Click;
+            picBtnListaColaboradores.MouseEnter += picBtnListaColaboradores_MouseEnter;
+            picBtnListaColaboradores.MouseLeave += picBtnListaColaboradores_MouseLeave;
             // 
             // tlpBotoesEstoque
             // 
@@ -231,11 +289,11 @@
             tlpBotoesEstoque.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tlpBotoesEstoque.Controls.Add(picBtnEstoque, 3, 0);
             tlpBotoesEstoque.Controls.Add(picBtnCadastrarMedicamento, 1, 0);
-            tlpBotoesEstoque.Location = new Point(1000, 0);
+            tlpBotoesEstoque.Location = new Point(993, 0);
             tlpBotoesEstoque.Name = "tlpBotoesEstoque";
             tlpBotoesEstoque.RowCount = 1;
             tlpBotoesEstoque.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBotoesEstoque.Size = new Size(101, 34);
+            tlpBotoesEstoque.Size = new Size(108, 34);
             tlpBotoesEstoque.TabIndex = 4;
             tlpBotoesEstoque.Visible = false;
             // 
@@ -243,68 +301,29 @@
             // 
             picBtnEstoque.Dock = DockStyle.Fill;
             picBtnEstoque.Image = Properties.Resources.btnEstoque;
-            picBtnEstoque.Location = new Point(72, 3);
+            picBtnEstoque.Location = new Point(78, 3);
             picBtnEstoque.Name = "picBtnEstoque";
             picBtnEstoque.Size = new Size(117, 28);
             picBtnEstoque.SizeMode = PictureBoxSizeMode.Zoom;
             picBtnEstoque.TabIndex = 0;
             picBtnEstoque.TabStop = false;
             picBtnEstoque.Click += picBtnEstoque_Click;
+            picBtnEstoque.MouseEnter += picBtnEstoque_MouseEnter;
+            picBtnEstoque.MouseLeave += picBtnEstoque_MouseLeave;
             // 
             // picBtnCadastrarMedicamento
             // 
             picBtnCadastrarMedicamento.Dock = DockStyle.Fill;
             picBtnCadastrarMedicamento.Image = Properties.Resources.btnCadastrarMedicamento;
-            picBtnCadastrarMedicamento.Location = new Point(-88, 3);
+            picBtnCadastrarMedicamento.Location = new Point(-85, 3);
             picBtnCadastrarMedicamento.Name = "picBtnCadastrarMedicamento";
             picBtnCadastrarMedicamento.Size = new Size(245, 28);
             picBtnCadastrarMedicamento.SizeMode = PictureBoxSizeMode.Zoom;
             picBtnCadastrarMedicamento.TabIndex = 1;
             picBtnCadastrarMedicamento.TabStop = false;
             picBtnCadastrarMedicamento.Click += picBtnCadastrarMedicamento_Click;
-            // 
-            // tlpBotoesPacientes
-            // 
-            tlpBotoesPacientes.ColumnCount = 5;
-            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 213F));
-            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 198F));
-            tlpBotoesPacientes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tlpBotoesPacientes.Controls.Add(picCadastrarPaciente, 1, 0);
-            tlpBotoesPacientes.Controls.Add(picListaPaciente, 3, 0);
-            tlpBotoesPacientes.Location = new Point(265, 0);
-            tlpBotoesPacientes.Name = "tlpBotoesPacientes";
-            tlpBotoesPacientes.RowCount = 1;
-            tlpBotoesPacientes.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBotoesPacientes.Size = new Size(74, 34);
-            tlpBotoesPacientes.TabIndex = 1;
-            tlpBotoesPacientes.Visible = false;
-            tlpBotoesPacientes.Paint += tableLayoutPanel1_Paint_1;
-            // 
-            // picCadastrarPaciente
-            // 
-            picCadastrarPaciente.Dock = DockStyle.Fill;
-            picCadastrarPaciente.Image = Properties.Resources.btnCadastrarPaciente;
-            picCadastrarPaciente.Location = new Point(-109, 3);
-            picCadastrarPaciente.Name = "picCadastrarPaciente";
-            picCadastrarPaciente.Size = new Size(207, 28);
-            picCadastrarPaciente.SizeMode = PictureBoxSizeMode.Zoom;
-            picCadastrarPaciente.TabIndex = 0;
-            picCadastrarPaciente.TabStop = false;
-            picCadastrarPaciente.Click += picCadastrarPaciente_Click;
-            // 
-            // picListaPaciente
-            // 
-            picListaPaciente.Dock = DockStyle.Fill;
-            picListaPaciente.Image = Properties.Resources.btnListaPacientes;
-            picListaPaciente.Location = new Point(-8, 3);
-            picListaPaciente.Name = "picListaPaciente";
-            picListaPaciente.Size = new Size(192, 28);
-            picListaPaciente.SizeMode = PictureBoxSizeMode.Zoom;
-            picListaPaciente.TabIndex = 1;
-            picListaPaciente.TabStop = false;
-            picListaPaciente.Click += picListaPaciente_Click;
+            picBtnCadastrarMedicamento.MouseEnter += picBtnCadastrarMedicamento_MouseEnter;
+            picBtnCadastrarMedicamento.MouseLeave += picBtnCadastrarMedicamento_MouseLeave;
             // 
             // tlpBotoesProntuario
             // 
@@ -448,8 +467,8 @@
             // 
             // panMain
             // 
-            panMain.Controls.Add(tlpListaPacientes);
             panMain.Controls.Add(tlpInternacao);
+            panMain.Controls.Add(tlpListaPacientes);
             panMain.Controls.Add(tlpBtnListaColaboradores);
             panMain.Controls.Add(tlpMedicamento);
             panMain.Dock = DockStyle.Fill;
@@ -458,6 +477,148 @@
             panMain.Size = new Size(1101, 407);
             panMain.TabIndex = 3;
             panMain.Paint += panMain_Paint;
+            // 
+            // tlpInternacao
+            // 
+            tlpInternacao.ColumnCount = 2;
+            tlpInternacao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpInternacao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpInternacao.Controls.Add(dgvInternacao, 0, 1);
+            tlpInternacao.Controls.Add(dgvInternacaoDetalhes, 1, 1);
+            tlpInternacao.Controls.Add(tableLayoutPanel1, 0, 0);
+            tlpInternacao.Controls.Add(tlpRegistroDetalhes, 1, 0);
+            tlpInternacao.Dock = DockStyle.Fill;
+            tlpInternacao.Location = new Point(0, 0);
+            tlpInternacao.Name = "tlpInternacao";
+            tlpInternacao.RowCount = 2;
+            tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
+            tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlpInternacao.Size = new Size(1101, 407);
+            tlpInternacao.TabIndex = 6;
+            tlpInternacao.Visible = false;
+            // 
+            // dgvInternacao
+            // 
+            dgvInternacao.BackgroundColor = Color.FromArgb(223, 233, 245);
+            dgvInternacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInternacao.Dock = DockStyle.Fill;
+            dgvInternacao.Location = new Point(3, 40);
+            dgvInternacao.Name = "dgvInternacao";
+            dgvInternacao.RowHeadersWidth = 51;
+            dgvInternacao.Size = new Size(544, 364);
+            dgvInternacao.TabIndex = 0;
+            dgvInternacao.CellClick += dgvInternacao_CellClick;
+            dgvInternacao.SelectionChanged += dgvInternacao_SelectionChanged;
+            // 
+            // dgvInternacaoDetalhes
+            // 
+            dgvInternacaoDetalhes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvInternacaoDetalhes.BackgroundColor = Color.FromArgb(223, 233, 245);
+            dgvInternacaoDetalhes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInternacaoDetalhes.Dock = DockStyle.Fill;
+            dgvInternacaoDetalhes.Location = new Point(553, 40);
+            dgvInternacaoDetalhes.Name = "dgvInternacaoDetalhes";
+            dgvInternacaoDetalhes.RowHeadersWidth = 51;
+            dgvInternacaoDetalhes.Size = new Size(545, 364);
+            dgvInternacaoDetalhes.TabIndex = 1;
+            dgvInternacaoDetalhes.CellBeginEdit += dgvInternacaoDetalhes_CellBeginEdit;
+            dgvInternacaoDetalhes.RowValidating += dgvInternacaoDetalhes_RowValidating;
+            dgvInternacaoDetalhes.SelectionChanged += dgvInternacaoDetalhes_SelectionChanged;
+            dgvInternacaoDetalhes.UserAddedRow += dgvInternacaoDetalhes_UserAddedRow;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Controls.Add(txtBusca, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnBuscar, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(3, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(544, 31);
+            tableLayoutPanel1.TabIndex = 3;
+            // 
+            // txtBusca
+            // 
+            txtBusca.BackColor = Color.FromArgb(223, 233, 245);
+            txtBusca.Dock = DockStyle.Fill;
+            txtBusca.Location = new Point(3, 3);
+            txtBusca.Name = "txtBusca";
+            txtBusca.Size = new Size(175, 23);
+            txtBusca.TabIndex = 0;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.FromArgb(187, 210, 236);
+            btnBuscar.Dock = DockStyle.Fill;
+            btnBuscar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.Location = new Point(184, 3);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(175, 25);
+            btnBuscar.TabIndex = 1;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // tlpRegistroDetalhes
+            // 
+            tlpRegistroDetalhes.ColumnCount = 4;
+            tlpRegistroDetalhes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            tlpRegistroDetalhes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180F));
+            tlpRegistroDetalhes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tlpRegistroDetalhes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 127F));
+            tlpRegistroDetalhes.Controls.Add(btnAlta, 3, 0);
+            tlpRegistroDetalhes.Controls.Add(txtRegistroDetalhes, 0, 0);
+            tlpRegistroDetalhes.Controls.Add(btnRegistrarDetalhes, 1, 0);
+            tlpRegistroDetalhes.Dock = DockStyle.Fill;
+            tlpRegistroDetalhes.Location = new Point(553, 3);
+            tlpRegistroDetalhes.Name = "tlpRegistroDetalhes";
+            tlpRegistroDetalhes.RowCount = 1;
+            tlpRegistroDetalhes.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpRegistroDetalhes.Size = new Size(545, 31);
+            tlpRegistroDetalhes.TabIndex = 4;
+            tlpRegistroDetalhes.Visible = false;
+            // 
+            // btnAlta
+            // 
+            btnAlta.BackgroundImage = Properties.Resources.cadastrarbutton9;
+            btnAlta.BackgroundImageLayout = ImageLayout.Zoom;
+            btnAlta.Dock = DockStyle.Fill;
+            btnAlta.FlatAppearance.BorderSize = 0;
+            btnAlta.FlatStyle = FlatStyle.Flat;
+            btnAlta.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAlta.Location = new Point(373, 3);
+            btnAlta.Name = "btnAlta";
+            btnAlta.Size = new Size(169, 25);
+            btnAlta.TabIndex = 1;
+            btnAlta.Text = "Alta";
+            btnAlta.UseVisualStyleBackColor = true;
+            // 
+            // txtRegistroDetalhes
+            // 
+            txtRegistroDetalhes.BackColor = Color.FromArgb(223, 233, 245);
+            txtRegistroDetalhes.Dock = DockStyle.Fill;
+            txtRegistroDetalhes.Location = new Point(3, 3);
+            txtRegistroDetalhes.Name = "txtRegistroDetalhes";
+            txtRegistroDetalhes.Size = new Size(134, 23);
+            txtRegistroDetalhes.TabIndex = 0;
+            // 
+            // btnRegistrarDetalhes
+            // 
+            btnRegistrarDetalhes.BackColor = Color.FromArgb(187, 210, 236);
+            btnRegistrarDetalhes.Dock = DockStyle.Fill;
+            btnRegistrarDetalhes.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrarDetalhes.Location = new Point(143, 3);
+            btnRegistrarDetalhes.Name = "btnRegistrarDetalhes";
+            btnRegistrarDetalhes.Size = new Size(174, 25);
+            btnRegistrarDetalhes.TabIndex = 1;
+            btnRegistrarDetalhes.Text = "Registrar";
+            btnRegistrarDetalhes.UseVisualStyleBackColor = false;
             // 
             // tlpListaPacientes
             // 
@@ -631,109 +792,6 @@
             btnInternarPaciente.Visible = false;
             btnInternarPaciente.Click += btnInternarPaciente_Click;
             // 
-            // tlpInternacao
-            // 
-            tlpInternacao.ColumnCount = 2;
-            tlpInternacao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpInternacao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpInternacao.Controls.Add(dgvInternacao, 0, 1);
-            tlpInternacao.Controls.Add(dgvInternacaoDetalhes, 1, 1);
-            tlpInternacao.Controls.Add(panel1, 0, 2);
-            tlpInternacao.Controls.Add(tableLayoutPanel1, 0, 0);
-            tlpInternacao.Location = new Point(755, 6);
-            tlpInternacao.Name = "tlpInternacao";
-            tlpInternacao.RowCount = 3;
-            tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
-            tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpInternacao.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpInternacao.Size = new Size(60, 45);
-            tlpInternacao.TabIndex = 6;
-            tlpInternacao.Visible = false;
-            // 
-            // dgvInternacao
-            // 
-            dgvInternacao.BackgroundColor = Color.FromArgb(223, 233, 245);
-            dgvInternacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInternacao.Dock = DockStyle.Fill;
-            dgvInternacao.Location = new Point(3, 40);
-            dgvInternacao.Name = "dgvInternacao";
-            dgvInternacao.RowHeadersWidth = 51;
-            dgvInternacao.Size = new Size(24, 1);
-            dgvInternacao.TabIndex = 0;
-            dgvInternacao.CellClick += dgvInternacao_CellClick;
-            // 
-            // dgvInternacaoDetalhes
-            // 
-            dgvInternacaoDetalhes.BackgroundColor = Color.FromArgb(223, 233, 245);
-            dgvInternacaoDetalhes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInternacaoDetalhes.Dock = DockStyle.Fill;
-            dgvInternacaoDetalhes.Location = new Point(33, 40);
-            dgvInternacaoDetalhes.Name = "dgvInternacaoDetalhes";
-            dgvInternacaoDetalhes.RowHeadersWidth = 51;
-            dgvInternacaoDetalhes.Size = new Size(24, 1);
-            dgvInternacaoDetalhes.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnAlta);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 44);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(24, 1);
-            panel1.TabIndex = 2;
-            // 
-            // btnAlta
-            // 
-            btnAlta.BackgroundImage = Properties.Resources.cadastrarbutton9;
-            btnAlta.BackgroundImageLayout = ImageLayout.Zoom;
-            btnAlta.FlatAppearance.BorderSize = 0;
-            btnAlta.FlatStyle = FlatStyle.Flat;
-            btnAlta.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAlta.Location = new Point(316, 11);
-            btnAlta.Name = "btnAlta";
-            btnAlta.Size = new Size(139, 64);
-            btnAlta.TabIndex = 1;
-            btnAlta.Text = "Alta";
-            btnAlta.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Controls.Add(txtBusca, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnBuscar, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 3);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(24, 31);
-            tableLayoutPanel1.TabIndex = 3;
-            // 
-            // txtBusca
-            // 
-            txtBusca.BackColor = Color.FromArgb(223, 233, 245);
-            txtBusca.Dock = DockStyle.Fill;
-            txtBusca.Location = new Point(3, 3);
-            txtBusca.Name = "txtBusca";
-            txtBusca.Size = new Size(2, 23);
-            txtBusca.TabIndex = 0;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.BackColor = Color.FromArgb(187, 210, 236);
-            btnBuscar.Dock = DockStyle.Fill;
-            btnBuscar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(11, 3);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(2, 25);
-            btnBuscar.TabIndex = 1;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click;
-            // 
             // tlpBtnListaColaboradores
             // 
             tlpBtnListaColaboradores.ColumnCount = 2;
@@ -827,8 +885,14 @@
             Name = "Form1";
             Text = "Medical System";
             WindowState = FormWindowState.Maximized;
+            FormClosing += Form1_FormClosing;
+            FormClosed += Form1_FormClosed;
+            Load += Form1_Load;
             tlpMain.ResumeLayout(false);
             panOptionsButtons.ResumeLayout(false);
+            tlpBotoesPacientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picCadastrarPaciente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picListaPaciente).EndInit();
             tlpBotoesColaboradores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picCadastrarEnfermeiros).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCadastrarMedico).EndInit();
@@ -837,9 +901,6 @@
             tlpBotoesEstoque.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picBtnEstoque).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBtnCadastrarMedicamento).EndInit();
-            tlpBotoesPacientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picCadastrarPaciente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picListaPaciente).EndInit();
             tlpBotoesProntuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picBtnExame).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBtnInternacoes).EndInit();
@@ -850,18 +911,19 @@
             ((System.ComponentModel.ISupportInitialize)picBtnProntuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBtnMedicamento).EndInit();
             panMain.ResumeLayout(false);
+            tlpInternacao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvInternacao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInternacaoDetalhes).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            tlpRegistroDetalhes.ResumeLayout(false);
+            tlpRegistroDetalhes.PerformLayout();
             tlpListaPacientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvListaPacientes).EndInit();
             tlpListaPacientesRight.ResumeLayout(false);
             tlpListaPacientesRightTop.ResumeLayout(false);
             tlpListaPacientesRightTop.PerformLayout();
             tlpBuscaPaciente.ResumeLayout(false);
-            tlpInternacao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvInternacao).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvInternacaoDetalhes).EndInit();
-            panel1.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             tlpBtnListaColaboradores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvListaColaboradores).EndInit();
             tlpMedicamento.ResumeLayout(false);
@@ -900,7 +962,6 @@
         private TableLayoutPanel tlpInternacao;
         private DataGridView dgvInternacao;
         private DataGridView dgvInternacaoDetalhes;
-        private Panel panel1;
         private Button btnAlta;
         private TableLayoutPanel tlpBotoesEstoque;
         private PictureBox picBtnEstoque;
@@ -920,5 +981,8 @@
         private TableLayoutPanel tlpBuscaPaciente;
         private Button btnBuscaPaciente;
         private Button btnInternarPaciente;
+        private TableLayoutPanel tlpRegistroDetalhes;
+        private TextBox txtRegistroDetalhes;
+        private Button btnRegistrarDetalhes;
     }
 }

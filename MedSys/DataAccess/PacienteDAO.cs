@@ -81,7 +81,7 @@ namespace MedSys.DataAccess
                         Peso = reader.GetFloat("peso"),
                         Altura = reader.GetFloat("altura"),
                         Observacoes = reader.GetString("observacoes"),
-                        Status = reader.GetString("status_paciente"),
+                        Status_Paciente = reader.GetString("status_paciente"),
                         Sexo = reader.GetString("sexo")
                     };
                     listaPacientes.Add(paciente);

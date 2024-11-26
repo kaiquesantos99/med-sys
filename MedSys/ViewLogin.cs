@@ -44,7 +44,7 @@ namespace MedSys
 
             if (aprovado)
             {
-                Form1 form1 = new Form1(usuario);
+                Form1 form1 = new Form1(usuario, this);
                 form1.Show();
                 this.Hide();
             }
@@ -75,7 +75,7 @@ namespace MedSys
 
                 if (aprovado)
                 {
-                    Form1 form1 = new Form1(usuario);
+                    Form1 form1 = new Form1(usuario, this);
                     form1.Show();
                     this.Hide();
                 }
@@ -86,6 +86,11 @@ namespace MedSys
 
                 e.Handled = true;
             }
+        }
+
+        private void ViewLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

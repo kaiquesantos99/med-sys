@@ -133,6 +133,16 @@ namespace MedSys.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnCadastrarEnfermeiroSelect {
+            get {
+                object obj = ResourceManager.GetObject("btnCadastrarEnfermeiroSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnCadastrarMedicamento {
             get {
                 object obj = ResourceManager.GetObject("btnCadastrarMedicamento", resourceCulture);
@@ -163,6 +173,16 @@ namespace MedSys.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnCadastrarMedicoSelect {
+            get {
+                object obj = ResourceManager.GetObject("btnCadastrarMedicoSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnCadastrarPaciente {
             get {
                 object obj = ResourceManager.GetObject("btnCadastrarPaciente", resourceCulture);
@@ -173,9 +193,29 @@ namespace MedSys.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnCadastrarPacienteSelect {
+            get {
+                object obj = ResourceManager.GetObject("btnCadastrarPacienteSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnCadastrarRecepcionista {
             get {
                 object obj = ResourceManager.GetObject("btnCadastrarRecepcionista", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnCadastrarRecepcionistaSelect {
+            get {
+                object obj = ResourceManager.GetObject("btnCadastrarRecepcionistaSelect", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +313,29 @@ namespace MedSys.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnListaColaboradoresSelect {
+            get {
+                object obj = ResourceManager.GetObject("btnListaColaboradoresSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnListaPacientes {
             get {
                 object obj = ResourceManager.GetObject("btnListaPacientes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnListaPacienteSelect {
+            get {
+                object obj = ResourceManager.GetObject("btnListaPacienteSelect", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

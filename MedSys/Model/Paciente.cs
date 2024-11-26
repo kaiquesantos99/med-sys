@@ -29,7 +29,7 @@ namespace MedSys.Model
         public float Peso { get; set; }
         public float Altura { get; set; }
         public string Observacoes { get; set; }
-        public string Status {  get; set; }
+        public string Status_Paciente {  get; set; }
         public string Sexo { get; set; }
     }
 }

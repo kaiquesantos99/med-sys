@@ -1,5 +1,6 @@
 using MedSys.DataAccess;
 using MedSys.Model;
+using System.Windows.Forms;
 
 namespace MedSys
 {
@@ -13,10 +14,14 @@ namespace MedSys
         private string UserName { get; set; }
         private string UserCpf { get; set; }
 
-        public Form1(string usuario)
+        private ViewLogin TelaLogin { get; set; }
+
+        public Form1(string usuario, ViewLogin login)
         {
             InitializeComponent();
             CheckTipoColaborador(usuario); // Verifica o tipo de colaborador para limitar acesso ao sistema
+
+            TelaLogin = login;
 
             tlpBotoesColaboradores.Dock = DockStyle.Fill;
             tlpBotoesPacientes.Dock = DockStyle.Fill;
@@ -164,7 +169,7 @@ namespace MedSys
                     tlpBotoesProntuario.Visible = false;
                     tlpBotoesEstoque.Visible = false;
                 }
-                
+
             }
             else
             {
@@ -201,8 +206,8 @@ namespace MedSys
             {
                 MessageBox.Show("Você não tem permissão para acessar as abas de colaborador!");
             }
-            
-            
+
+
 
         }
 
@@ -248,7 +253,7 @@ namespace MedSys
 
         private void picBtnPaciente_Click(object sender, EventArgs e)
         {
-            
+
             if (CheckedRecepcionista || CheckedMedico)
             {
                 if (!tlpBotoesPacientes.Visible)
@@ -270,7 +275,7 @@ namespace MedSys
             {
                 MessageBox.Show("Você não tem permissão para acessar as abas de paciente!");
             }
-            
+
         }
 
         private void picCadastrarEnfermeiros_Click(object sender, EventArgs e)
@@ -285,12 +290,12 @@ namespace MedSys
 
         private void picBtnConsulta_MouseEnter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void picBtnConsulta_MouseLeave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void picBtnProntuario_Click(object sender, EventArgs e)
@@ -316,7 +321,7 @@ namespace MedSys
             {
                 MessageBox.Show("Você não tem permissão para acessar as abas de prontuário!");
             }
-            
+
         }
 
         private void picInicioMedSys_Click(object sender, EventArgs e)
@@ -358,7 +363,7 @@ namespace MedSys
 
         private void picCadastrarColaboradores_Click(object sender, EventArgs e)
         {
-            
+
             if (!tlpBtnListaColaboradores.Visible)
             {
                 ReadTables();
@@ -375,7 +380,7 @@ namespace MedSys
                 tlpMedicamento.Visible = false;
             }
 
-            
+
 
         }
 
@@ -416,7 +421,7 @@ namespace MedSys
                 ReadTables();
                 tlpBtnListaColaboradores.Visible = false;
                 tlpListaPacientes.Visible = false;
-                tlpInternacao.Visible = true;
+                tlpInternacao.Visible = true; tlpRegistroDetalhes.Visible = false;
                 tlpMedicamento.Visible = false;
             }
             else
@@ -430,7 +435,7 @@ namespace MedSys
 
         private void picBtnEstoque_Click(object sender, EventArgs e)
         {
-            
+
 
             if (!tlpMedicamento.Visible)
             {
@@ -595,7 +600,7 @@ namespace MedSys
 
         private void btnInternar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dgvEstoque_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -751,7 +756,7 @@ namespace MedSys
 
         private void btnInternarPaciente_Click(object sender, EventArgs e)
         {
-            
+
 
             if (CheckedMedico)
             {
@@ -760,7 +765,7 @@ namespace MedSys
                     int linhaSelecionada = dgvListaPacientes.SelectedRows[0].Index;
                     string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["id"].Value?.ToString();
 
-                    new ViewInternarPaciente(UserId,int.Parse(valor),this).Show();
+                    new ViewInternarPaciente(UserId, int.Parse(valor), this).Show();
                     btnInternarPaciente.Visible = false;
                 }
                 else if (dgvListaPacientes.CurrentRow != null)
@@ -768,7 +773,7 @@ namespace MedSys
                     int linhaSelecionada = dgvListaPacientes.CurrentRow.Index;
                     string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["id"].Value?.ToString();
 
-                    new ViewInternarPaciente(UserId, int.Parse(valor),this).Show();
+                    new ViewInternarPaciente(UserId, int.Parse(valor), this).Show();
                     btnInternarPaciente.Visible = false;
                 }
             }
@@ -777,7 +782,174 @@ namespace MedSys
                 MessageBox.Show("Você não tem permissão para internar um paciente!");
             }
 
-            
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvInternacaoDetalhes_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+        }
+
+        private void dgvInternacaoDetalhes_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+        }
+
+        private void dgvInternacaoDetalhes_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+
+
+        }
+
+        private void dgvInternacaoDetalhes_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvInternacaoDetalhes.SelectedRows.Count > 0)
+            {
+
+            }
+            else if (dgvInternacaoDetalhes.CurrentRow != null)
+            {
+
+            }
+
+
+        }
+
+        private void dgvInternacao_SelectionChanged(object sender, EventArgs e)
+        {
+            // AO SELECIONAR UM REGISTRO DA TABELA, SE CASO TIVER INTERNADO ELE OCULTA OS BOTOES DE DETALHES, SENAO ELE EXIBE
+            if (dgvInternacao.SelectedRows.Count > 0)
+            {
+                int linhaSelecionada = dgvInternacao.SelectedRows[0].Index;
+                string valor = dgvInternacao.Rows[linhaSelecionada].Cells["StatusPaciente"].Value?.ToString();
+
+                if (valor == "Internado")
+                {
+                    tlpRegistroDetalhes.Visible = true;
+                    btnAlta.Visible = true;
+                }
+                else
+                {
+                    tlpRegistroDetalhes.Visible = false;
+                    btnAlta.Visible = false;
+                }
+            }
+            else if (dgvInternacao.CurrentRow != null)
+            {
+                int linhaSelecionada = dgvInternacao.CurrentRow.Index;
+                string valor = dgvInternacao.Rows[linhaSelecionada].Cells["StatusPaciente"].Value?.ToString();
+
+                if (valor == "Internado")
+                {
+                    tlpRegistroDetalhes.Visible = true;
+                    btnAlta.Visible = true;
+                }
+                else
+                {
+                    tlpRegistroDetalhes.Visible = false;
+                    btnAlta.Visible = false;
+                }
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (TelaLogin != null)
+            {
+                TelaLogin = new ViewLogin();
+                TelaLogin.Show();
+            }
+        }
+
+        private void picBtnEstoque_MouseEnter(object sender, EventArgs e)
+        {
+            picBtnEstoque.Image = Properties.Resources.btnEstoqueSelect;
+        }
+
+        private void picBtnEstoque_MouseLeave(object sender, EventArgs e)
+        {
+            picBtnEstoque.Image = Properties.Resources.btnEstoque;
+        }
+
+        private void picBtnCadastrarMedicamento_MouseEnter(object sender, EventArgs e)
+        {
+            picBtnCadastrarMedicamento.Image = Properties.Resources.btnCadastrarMedicamentoSelect;
+        }
+
+        private void picBtnCadastrarMedicamento_MouseLeave(object sender, EventArgs e)
+        {
+            picBtnCadastrarMedicamento.Image = Properties.Resources.btnCadastrarMedicamento;
+        }
+
+        private void picCadastrarEnfermeiros_MouseEnter(object sender, EventArgs e)
+        {
+            picCadastrarEnfermeiros.Image = Properties.Resources.btnCadastrarEnfermeiroSelect;
+        }
+
+        private void picCadastrarEnfermeiros_MouseLeave(object sender, EventArgs e)
+        {
+            picCadastrarEnfermeiros.Image = Properties.Resources.btnCadastrarEnfermeiro;
+        }
+
+        private void picCadastrarMedico_MouseEnter(object sender, EventArgs e)
+        {
+            picCadastrarMedico.Image = Properties.Resources.btnCadastrarMedicoSelect;
+        }
+
+        private void picCadastrarMedico_MouseLeave(object sender, EventArgs e)
+        {
+            picCadastrarMedico.Image = Properties.Resources.btnCadastrarMedico;
+        }
+
+        private void picCadastrarRecepcionista_MouseEnter(object sender, EventArgs e)
+        {
+            picCadastrarRecepcionista.Image = Properties.Resources.btnCadastrarRecepcionistaSelect;
+        }
+
+        private void picCadastrarRecepcionista_MouseLeave(object sender, EventArgs e)
+        {
+            picCadastrarRecepcionista.Image = Properties.Resources.btnCadastrarRecepcionista;
+        }
+
+        private void picBtnListaColaboradores_MouseEnter(object sender, EventArgs e)
+        {
+            picBtnListaColaboradores.Image = Properties.Resources.btnListaColaboradoresSelect;
+        }
+
+        private void picBtnListaColaboradores_MouseLeave(object sender, EventArgs e)
+        {
+            picBtnListaColaboradores.Image = Properties.Resources.btnListaColaboradores;
+        }
+
+        private void picCadastrarPaciente_MouseEnter(object sender, EventArgs e)
+        {
+            picCadastrarPaciente.Image = Properties.Resources.btnCadastrarPacienteSelect;
+        }
+
+        private void picCadastrarPaciente_MouseLeave(object sender, EventArgs e)
+        {
+            picCadastrarPaciente.Image = Properties.Resources.btnCadastrarPaciente;
+        }
+
+        private void picListaPaciente_MouseEnter(object sender, EventArgs e)
+        {
+            picListaPaciente.Image = Properties.Resources.btnListaPacienteSelect;
+        }
+
+        private void picListaPaciente_MouseLeave(object sender, EventArgs e)
+        {
+            picListaPaciente.Image = Properties.Resources.btnListaPacientes;
         }
     }
 }

@@ -191,124 +191,159 @@ namespace MedSys.DataAccess
             }
         }
 
-        public List<Enfermeiro> ReadEnfermeiro()
+        public Colaborador ReadUserData(string usuario) // Retorna o CPF e o nome do usuário
         {
-            List<Enfermeiro> listaEnfermeiros = new List<Enfermeiro>();
+            Colaborador nomeCpf = null;
+
+            try
+            {
+                // VERIFICAÇÃO 1
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+                    string query1 = "SELECT id, nome, cpf FROM enfermeiro WHERE usuario = @usuario";
+                    MySqlCommand cmd1 = new MySqlCommand(query1, conn);
+                    cmd1.Parameters.AddWithValue("usuario", usuario);
+                    MySqlDataReader reader1 = cmd1.ExecuteReader();
+
+
+                    while (reader1.Read())
+                    {
+                        nomeCpf = new Colaborador
+                        {
+                            Id = reader1.GetInt32("id"),
+                            Nome = reader1.GetString("nome"),
+                            Cpf = reader1.GetString("cpf")
+                        };
+                        return nomeCpf;
+
+                    }
+
+
+                    // VERIFICAÇÃO 2
+                    conn.Close();
+                    conn.Open();
+                    string query2 = "SELECT id, nome, cpf FROM medico WHERE usuario = @usuario";
+                    MySqlCommand cmd2 = new MySqlCommand(query2, conn);
+                    cmd2.Parameters.AddWithValue("usuario", usuario);
+                    MySqlDataReader reader2 = cmd2.ExecuteReader();
+
+                    while (reader2.Read())
+                    {
+                        nomeCpf = new Colaborador
+                        {
+                            Id = reader2.GetInt32("id"),
+                            Nome = reader2.GetString("nome"),
+                            Cpf = reader2.GetString("cpf")
+                        };
+                        return nomeCpf;
+                    }
+
+
+                    // VERIFICAÇÃO 3
+                    conn.Close();
+                    conn.Open();
+                    string query3 = "SELECT id, nome, cpf FROM recepcionista WHERE usuario = @usuario";
+                    MySqlCommand cmd3 = new MySqlCommand(query3, conn);
+                    cmd3.Parameters.AddWithValue("usuario", usuario);
+                    MySqlDataReader reader3 = cmd3.ExecuteReader();
+
+                    while (reader3.Read())
+                    {
+                        nomeCpf = new Colaborador
+                        {
+                            Id = reader3.GetInt32("id"),
+                            Nome = reader3.GetString("nome"),
+                            Cpf = reader3.GetString("cpf")
+                        };
+
+                        return nomeCpf;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+            }
+
+
+            return nomeCpf;
+            
+
+        }
+
+        public List<EnfermeiroDgv> ReadEnfermeiro()
+        {
+            List<EnfermeiroDgv> listaEnfermeiros = new List<EnfermeiroDgv>();
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM enfermeiro";
+                string query = "SELECT id, nome, dt_admissao, coren, telefone FROM enfermeiro";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while(reader.Read())
                 {
-                    Enfermeiro enfermeiro = new Enfermeiro
+                    EnfermeiroDgv enfermeiroDgv = new EnfermeiroDgv
                     {
                         Id = reader.GetInt32("id"),
                         Nome = reader.GetString("nome"),
                         Dt_Admissao = reader.GetDateTime("dt_admissao").ToString().Substring(0,10),
-                        Matricula = reader.GetInt32("matricula"),
                         Coren = reader.GetInt32("coren"),
-                        Nascimento = reader.GetDateTime("nascimento").ToString().Substring(0,10),
-                        Cpf = reader.GetString("cpf"),
-                        Rg = reader.GetString("rg"),
-                        Pis = reader.GetInt32("pis"),
-                        Cep = reader.GetString("cep"),
-                        Logradouro = reader.GetString("logradouro"),
-                        Numero = reader.GetInt32("numero"),
-                        Complemento = reader.GetString("complemento"),
-                        Bairro = reader.GetString("bairro"),
-                        Cidade = reader.GetString("cidade"),
-                        Uf = reader.GetString("uf"),
-                        Telefone = reader.GetString("telefone"),
-                        Email = reader.GetString("email"),
-                        Usuario = reader.GetString("usuario"),
-                        Senha = reader.GetString("senha")
+                        Telefone = reader.GetString("telefone")
                     };
-                    listaEnfermeiros.Add(enfermeiro);
+                    listaEnfermeiros.Add(enfermeiroDgv);
                 }
             }
             return listaEnfermeiros;
         }
 
-        public List<Medico> ReadMedico()
+        public List<MedicoDgv> ReadMedico()
         {
-            List<Medico> listaMedico = new List<Medico>();
+            List<MedicoDgv> listaMedico = new List<MedicoDgv>();
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM medico";
+                string query = "SELECT id, nome, dt_admissao, crm, telefone FROM medico";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Medico medico = new Medico
+                    MedicoDgv medicoDgv = new MedicoDgv
                     {
                         Id = reader.GetInt32("id"),
                         Nome = reader.GetString("nome"),
                         Dt_Admissao = reader.GetDateTime("dt_admissao").ToString().Substring(0, 10),
-                        Matricula = reader.GetInt32("matricula"),
                         Crm = reader.GetInt32("crm"),
-                        Nascimento = reader.GetDateTime("nascimento").ToString().Substring(0, 10),
-                        Cpf = reader.GetString("cpf"),
-                        Rg = reader.GetString("rg"),
-                        Pis = reader.GetInt32("pis"),
-                        Especialidade = reader.GetString("especialidade"),
-                        Cep = reader.GetString("cep"),
-                        Logradouro = reader.GetString("logradouro"),
-                        Numero = reader.GetInt32("numero"),
-                        Complemento = reader.GetString("complemento"),
-                        Bairro = reader.GetString("bairro"),
-                        Cidade = reader.GetString("cidade"),
-                        Uf = reader.GetString("uf"),
-                        Telefone = reader.GetString("telefone"),
-                        Email = reader.GetString("email"),
-                        Usuario = reader.GetString("usuario"),
-                        Senha = reader.GetString("senha")
+                        Telefone = reader.GetString("telefone")
                     };
-                    listaMedico.Add(medico);
+                    listaMedico.Add(medicoDgv);
                 }
             }
             return listaMedico;
         }
 
-        public List<Recepcionista> ReadRecepcionista()
+        public List<RecepcionistaDgv> ReadRecepcionista()
         {
-            List<Recepcionista> listaRecepcionista = new List<Recepcionista>();
+            List<RecepcionistaDgv> listaRecepcionista = new List<RecepcionistaDgv>();
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM recepcionista";
+                string query = "SELECT id, nome, dt_admissao, telefone FROM recepcionista";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Recepcionista recepcionista = new Recepcionista
+                    RecepcionistaDgv recepcionistaDgv = new RecepcionistaDgv
                     {
                         Id = reader.GetInt32("id"),
                         Nome = reader.GetString("nome"),
                         Dt_Admissao = reader.GetDateTime("dt_admissao").ToString().Substring(0, 10),
-                        Matricula = reader.GetInt32("matricula"),
-                        Nascimento = reader.GetDateTime("nascimento").ToString().Substring(0, 10),
-                        Cpf = reader.GetString("cpf"),
-                        Rg = reader.GetString("rg"),
-                        Pis = reader.GetInt32("pis"),
-                        Cep = reader.GetString("cep"),
-                        Logradouro = reader.GetString("logradouro"),
-                        Numero = reader.GetInt32("numero"),
-                        Complemento = reader.GetString("complemento"),
-                        Bairro = reader.GetString("bairro"),
-                        Cidade = reader.GetString("cidade"),
-                        Uf = reader.GetString("uf"),
-                        Telefone = reader.GetString("telefone"),
-                        Email = reader.GetString("email"),
-                        Usuario = reader.GetString("usuario"),
-                        Senha = reader.GetString("senha")
+                        Telefone = reader.GetString("telefone")
                     };
-                    listaRecepcionista.Add(recepcionista);
+                    listaRecepcionista.Add(recepcionistaDgv);
                 }
             }
             return listaRecepcionista;

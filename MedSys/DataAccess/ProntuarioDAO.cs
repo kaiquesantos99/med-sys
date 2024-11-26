@@ -20,7 +20,7 @@ namespace MedSys.DataAccess
 
 
         // Leitura
-        public List<Internacao> ReadInternacao(string p)
+        public List<Internacao> ReadInternacaoForName(string p)
         {
             List<Internacao> listaInternacao = new List<Internacao>();
 
@@ -67,6 +67,52 @@ namespace MedSys.DataAccess
 
         }
 
+        public List<Internacao> ReadInternacao(string p)
+        {
+            List<Internacao> listaInternacao = new List<Internacao>();
+
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT i.id id, p.nome paciente, p.cpf cpf, p.nascimento nascimento, p.sexo sexo, i.leito leito, i.setor setor, i.internado_tempo tempo_internado, m.nome medico, m.especialidade especialidade, p.status_paciente status_paciente FROM medico m JOIN internacao i on m.id = i.id_medico JOIN paciente p on p.id = i.id_paciente";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Internacao internacao = new Internacao()
+                        {
+
+                            Atendimento = reader.GetInt32("id"),
+                            Paciente = reader.GetString("paciente"),
+                            Cpf = reader.GetString("cpf"),
+                            Nascimento = reader.GetDateTime("nascimento").ToString().Substring(0, 10),
+                            Sexo = reader.GetString("sexo"),
+                            Leito = reader.GetString("leito"),
+                            Setor = reader.GetString("setor"),
+                            InternadoTempo = reader.GetDateTime("tempo_internado").ToString().Substring(0, 10),
+                            Medico = reader.GetString("medico"),
+                            Especialidade = reader.GetString("especialidade"),
+                            StatusPaciente = reader.GetString("status_paciente")
+
+                        };
+                        listaInternacao.Add(internacao);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex);
+                }
+
+                return listaInternacao;
+
+            }
+
+        }
+
         public List<DetalhesInternacao> ReadDetalhesInternacao(int i)
         {
             List<DetalhesInternacao> listaInternacaoDetalhes = new List<DetalhesInternacao>();
@@ -103,29 +149,49 @@ namespace MedSys.DataAccess
             }
 
         }
-        // Inserção
 
-        // Atualização
-        public void InternarPaciente(string cpf)
+
+
+        // Inserção
+        public void InternarPaciente(Internacao i, int idpaciente, int idmedico)
         {
             using (MySqlConnection conn = db.GetConnection())
             {
-                try
+                conn.Open();
+                string query = "INSERT INTO internacao (id_paciente, leito, setor, id_medico) VALUES (@idpaciente, @leito, @setor, @idmedico)";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    conn.Open();
-                    string query = "UPDATE paciente SET status_paciente = @status WHERE cpf = @cpf AND status_paciente = @statusAtual";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@status", "internado");
-                    cmd.Parameters.AddWithValue("@cpf", cpf);
-                    cmd.Parameters.AddWithValue("@statusAtual", "aguardando");
+                    cmd.Parameters.AddWithValue("@idpaciente", idpaciente);
+                    cmd.Parameters.AddWithValue("@leito", i.Leito);
+                    cmd.Parameters.AddWithValue("@setor", i.Setor);
+                    cmd.Parameters.AddWithValue("@idmedico", idmedico);
+
                     cmd.ExecuteNonQuery();
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Impossível cadastrar!" + ex);
-                }
                 
+                conn.Close();
+
+
+                conn.Open();
+                string query2 = "UPDATE paciente SET status_paciente = @statuspaciente WHERE id = @id";
+                using (MySqlCommand cmd2 = new MySqlCommand(query2, conn))
+                {
+                    cmd2.Parameters.AddWithValue("@statuspaciente", "Internado");
+                    cmd2.Parameters.AddWithValue("@id", idpaciente);
+
+                    cmd2.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Paciente internado com sucesso!");
+
+
             }
+
         }
+
+
+
+
+        
     }
 }

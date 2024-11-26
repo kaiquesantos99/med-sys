@@ -9,6 +9,10 @@ namespace MedSys
         private bool CheckedMedico { get; set; } = false;
         private bool CheckedRecepcionista { get; set; } = false;
 
+        private int UserId { get; set; }
+        private string UserName { get; set; }
+        private string UserCpf { get; set; }
+
         public Form1(string usuario)
         {
             InitializeComponent();
@@ -21,15 +25,22 @@ namespace MedSys
             tlpMedicamento.Dock = DockStyle.Fill;
             tlpInternacao.Dock = DockStyle.Fill;
             tlpBotoesEstoque.Dock = DockStyle.Fill;
+            tlpListaPacientes.Dock = DockStyle.Fill;
 
 
-            EstoqueDAO edao = new EstoqueDAO();
-            dgvEstoque.DataSource = edao.ReadEstoque();
-            ColaboradorDAO cdao = new ColaboradorDAO();
-            dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
+            ReadTables();
 
 
-            // Add ComboBox Values
+            // Add ComboBox Values Pacientes Status
+            cbFiltroStatusPaciente.Items.Add("Aguardando");
+            cbFiltroStatusPaciente.Items.Add("Internado");
+            cbFiltroStatusPaciente.Items.Add("Alta");
+
+            // Add ComboBox Values Pacientes Dados
+            cbFiltroDadosPaciente.Items.Add("Exibir dados");
+            cbFiltroDadosPaciente.Items.Add("Exibir dados filtrados");
+
+            // Add ComboBox Values Colaboradores
             cbColaboradores.Items.Add("Enfermeiros");
             cbColaboradores.Items.Add("Médicos");
             cbColaboradores.Items.Add("Recepcionistas");
@@ -69,8 +80,21 @@ namespace MedSys
 
         }
 
+        private void ReadTables()
+        {
+            EstoqueDAO edao = new EstoqueDAO();
+            dgvEstoque.DataSource = edao.ReadEstoque();
+            ColaboradorDAO cdao = new ColaboradorDAO();
+            dgvListaColaboradores.DataSource = cdao.ReadEnfermeiro();
+            PacienteDAO pfdao = new PacienteDAO();
+            dgvListaPacientes.DataSource = pfdao.ReadPacientesFiltro();
+            ProntuarioDAO pdao = new ProntuarioDAO();
+            dgvInternacao.DataSource = pdao.ReadInternacao(txtBusca.Text);
+        }
+
         private void CheckTipoColaborador(string usuario)
         {
+            Colaborador colaborador = new Colaborador();
             ColaboradorDAO cdao = new ColaboradorDAO();
             if (cdao.CheckEnfermeiro(usuario))
             {
@@ -84,6 +108,11 @@ namespace MedSys
             {
                 CheckedRecepcionista = true;
             }
+
+            colaborador = cdao.ReadUserData(usuario);
+            UserName = colaborador.Nome;
+            UserCpf = colaborador.Cpf;
+            UserId = colaborador.Id;
         }
 
 
@@ -130,7 +159,7 @@ namespace MedSys
             {
                 MessageBox.Show("Você não tem permissão para acessar a aba de estoque!");
             }
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -154,7 +183,7 @@ namespace MedSys
 
         private void picListaPaciente_Click(object sender, EventArgs e)
         {
-
+            tlpListaPacientes.Visible = true;
         }
 
         private void panOptionsButtons_Paint(object sender, PaintEventArgs e)
@@ -217,6 +246,7 @@ namespace MedSys
             tlpBtnListaColaboradores.Visible = false;
             tlpMedicamento.Visible = false;
             tlpInternacao.Visible = false;
+            tlpListaPacientes.Visible = false;
         }
 
         private void picBtnExame_Click(object sender, EventArgs e)
@@ -298,7 +328,7 @@ namespace MedSys
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ProntuarioDAO pdao = new ProntuarioDAO();
-            dgvInternacao.DataSource = pdao.ReadInternacao(txtBusca.Text);
+            dgvInternacao.DataSource = pdao.ReadInternacaoForName(txtBusca.Text);
         }
 
         private void picBtnCadastrarMedicamento_Click(object sender, EventArgs e)
@@ -440,19 +470,7 @@ namespace MedSys
 
         private void btnInternar_Click(object sender, EventArgs e)
         {
-            if (dgvInternacao.CurrentRow != null)
-            {
-
-                var cellValue = dgvInternacao.CurrentRow.Cells["cpf"].Value?.ToString();
-                ProntuarioDAO pdao = new ProntuarioDAO();
-                pdao.InternarPaciente(cellValue.ToString());
-                dgvInternacao.DataSource = pdao.ReadInternacao(cellValue.ToString());
-                MessageBox.Show("Paciente interado com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Selecione um paciente para internar!");
-            }
+            
         }
 
         private void dgvEstoque_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -502,6 +520,137 @@ namespace MedSys
                     MessageBox.Show("Selecione um medicamento que deseja excluir!");
                 }
             }
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbFiltroDadosPaciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PacienteDAO pdao = new PacienteDAO();
+
+            string valorSelecionado = cbFiltroDadosPaciente.SelectedItem.ToString();
+
+            if (valorSelecionado == "Exibir dados")
+            {
+                dgvListaPacientes.DataSource = pdao.ReadPacientes();
+            }
+            else if (valorSelecionado == "Exibir dados filtrados")
+            {
+                dgvListaPacientes.DataSource = pdao.ReadPacientesFiltro();
+            }
+
+        }
+
+        private void cbFiltroStatusPaciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PacienteDAO pdao = new PacienteDAO();
+
+            string valorSelecionado = cbFiltroStatusPaciente.SelectedItem.ToString();
+
+            if (valorSelecionado == "Aguardando")
+            {
+                dgvListaPacientes.DataSource = pdao.ReadPacientesForStatus("Aguardando");
+            }
+            else if (valorSelecionado == "Internado")
+            {
+                dgvListaPacientes.DataSource = pdao.ReadPacientesForStatus("Internado");
+            }
+            else if (valorSelecionado == "Alta")
+            {
+                dgvListaPacientes.DataSource = pdao.ReadPacientesForStatus("Alta");
+            }
+        }
+
+        private void btnBuscaPaciente_Click(object sender, EventArgs e)
+        {
+            PacienteDAO pdao = new PacienteDAO();
+            dgvListaPacientes.DataSource = pdao.SearchPacienteForName(txtBuscaPaciente.Text);
+        }
+
+        private void dgvListaPacientes_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+
+            if (dgvEstoque.SelectedRows.Count > 0)
+            {
+                int id = int.Parse(dgvEstoque.SelectedRows[0].Cells["id"].Value.ToString());
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    EstoqueDAO edao = new EstoqueDAO();
+                    edao.DeleteEstoque(id);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um medicamento que deseja excluir!");
+            }
+        }
+
+        private void dgvListaPacientes_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvListaPacientes.SelectedRows.Count > 0)
+            {
+                int linhaSelecionada = dgvListaPacientes.SelectedRows[0].Index;
+                string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["status_paciente"].Value?.ToString();
+
+                if (valor == "aguardando")
+                {
+                    btnInternarPaciente.Visible = true;
+                }
+                else
+                {
+                    btnInternarPaciente.Visible = false;
+                }
+            }
+            else if (dgvListaPacientes.CurrentRow != null)
+            {
+                int linhaSelecionada = dgvListaPacientes.CurrentRow.Index;
+                string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["status_paciente"].Value?.ToString();
+
+                if (valor == "aguardando")
+                {
+                    btnInternarPaciente.Visible = true;
+                }
+                else
+                {
+                    btnInternarPaciente.Visible = false;
+                }
+            }
+        }
+
+        private void btnInternarPaciente_Click(object sender, EventArgs e)
+        {
+            
+
+            if (CheckedMedico)
+            {
+                if (dgvListaPacientes.SelectedRows.Count > 0)
+                {
+                    int linhaSelecionada = dgvListaPacientes.SelectedRows[0].Index;
+                    string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["id"].Value?.ToString();
+
+                    new ViewInternarPaciente(UserId,int.Parse(valor)).Show();
+                    btnInternarPaciente.Visible = false;
+                }
+                else if (dgvListaPacientes.CurrentRow != null)
+                {
+                    int linhaSelecionada = dgvListaPacientes.CurrentRow.Index;
+                    string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["id"].Value?.ToString();
+
+                    new ViewInternarPaciente(UserId, int.Parse(valor)).Show();
+                    btnInternarPaciente.Visible = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Você não tem permissão para internar um paciente!");
+            }
+
+            
         }
     }
 }

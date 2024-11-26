@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCadastrarMedicamentos));
             lblTipo = new Label();
             cmbTipo = new ComboBox();
             label1 = new Label();
@@ -44,9 +45,9 @@
             lblTipo.AutoSize = true;
             lblTipo.BackColor = Color.FromArgb(187, 210, 236);
             lblTipo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTipo.Location = new Point(237, 118);
+            lblTipo.Location = new Point(207, 88);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(202, 18);
+            lblTipo.Size = new Size(166, 15);
             lblTipo.TabIndex = 0;
             lblTipo.Text = "TIPO DE MEDICAMENTO";
             // 
@@ -54,9 +55,10 @@
             // 
             cmbTipo.BackColor = Color.FromArgb(223, 233, 245);
             cmbTipo.FormattingEnabled = true;
-            cmbTipo.Location = new Point(451, 114);
+            cmbTipo.Location = new Point(395, 86);
+            cmbTipo.Margin = new Padding(3, 2, 3, 2);
             cmbTipo.Name = "cmbTipo";
-            cmbTipo.Size = new Size(222, 28);
+            cmbTipo.Size = new Size(195, 23);
             cmbTipo.TabIndex = 1;
             cmbTipo.SelectedIndexChanged += cmbTipo_SelectedIndexChanged;
             // 
@@ -65,27 +67,29 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(187, 210, 236);
             label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(238, 158);
+            label1.Location = new Point(208, 118);
             label1.Name = "label1";
-            label1.Size = new Size(131, 18);
+            label1.Size = new Size(108, 15);
             label1.TabIndex = 2;
             label1.Text = "MEDICAMENTO";
             // 
             // txtMedicamento
             // 
             txtMedicamento.BackColor = Color.FromArgb(223, 233, 245);
-            txtMedicamento.Location = new Point(375, 155);
+            txtMedicamento.Location = new Point(328, 116);
+            txtMedicamento.Margin = new Padding(3, 2, 3, 2);
             txtMedicamento.Multiline = true;
             txtMedicamento.Name = "txtMedicamento";
-            txtMedicamento.Size = new Size(298, 24);
+            txtMedicamento.Size = new Size(261, 19);
             txtMedicamento.TabIndex = 3;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.estoque;
-            pictureBox1.Location = new Point(46, 103);
+            pictureBox1.Location = new Point(40, 77);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(152, 125);
+            pictureBox1.Size = new Size(133, 94);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -97,9 +101,10 @@
             btnCadastrarMedicamento.FlatAppearance.BorderSize = 0;
             btnCadastrarMedicamento.FlatStyle = FlatStyle.Flat;
             btnCadastrarMedicamento.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadastrarMedicamento.Location = new Point(237, 262);
+            btnCadastrarMedicamento.Location = new Point(207, 196);
+            btnCadastrarMedicamento.Margin = new Padding(3, 2, 3, 2);
             btnCadastrarMedicamento.Name = "btnCadastrarMedicamento";
-            btnCadastrarMedicamento.Size = new Size(260, 87);
+            btnCadastrarMedicamento.Size = new Size(228, 65);
             btnCadastrarMedicamento.TabIndex = 5;
             btnCadastrarMedicamento.Text = "CADASTRAR MEDICAMENTO";
             btnCadastrarMedicamento.UseVisualStyleBackColor = true;
@@ -110,26 +115,27 @@
             lblQuantidade.AutoSize = true;
             lblQuantidade.BackColor = Color.FromArgb(187, 210, 236);
             lblQuantidade.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblQuantidade.Location = new Point(238, 200);
+            lblQuantidade.Location = new Point(208, 150);
             lblQuantidade.Name = "lblQuantidade";
-            lblQuantidade.Size = new Size(114, 18);
+            lblQuantidade.Size = new Size(94, 15);
             lblQuantidade.TabIndex = 6;
             lblQuantidade.Text = "QUANTIDADE";
             // 
             // txtQuantidade
             // 
             txtQuantidade.BackColor = Color.FromArgb(223, 233, 245);
-            txtQuantidade.Location = new Point(359, 196);
+            txtQuantidade.Location = new Point(314, 147);
+            txtQuantidade.Margin = new Padding(3, 2, 3, 2);
             txtQuantidade.Multiline = true;
             txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(314, 24);
+            txtQuantidade.Size = new Size(275, 19);
             txtQuantidade.TabIndex = 7;
             // 
             // ViewCadastrarMedicamentos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(739, 450);
+            ClientSize = new Size(647, 338);
             Controls.Add(txtQuantidade);
             Controls.Add(lblQuantidade);
             Controls.Add(btnCadastrarMedicamento);
@@ -138,8 +144,10 @@
             Controls.Add(label1);
             Controls.Add(cmbTipo);
             Controls.Add(lblTipo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ViewCadastrarMedicamentos";
-            Text = "ViewCadastrarMedicamentos";
+            Text = "MedSys | Cadastrar Medicamento";
             Load += ViewCadastrarMedicamentos_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

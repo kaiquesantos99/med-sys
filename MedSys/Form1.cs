@@ -80,7 +80,7 @@ namespace MedSys
 
         }
 
-        private void ReadTables()
+        public void ReadTables()
         {
             EstoqueDAO edao = new EstoqueDAO();
             dgvEstoque.DataSource = edao.ReadEstoque();
@@ -150,14 +150,25 @@ namespace MedSys
         {
             if (CheckedEnfermeiro)
             {
-                tlpBotoesColaboradores.Visible = false;
-                tlpBotoesPacientes.Visible = false;
-                tlpBotoesProntuario.Visible = false;
-                tlpBotoesEstoque.Visible = true;
+                if (!tlpBotoesEstoque.Visible)
+                {
+                    tlpBotoesColaboradores.Visible = false;
+                    tlpBotoesPacientes.Visible = false;
+                    tlpBotoesProntuario.Visible = false;
+                    tlpBotoesEstoque.Visible = true;
+                }
+                else
+                {
+                    tlpBotoesColaboradores.Visible = false;
+                    tlpBotoesPacientes.Visible = false;
+                    tlpBotoesProntuario.Visible = false;
+                    tlpBotoesEstoque.Visible = false;
+                }
+                
             }
             else
             {
-                MessageBox.Show("Você não tem permissão para acessar a aba de estoque!");
+                MessageBox.Show("Você não tem permissão para acessar as abas de estoque!");
             }
 
         }
@@ -169,21 +180,55 @@ namespace MedSys
 
         private void picBtnColaborador_Click(object sender, EventArgs e)
         {
-            tlpBotoesColaboradores.Visible = true;
-            tlpBotoesPacientes.Visible = false;
-            tlpBotoesProntuario.Visible = false;
-            tlpBotoesEstoque.Visible = false;
+            if (CheckedRecepcionista)
+            {
+                if (!tlpBotoesColaboradores.Visible)
+                {
+                    tlpBotoesColaboradores.Visible = true;
+                    tlpBotoesPacientes.Visible = false;
+                    tlpBotoesProntuario.Visible = false;
+                    tlpBotoesEstoque.Visible = false;
+                }
+                else
+                {
+                    tlpBotoesColaboradores.Visible = false;
+                    tlpBotoesPacientes.Visible = false;
+                    tlpBotoesProntuario.Visible = false;
+                    tlpBotoesEstoque.Visible = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Você não tem permissão para acessar as abas de colaborador!");
+            }
+            
+            
 
         }
 
         private void picCadastrarPaciente_Click(object sender, EventArgs e)
         {
-            new ViewCadastrarPaciente().Show();
+            new ViewCadastrarPaciente(this).Show();
         }
 
         private void picListaPaciente_Click(object sender, EventArgs e)
         {
-            tlpListaPacientes.Visible = true;
+
+            if (!tlpListaPacientes.Visible)
+            {
+                ReadTables();
+                tlpBtnListaColaboradores.Visible = false;
+                tlpListaPacientes.Visible = true;
+                tlpInternacao.Visible = false;
+                tlpMedicamento.Visible = false;
+            }
+            else
+            {
+                tlpBtnListaColaboradores.Visible = false;
+                tlpListaPacientes.Visible = false;
+                tlpInternacao.Visible = false;
+                tlpMedicamento.Visible = false;
+            }
         }
 
         private void panOptionsButtons_Paint(object sender, PaintEventArgs e)
@@ -198,25 +243,44 @@ namespace MedSys
 
         private void picCadastrarMedico_Click(object sender, EventArgs e)
         {
-            new ViewCadastroMedico().Show();
+            new ViewCadastroMedico(this).Show();
         }
 
         private void picBtnPaciente_Click(object sender, EventArgs e)
         {
-            tlpBotoesColaboradores.Visible = false;
-            tlpBotoesPacientes.Visible = true;
-            tlpBotoesProntuario.Visible = false;
-            tlpBotoesEstoque.Visible = false;
+            
+            if (CheckedRecepcionista || CheckedMedico)
+            {
+                if (!tlpBotoesPacientes.Visible)
+                {
+                    tlpBotoesColaboradores.Visible = false;
+                    tlpBotoesPacientes.Visible = true;
+                    tlpBotoesProntuario.Visible = false;
+                    tlpBotoesEstoque.Visible = false;
+                }
+                else
+                {
+                    tlpBotoesColaboradores.Visible = false;
+                    tlpBotoesPacientes.Visible = false;
+                    tlpBotoesProntuario.Visible = false;
+                    tlpBotoesEstoque.Visible = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Você não tem permissão para acessar as abas de paciente!");
+            }
+            
         }
 
         private void picCadastrarEnfermeiros_Click(object sender, EventArgs e)
         {
-            new ViewCadastrarEnfermeiro().Show();
+            new ViewCadastrarEnfermeiro(this).Show();
         }
 
         private void picCadastrarRecepcionista_Click(object sender, EventArgs e)
         {
-            new ViewCadastroRecepcionista().Show();
+            new ViewCadastroRecepcionista(this).Show();
         }
 
         private void picBtnConsulta_MouseEnter(object sender, EventArgs e)
@@ -231,10 +295,28 @@ namespace MedSys
 
         private void picBtnProntuario_Click(object sender, EventArgs e)
         {
-            tlpBotoesColaboradores.Visible = false;
-            tlpBotoesPacientes.Visible = false;
-            tlpBotoesProntuario.Visible = true;
-            tlpBotoesEstoque.Visible = false;
+            if (CheckedMedico || CheckedEnfermeiro)
+            {
+                if (!tlpBotoesProntuario.Visible)
+                {
+                    tlpBotoesColaboradores.Visible = false;
+                    tlpBotoesPacientes.Visible = false;
+                    tlpBotoesProntuario.Visible = true;
+                    tlpBotoesEstoque.Visible = false;
+                }
+                else
+                {
+                    tlpBotoesColaboradores.Visible = false;
+                    tlpBotoesPacientes.Visible = false;
+                    tlpBotoesProntuario.Visible = false;
+                    tlpBotoesEstoque.Visible = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Você não tem permissão para acessar as abas de prontuário!");
+            }
+            
         }
 
         private void picInicioMedSys_Click(object sender, EventArgs e)
@@ -276,10 +358,24 @@ namespace MedSys
 
         private void picCadastrarColaboradores_Click(object sender, EventArgs e)
         {
-            tlpBotoesColaboradores.Visible = false;
-            tlpBotoesPacientes.Visible = false;
-            tlpBotoesProntuario.Visible = false;
-            tlpBtnListaColaboradores.Visible = true;
+            
+            if (!tlpBtnListaColaboradores.Visible)
+            {
+                ReadTables();
+                tlpBtnListaColaboradores.Visible = true;
+                tlpListaPacientes.Visible = false;
+                tlpInternacao.Visible = false;
+                tlpMedicamento.Visible = false;
+            }
+            else
+            {
+                tlpBtnListaColaboradores.Visible = false;
+                tlpListaPacientes.Visible = false;
+                tlpInternacao.Visible = false;
+                tlpMedicamento.Visible = false;
+            }
+
+            
 
         }
 
@@ -314,14 +410,43 @@ namespace MedSys
 
         private void picBtnInternacoes_Click(object sender, EventArgs e)
         {
-            tlpInternacao.Visible = true;
+
+            if (!tlpInternacao.Visible)
+            {
+                ReadTables();
+                tlpBtnListaColaboradores.Visible = false;
+                tlpListaPacientes.Visible = false;
+                tlpInternacao.Visible = true;
+                tlpMedicamento.Visible = false;
+            }
+            else
+            {
+                tlpBtnListaColaboradores.Visible = false;
+                tlpListaPacientes.Visible = false;
+                tlpInternacao.Visible = false;
+                tlpMedicamento.Visible = false;
+            }
         }
 
         private void picBtnEstoque_Click(object sender, EventArgs e)
         {
-            tlpBtnListaColaboradores.Visible = false;
-            tlpInternacao.Visible = false;
-            tlpMedicamento.Visible = true;
+            
+
+            if (!tlpMedicamento.Visible)
+            {
+                ReadTables();
+                tlpBtnListaColaboradores.Visible = false;
+                tlpListaPacientes.Visible = false;
+                tlpInternacao.Visible = false;
+                tlpMedicamento.Visible = true;
+            }
+            else
+            {
+                tlpBtnListaColaboradores.Visible = false;
+                tlpListaPacientes.Visible = false;
+                tlpInternacao.Visible = false;
+                tlpMedicamento.Visible = false;
+            }
 
         }
 
@@ -333,7 +458,7 @@ namespace MedSys
 
         private void picBtnCadastrarMedicamento_Click(object sender, EventArgs e)
         {
-            new ViewCadastrarMedicamentos().Show();
+            new ViewCadastrarMedicamentos(this).Show();
         }
 
         private void cbMedicamentos_SelectedIndexChanged(object sender, EventArgs e)
@@ -620,6 +745,8 @@ namespace MedSys
                     btnInternarPaciente.Visible = false;
                 }
             }
+
+
         }
 
         private void btnInternarPaciente_Click(object sender, EventArgs e)
@@ -633,7 +760,7 @@ namespace MedSys
                     int linhaSelecionada = dgvListaPacientes.SelectedRows[0].Index;
                     string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["id"].Value?.ToString();
 
-                    new ViewInternarPaciente(UserId,int.Parse(valor)).Show();
+                    new ViewInternarPaciente(UserId,int.Parse(valor),this).Show();
                     btnInternarPaciente.Visible = false;
                 }
                 else if (dgvListaPacientes.CurrentRow != null)
@@ -641,7 +768,7 @@ namespace MedSys
                     int linhaSelecionada = dgvListaPacientes.CurrentRow.Index;
                     string valor = dgvListaPacientes.Rows[linhaSelecionada].Cells["id"].Value?.ToString();
 
-                    new ViewInternarPaciente(UserId, int.Parse(valor)).Show();
+                    new ViewInternarPaciente(UserId, int.Parse(valor),this).Show();
                     btnInternarPaciente.Visible = false;
                 }
             }

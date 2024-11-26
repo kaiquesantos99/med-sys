@@ -46,7 +46,7 @@ namespace MedSys
             {
                 Form1 form1 = new Form1(usuario);
                 form1.Show();
-
+                this.Hide();
             }
             else
             {
@@ -77,7 +77,7 @@ namespace MedSys
                 {
                     Form1 form1 = new Form1(usuario);
                     form1.Show();
-
+                    this.Hide();
                 }
                 else
                 {

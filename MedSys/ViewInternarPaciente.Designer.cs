@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewInternarPaciente));
             txtLeito = new TextBox();
             txtSetor = new TextBox();
             lblLeito = new Label();
@@ -40,19 +41,17 @@
             // txtLeito
             // 
             txtLeito.BackColor = Color.FromArgb(223, 233, 245);
-            txtLeito.Location = new Point(229, 67);
-            txtLeito.Margin = new Padding(3, 4, 3, 4);
+            txtLeito.Location = new Point(200, 50);
             txtLeito.Name = "txtLeito";
-            txtLeito.Size = new Size(114, 27);
+            txtLeito.Size = new Size(100, 23);
             txtLeito.TabIndex = 0;
             // 
             // txtSetor
             // 
             txtSetor.BackColor = Color.FromArgb(223, 233, 245);
-            txtSetor.Location = new Point(229, 106);
-            txtSetor.Margin = new Padding(3, 4, 3, 4);
+            txtSetor.Location = new Point(200, 80);
             txtSetor.Name = "txtSetor";
-            txtSetor.Size = new Size(114, 27);
+            txtSetor.Size = new Size(100, 23);
             txtSetor.TabIndex = 1;
             // 
             // lblLeito
@@ -60,9 +59,9 @@
             lblLeito.AutoSize = true;
             lblLeito.BackColor = Color.FromArgb(187, 210, 236);
             lblLeito.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLeito.Location = new Point(174, 72);
+            lblLeito.Location = new Point(152, 54);
             lblLeito.Name = "lblLeito";
-            lblLeito.Size = new Size(45, 18);
+            lblLeito.Size = new Size(39, 15);
             lblLeito.TabIndex = 2;
             lblLeito.Text = "Leito";
             // 
@@ -71,9 +70,9 @@
             lblSetor.AutoSize = true;
             lblSetor.BackColor = Color.FromArgb(187, 210, 236);
             lblSetor.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSetor.Location = new Point(173, 111);
+            lblSetor.Location = new Point(151, 83);
             lblSetor.Name = "lblSetor";
-            lblSetor.Size = new Size(49, 18);
+            lblSetor.Size = new Size(41, 15);
             lblSetor.TabIndex = 3;
             lblSetor.Text = "Setor";
             // 
@@ -85,10 +84,9 @@
             btnInternar.FlatAppearance.BorderSize = 0;
             btnInternar.FlatStyle = FlatStyle.Flat;
             btnInternar.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInternar.Location = new Point(180, 152);
-            btnInternar.Margin = new Padding(3, 4, 3, 4);
+            btnInternar.Location = new Point(158, 114);
             btnInternar.Name = "btnInternar";
-            btnInternar.Size = new Size(149, 58);
+            btnInternar.Size = new Size(130, 44);
             btnInternar.TabIndex = 4;
             btnInternar.Text = "INTERNAR";
             btnInternar.UseVisualStyleBackColor = false;
@@ -97,25 +95,26 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.g1int;
-            pictureBox1.Location = new Point(46, 41);
+            pictureBox1.Location = new Point(40, 31);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(106, 120);
+            pictureBox1.Size = new Size(93, 90);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
             // ViewInternarPaciente
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(447, 267);
+            ClientSize = new Size(391, 200);
             Controls.Add(pictureBox1);
             Controls.Add(btnInternar);
             Controls.Add(lblSetor);
             Controls.Add(lblLeito);
             Controls.Add(txtSetor);
             Controls.Add(txtLeito);
-            Margin = new Padding(3, 4, 3, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ViewInternarPaciente";
             Text = "MedSys | Finalizar Internação";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

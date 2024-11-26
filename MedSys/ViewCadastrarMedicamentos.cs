@@ -14,7 +14,8 @@ namespace MedSys
 {
     public partial class ViewCadastrarMedicamentos : Form
     {
-        public ViewCadastrarMedicamentos()
+        Form1 f;
+        public ViewCadastrarMedicamentos(Form1 f)
         {
             InitializeComponent();
 
@@ -47,6 +48,8 @@ namespace MedSys
             cmbTipo.Items.Add("Anestésicos");
             cmbTipo.Items.Add("Antidiarreicos");
             cmbTipo.Items.Add("Estimulantes do Sistema Nervoso Central");
+
+            this.f = f;
         }
 
         private void btnCadastrarMedicamento_Click(object sender, EventArgs e)
@@ -66,7 +69,7 @@ namespace MedSys
             txtMedicamento.Text = "";
             txtQuantidade.Text = "";
 
-
+            f.ReadTables();
 
             MessageBox.Show("Cadastrado com sucesso!");
         }

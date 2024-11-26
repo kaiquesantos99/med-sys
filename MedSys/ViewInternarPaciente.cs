@@ -14,14 +14,16 @@ namespace MedSys
 {
     public partial class ViewInternarPaciente : Form
     {
+        Form1 f;
         private int IdMedico { get; set; }
         private int IdPaciente { get; set; }
 
-        public ViewInternarPaciente(int idMedico, int idPaciente)
+        public ViewInternarPaciente(int idMedico, int idPaciente, Form1 f)
         {
             InitializeComponent();
             IdMedico = idMedico;
             IdPaciente = idPaciente;
+            this.f = f;
         }
 
         private void btnInternar_Click(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace MedSys
             internacao.Leito = txtLeito.Text;
             internacao.Setor = txtSetor.Text;
             pdao.InternarPaciente(internacao, IdPaciente, IdMedico);
+            f.ReadTables();
             this.Close();
         }
     }

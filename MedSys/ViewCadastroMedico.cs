@@ -14,9 +14,11 @@ namespace MedSys
 {
     public partial class ViewCadastroMedico : Form
     {
-        public ViewCadastroMedico()
+        Form1 f;
+        public ViewCadastroMedico(Form1 f)
         {
             InitializeComponent();
+            this.f = f;
         }
 
         private void ViewCadastroMedico_Load(object sender, EventArgs e)
@@ -73,6 +75,8 @@ namespace MedSys
             txtEmailM.Text = "";
             txtUsuarioM.Text = "";
             txtSenhaM.Text = "";
+
+            f.ReadTables();
 
             MessageBox.Show("Cadastrado com sucesso!");
         }

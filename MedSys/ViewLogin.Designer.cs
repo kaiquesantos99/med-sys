@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewLogin));
             ldlEntrar = new Label();
             txtSenha = new TextBox();
             txtUsuario = new TextBox();
@@ -36,7 +37,7 @@
             // ldlEntrar
             // 
             ldlEntrar.AutoSize = true;
-            ldlEntrar.Location = new Point(525, 203);
+            ldlEntrar.Location = new Point(525, 199);
             ldlEntrar.Name = "ldlEntrar";
             ldlEntrar.Size = new Size(38, 15);
             ldlEntrar.TabIndex = 1;
@@ -45,22 +46,21 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(500, 165);
+            txtSenha.Location = new Point(500, 161);
             txtSenha.Margin = new Padding(3, 2, 3, 2);
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(110, 23);
             txtSenha.TabIndex = 3;
-            txtSenha.Text = "05031999";
             txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(500, 133);
+            txtUsuario.Location = new Point(500, 128);
             txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(110, 23);
             txtUsuario.TabIndex = 2;
-            txtUsuario.Text = "kaka.01";
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // ViewLogin
@@ -68,15 +68,17 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background_login;
-            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(700, 338);
             Controls.Add(txtUsuario);
             Controls.Add(txtSenha);
             Controls.Add(ldlEntrar);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "ViewLogin";
-            Text = "Login MedSys";
+            Text = "MedSys | Login";
             KeyDown += ViewLogin_KeyDown;
             ResumeLayout(false);
             PerformLayout();

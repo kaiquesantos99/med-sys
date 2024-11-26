@@ -14,9 +14,11 @@ namespace MedSys
 {
     public partial class ViewCadastroRecepcionista : Form
     {
-        public ViewCadastroRecepcionista()
+        Form1 f;
+        public ViewCadastroRecepcionista(Form1 f)
         {
             InitializeComponent();
+            this.f = f;
         }
 
         private void btnCadastrarR_Click(object sender, EventArgs e)
@@ -64,6 +66,8 @@ namespace MedSys
             txtEmailR.Text = "";
             txtUsuarioR.Text = "";
             txtSenhaR.Text = "";
+
+            f.ReadTables();
 
             MessageBox.Show("Cadastrado com sucesso!");
         }

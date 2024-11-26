@@ -14,9 +14,11 @@ namespace MedSys
 {
     public partial class ViewCadastrarPaciente : Form
     {
-        public ViewCadastrarPaciente()
+        Form1 f;
+        public ViewCadastrarPaciente(Form1 f)
         {
             InitializeComponent();
+            this.f = f;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -78,6 +80,8 @@ namespace MedSys
             txtAlturaP.Text = "";
             txtObservacoesP.Text = "";
             txtSexoP.Text = "";
+
+            f.ReadTables();
 
             MessageBox.Show("Cadastrado com sucesso!");
         }

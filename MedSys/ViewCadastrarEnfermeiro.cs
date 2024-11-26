@@ -14,9 +14,11 @@ namespace MedSys
 {
     public partial class ViewCadastrarEnfermeiro : Form
     {
-        public ViewCadastrarEnfermeiro()
+        Form1 f;
+        public ViewCadastrarEnfermeiro(Form1 f)
         {
             InitializeComponent();
+            this.f = f;
         }
 
         private void txtComplemento_TextChanged(object sender, EventArgs e)
@@ -72,6 +74,7 @@ namespace MedSys
             txtUsuario.Text = "";
             txtSenha.Text = "";
 
+            f.ReadTables();
             MessageBox.Show("Cadastrado com sucesso!");
         }
     }

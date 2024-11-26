@@ -184,3 +184,5 @@ C:\Users\Lennon\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.pdb
 C:\Users\Lennon\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.genruntimeconfig.cache
 C:\Users\Lennon\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\ref\MedSys.dll
 C:\Users\Kaique\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewInternarPaciente.resources
+C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewInternarPaciente.resources
+C:\Users\aclis\source\repos\med-sys\MedSys\obj\Debug\net8.0-windows\MedSys.ViewProntuarioExame.resources

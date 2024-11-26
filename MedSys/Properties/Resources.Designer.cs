@@ -303,6 +303,16 @@ namespace MedSys.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cadastrarbutton10 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarbutton10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cadastrarbutton2 {
             get {
                 object obj = ResourceManager.GetObject("cadastrarbutton2", resourceCulture);
@@ -346,6 +356,36 @@ namespace MedSys.Properties {
         internal static System.Drawing.Bitmap cadastrarbutton6 {
             get {
                 object obj = ResourceManager.GetObject("cadastrarbutton6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadastrarbutton7 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarbutton7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadastrarbutton8 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarbutton8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadastrarbutton9 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarbutton9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,6 +463,16 @@ namespace MedSys.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap g1int {
+            get {
+                object obj = ResourceManager.GetObject("g1int", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap g7 {
             get {
                 object obj = ResourceManager.GetObject("g7", resourceCulture);
@@ -466,6 +516,28 @@ namespace MedSys.Properties {
         internal static System.Drawing.Bitmap paciente {
             get {
                 object obj = ResourceManager.GetObject("paciente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_cartoon_blue_magnifying_glass_illustration_image_1214215_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-cartoon-blue-magnifying-glass-illustration-image_1214215-removebg-preview" +
+                        "", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_cartoon_blue_magnifying_glass_illustration_image_1214215_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-cartoon-blue-magnifying-glass-illustration-image_1214215-removebg-preview" +
+                        "1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

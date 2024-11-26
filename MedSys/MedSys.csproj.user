@@ -25,5 +25,8 @@
     <Compile Update="ViewLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ViewProntuarioExame.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

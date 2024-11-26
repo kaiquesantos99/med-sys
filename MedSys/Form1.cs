@@ -221,12 +221,12 @@ namespace MedSys
 
         private void picBtnConsulta_MouseEnter(object sender, EventArgs e)
         {
-            picBtnConsulta.Image = Properties.Resources.btnConsultaSelect;
+            
         }
 
         private void picBtnConsulta_MouseLeave(object sender, EventArgs e)
         {
-            picBtnConsulta.Image = Properties.Resources.btnConsulta;
+            
         }
 
         private void picBtnProntuario_Click(object sender, EventArgs e)
@@ -251,7 +251,7 @@ namespace MedSys
 
         private void picBtnExame_Click(object sender, EventArgs e)
         {
-
+            new ViewProntuarioExame().Show();
         }
 
         private void picBtnExame_MouseEnter(object sender, EventArgs e)
